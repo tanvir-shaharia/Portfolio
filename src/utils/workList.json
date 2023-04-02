@@ -1,27 +1,22 @@
 [
   {
     "id": 1,
-    "workTitle": "Front End Web Developer",
-    "startDate": "12-06-2020",
-    "endDate": "NOW",
-    "position": "React developer",
+    "workTitle": "Creative It Institute",
+    "startDate": "01-09-2022",
+    "endDate": "31-12-2022",
+    "position": "Andriod App development",
     "location": "Dhaka, Bangladesh",
-    "description": "I am a web designer. Also, I am a React front-end developer. I have been doing web design for the last many years. I have worked in web design with HTML5, CSS3, CSS3 Animation, Bootstrap, JavaScript, JQuery, JQuery Animation, React. I am ready to convert your Html conversion ( PSD, image, pdf to Html ). I know many wonderful effects of use on websites and how to keep the website clean. Effective and clean cross-browser support has been a priority in many of the projects I've worked on.",
+    "description": "I complete my projects with customer satisfaction. I can develop slick Android Applications and will provide you with the source code. Also, the application can be graphically enhanced if you desire. Contact me for further discussion. Anything from offline applications to database-connected online applications, from simple to advanced applications, there is no space for saying IT CAN'T BE.",
     "certificates": ""
   },
   {
     "id": 2,
-    "workTitle": "Kalpas innovation pvt. ltd",
-    "startDate": "29-12-2021",
-    "endDate": "29-04-2022",
-    "position": "React internship",
-    "location": " Hubballi, Karnataka, India",
-    "description": "",
-    "certificates": [
-      {
-        "image": "https://i.ibb.co/m83Dqpr/Internship-Certificate.png",
-        "title": "internship certificate"
-      }
-    ]
+    "workTitle": "Graphics Designer",
+    "startDate": "01-01-2021",
+    "endDate": "Now",
+    "position": "Designer",
+    "location": "Dhaka, Bangladesh",
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni natus, sunt, dignissimos repellendus ut rerum inventore tempora consectetur quo iure voluptates velit quam officia cum aperiam animi aspernatur in soluta.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni natus, sunt, dignissimos repellendus ut rerum inventore tempora consectetur quo iure voluptates velit quam officia cum aperiam animi aspernatur in soluta.",
+    "certificates": ""
   }
 ]

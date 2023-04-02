@@ -3,7 +3,7 @@ import { Fade } from "react-reveal";
 import { Link } from "react-router-dom";
 import Typed from "react-typed";
 import Wave from "react-wavify";
-import avatar from "../../../assets/images/avater.webp";
+import avatar from "../../../assets/images/avater.jpg";
 import useWindowDimensions from "../../../hook/getWindowDimensions";
 import SocialBtn from "../../socialBtn";
 import socialBtnList from "./../../../utils/socialBtnList.json";
@@ -30,15 +30,15 @@ export default function Home() {
               </div>
               <h2 className="text-3xl md:text-4xl font-medium pb-4 pt-2 ">
                 <Fade up cascade>
-                  Tahir Ahmad (Sani)
+                  MD Tanvir Shaharia
                 </Fade>
               </h2>{" "}
               <Typed
                 strings={[
-                  "Web developer",
-                  "Web designer",
-                  "React Developer",
-                  "UI/UX designer",
+                  "Android App Developer",
+                  "Graphics Designer",
+                  "Logo Developer",
+                  "UI/UX Designer",
                 ]}
                 typeSpeed={90}
                 backSpeed={80}
