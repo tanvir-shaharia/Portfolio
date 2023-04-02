@@ -7,7 +7,7 @@ export default function Projects() {
   return (
     <>
       <Helmet>
-        <title>Projects - Tahir Ahmad</title>
+        <title>Projects - Tanvir Shaharia</title>
       </Helmet>
 
       <PageLayout>

@@ -1,31 +1,31 @@
 [
   {
     "id": 1,
-    "link": "https://www.facebook.com/TahirAhmad01/",
+    "link": " https://www.facebook.com/profile.php?id=100076360894745",
     "hover": "facebook",
     "icon": "fab fa-facebook-f"
   },
   {
     "id": 2,
-    "link": "https://www.linkedin.com/in/tahirahmad01/",
+    "link": "https://www.linkedin.com/in/tanvir-shaharia/",
     "hover": "linkedin",
     "icon": "fab fa-linkedin-in"
   },
   {
     "id": 3,
-    "link": "https://twitter.com/tahir_ahmad01",
+    "link": "https://twitter.com/tanvir_shaharia",
     "hover": "twitter",
     "icon": "fab fa-twitter"
   },
   {
     "id": 4,
-    "link": "https://www.instagram.com/tahir_ahmad01",
+    "link": " https://www.instagram.com/tanvir_shaharia/",
     "hover": "instagram",
     "icon": "fab fa-instagram"
   },
   {
     "id": 5,
-    "link": "https://github.com/TahirAhmad01",
+    "link": "https://github.com/tanvir-shaharia",
     "hover": "github",
     "icon": "fab fa-github"
   }

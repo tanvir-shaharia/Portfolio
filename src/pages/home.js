@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Tahir Ahmad - Portfolio</title>
+        <title>Tanvir Shaharia - Portfolio</title>
       </Helmet>
 
       {/* <PageLayout> */}

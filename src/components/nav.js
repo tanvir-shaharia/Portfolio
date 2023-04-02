@@ -41,7 +41,7 @@ export default function Navbar({ theme, toggleDarkMode }) {
                 </div>
                 <div className="ml-3">
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18c8fd] to-purple-600 font-extrabold text-2xl">
-                    Tahir Ahmad
+                    Tanvir Shaharia
                   </span>
                 </div>
               </h4>

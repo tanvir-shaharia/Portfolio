@@ -7,7 +7,7 @@ export default function Skill() {
   return (
     <>
       <Helmet>
-        <title>Skill - Tahir Ahmad</title>
+        <title>Skill - Tanvir Shaharia</title>
       </Helmet>
 
       <PageLayout>

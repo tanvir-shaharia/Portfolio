@@ -66,7 +66,7 @@ export default function Home() {
                 </Link>
 
                 <a
-                  href="https://drive.google.com/uc?export=download&id=1k2sWD02DE43O65nkMLJ-s3GtwtYZrhPI"
+                  href="https://drive.google.com/uc?export=download&id=1IX3ExvDqUT29OHejJwsPIWbEhIMl2agS"
                   download
                 >
                   <Button name="Download CV" />

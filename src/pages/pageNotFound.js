@@ -8,7 +8,7 @@ function PageNotFound() {
   return (
     <>
       <Helmet>
-        <title>404 - Tahir Ahmad</title>
+        <title>404 - Tanvir Shaharia</title>
       </Helmet>
 
       <PageLayout>
