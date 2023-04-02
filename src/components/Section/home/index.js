@@ -37,7 +37,7 @@ export default function Home() {
                 strings={[
                   "Android App Developer",
                   "Graphics Designer",
-                  "Logo Developer",
+                  "Logo Designer",
                   "UI/UX Designer",
                 ]}
                 typeSpeed={90}
