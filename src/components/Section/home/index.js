@@ -65,7 +65,6 @@ export default function Home() {
                   <Button name="Get in touch" />
                 </Link>
 
-                 //https://drive.google.com/file/d/163Mwq2VYS5nIdIf2cTcZZTYSzzBEd6Qf/view?usp=sharing
                 <a
                   href="https://drive.google.com/uc?export=download&id=163Mwq2VYS5nIdIf2cTcZZTYSzzBEd6Qf"
                   download
