@@ -26,7 +26,7 @@ export default function About() {
                 Hello! I Am MD Tanvir Shaharia.
               </h3>
               <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300 mb-6">
-                I am a Junior Software Engineer (Android & Flutter) with 2.5+ years of experience developing and maintaining production-ready mobile applications. Specializing in Android Native (Kotlin) and Flutter (Dart), I have a strong focus on clean architecture (MVVM, Clean Architecture), scalable application design, REST API integration, and robust state management (Riverpod, Provider). Passionate about modern Android technologies, Jetpack Compose, and AI-powered mobile experiences.
+                I am a Software Engineer (Android & Flutter) with 2.5+ years of experience developing and maintaining production-ready mobile applications. Specializing in Android Native (Kotlin) and Flutter (Dart), I have a strong focus on clean architecture (MVVM, Clean Architecture), scalable application design, REST API integration, and robust state management (Riverpod, Provider). Passionate about modern Android technologies, Jetpack Compose, and AI-powered mobile experiences.
               </p>
               <div className="mt-5">
                 <Fade up>

@@ -36,7 +36,7 @@ export default function Home() {
               </h2>{" "}
               <Typed
                 strings={[
-                  "Junior Software Engineer",
+                  "Software Engineer",
                   "Android Native Developer",
                   "Flutter Developer",
                   "Mobile Application Developer",
