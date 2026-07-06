@@ -4,7 +4,7 @@
     "workTitle": "Nascenia Limited",
     "startDate": "Sep 2023",
     "endDate": "Present",
-    "position": "Software Engineer",
+    "position": "Junior Software Engineer",
     "location": "Dhaka, Bangladesh",
     "description": "Develop and maintain high-performance, responsive Flutter and Android Native applications in production. Support large-scale telecom applications My Robi and My Airtel BD (serving millions of users) by implementing new features and fixing critical bugs. Co-developed a hospital ecosystem app (Shojja Hospital) in Flutter using Clean Architecture and Riverpod. Integrated secure OTP-based user authentication, localized resources, and Firebase Cloud Messaging (FCM) for real-time notifications. Optimized state management and network clients using Provider and Retrofit for Zakat management (CZM Mobile App) and matchmaking (Biyeta) applications. Establish background Bluetooth connectivity for industrial weighing scale hardware. Collaborate in Agile Scrum teams and perform peer code reviews.",
     "certificates": ""
