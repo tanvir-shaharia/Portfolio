@@ -31,7 +31,7 @@ export default function ProjectButton({ setItem }) {
                   <button
                     className={`mx-1 my-1  py-1 px-4 capitalize bg-slate-200 hover:bg-slate-300 rounded-3xl text-sm min-w-[4.5rem]  ${
                       activeBtn === btn.category
-                        ? "bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 hover:bg-gradient-to-bl text-white"
+                        ? "bg-gradient-to-r from-red-600 to-rose-700 text-white font-semibold"
                         : "dark:text-black"
                     }`}
                     onClick={() => filterItem(btn.category)}

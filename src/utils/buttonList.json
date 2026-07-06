@@ -6,27 +6,32 @@
   },
   {
     "id": 2,
-    "name": "java",
-    "category": "Java"
+    "name": "Android Native",
+    "category": "Android Native"
   },
   {
     "id": 3,
-    "name": "xml",
-    "category": "Xml"
+    "name": "Flutter",
+    "category": "Flutter"
   },
   {
     "id": 4,
-    "name": "firebase",
-    "category": "Firebase"
+    "name": "Kotlin",
+    "category": "Kotlin"
   },
   {
     "id": 5,
-    "name": "room database",
-    "category": "Room Database"
+    "name": "Dart",
+    "category": "Dart"
   },
   {
     "id": 6,
-    "name": "api",
-    "category": "Api"
+    "name": "Firebase",
+    "category": "Firebase"
+  },
+  {
+    "id": 7,
+    "name": "Bluetooth / IoT",
+    "category": "Bluetooth"
   }
 ]

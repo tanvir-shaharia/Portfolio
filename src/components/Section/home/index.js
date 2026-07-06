@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Typed from "react-typed";
 import Wave from "react-wavify";
 import avatar from "../../../assets/images/avater.jpg";
+import cv from "../../../assets/pdf/cv.pdf";
 import useWindowDimensions from "../../../hook/getWindowDimensions";
 import SocialBtn from "../../socialBtn";
 import socialBtnList from "./../../../utils/socialBtnList.json";
@@ -35,28 +36,26 @@ export default function Home() {
               </h2>{" "}
               <Typed
                 strings={[
-                  "Android App Developer",
-                  "Graphics Designer",
-                  "Logo Designer",
-                  "UI/UX Designer",
+                  "Junior Software Engineer",
+                  "Android Native Developer",
+                  "Flutter Developer",
+                  "Mobile Application Developer",
                 ]}
                 typeSpeed={90}
                 backSpeed={80}
                 loop
-                className="text-md md:text-xl text-gray-600 dark:text-gray-300"
+                className="text-md md:text-xl text-gray-600 dark:text-gray-300 font-semibold"
               />
               <div className="icons mt-4 text-gray-600 dark:text-white/60 flex justify-center flex-wrap">
                 {socialBtnList.map((btn, idx) => {
                   const { link, hover, icon } = btn || {};
                   return (
-                    <>
-                      <SocialBtn
-                        key={idx}
-                        link={link}
-                        hover={hover}
-                        icon={icon}
-                      />
-                    </>
+                    <SocialBtn
+                      key={idx}
+                      link={link}
+                      hover={hover}
+                      icon={icon}
+                    />
                   );
                 })}
               </div>
@@ -66,15 +65,15 @@ export default function Home() {
                 </Link>
 
                 <a
-                  href="https://drive.google.com/uc?export=download&id=163Mwq2VYS5nIdIf2cTcZZTYSzzBEd6Qf"
-                  download
+                  href={cv}
+                  download="MD_Tanvir_Shaharia_CV.pdf"
                 >
                   <Button name="Download CV" />
                 </a>
               </div>
             </div>
             <Wave
-              fill="#fff4"
+              fill="currentColor"
               paused={false}
               options={{
                 height: 50,
@@ -82,10 +81,10 @@ export default function Home() {
                 speed: 0.15,
                 points: 3,
               }}
-              className="absolute bottom-0 z-10 "
+              className="text-white/20 dark:text-zinc-950/20 absolute bottom-0 z-10 w-full"
             />
             <Wave
-              fill="#fff5"
+              fill="currentColor"
               paused={false}
               options={{
                 height: 70,
@@ -93,7 +92,7 @@ export default function Home() {
                 speed: 0.2,
                 points: 5,
               }}
-              className="absolute bottom-0 z-10 "
+              className="text-white/30 dark:text-zinc-950/30 absolute bottom-0 z-10 w-full"
             />
           </div>
         </div>

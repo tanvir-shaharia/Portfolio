@@ -1,11 +1,20 @@
 [
   {
+    "id": 2,
+    "educationTitle": "Northern University Bangladesh",
+    "startDate": "2023",
+    "endDate": "Present",
+    "position": "Bachelor of Science (B.Sc.) in Computer Science & Engineering",
+    "location": "Dhaka, Bangladesh",
+    "description": "Currently pursuing a Bachelor's degree in Computer Science & Engineering. Deepening knowledge in advanced system architecture, algorithms, and core engineering principles."
+  },
+  {
     "id": 1,
-    "educationTitle": "Rajshahi polytechnic institute",
-    "startDate": "Sep 2018",
-    "endDate": "Jan 2022",
-    "position": "Computer Science",
+    "educationTitle": "Rajshahi Polytechnic Institute",
+    "startDate": "2018",
+    "endDate": "2022",
+    "position": "Diploma in Engineering in Computer Science Technology",
     "location": "Rajshahi, Bangladesh",
-    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni natus, sunt, dignissimos repellendus ut rerum inventore tempora consectetur quo iure voluptates velit quam officia cum aperiam animi aspernatur in soluta.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni natus, sunt, dignissimos repellendus ut rerum inventore tempora consectetur quo iure voluptates velit quam officia cum aperiam animi aspernatur in soluta."
+    "description": "Graduated with a Diploma in Computer Science Technology. CGPA: 3.54 / 4.00. Acquired foundational skills in programming, databases, and network administration."
   }
 ]

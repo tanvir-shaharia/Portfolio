@@ -1,50 +1,92 @@
 [
   {
     "id": 1,
-    "name": "Easy chat",
-    "category": ["Java", "Firebase", "Xml"],
-    "placeholderSrc": "https://i.ibb.co/kSdSpcX/poject1.jpg",
-    "imageSrc": "https://i.ibb.co/wN3J6P8/poject1.jpg",
-    "source": "https://github.com/tanvir-shaharia/EasyChat"
+    "name": "Shojja Hospital",
+    "category": ["Flutter", "Dart", "Firebase", "REST API"],
+    "description": "A multi-tenant mobile client designed for a comprehensive hospital ecosystem, facilitating secure patient login, localized resource management, and notification dispatch.",
+    "contributions": [
+      "Built the core authentication module (OTP verification via REST APIs)",
+      "Configured localized string resources for multi-language accessibility",
+      "Integrated FCM for real-time notification dispatch and offline data caching using Dio interceptors"
+    ],
+    "placeholderSrc": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=600&auto=format&fit=crop",
+    "imageSrc": "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=600&auto=format&fit=crop",
+    "source": "https://github.com/tanvir-shaharia",
+    "link": ""
   },
   {
     "id": 2,
-    "name": "My note",
-    "category": ["Java", "Xml", "Room Database"],
-    "placeholderSrc": "https://i.ibb.co/pQ14Ms3/poject2.jpg",
-    "imageSrc": "https://i.ibb.co/fYZBW6G/poject2.jpg",
-    "source": "https://github.com/tanvir-shaharia/mynote"
+    "name": "My Robi",
+    "category": ["Android Native", "Kotlin", "REST API", "Firebase"],
+    "description": "A leading self-care telecommunications application in Bangladesh with millions of active users. It allows customers to manage accounts, recharge balances, buy mobile internet packs, and activate customized telecom bundles.",
+    "contributions": [
+      "Refactored legacy UI components to match modern layout design guidelines",
+      "Optimized API integrations and resolved visual lag and critical app crashes",
+      "Improved overall application stability and enhanced the self-care user experience"
+    ],
+    "placeholderSrc": "/my_robi.webp",
+    "imageSrc": "/my_robi.webp",
+    "source": "",
+    "link": "https://play.google.com/store/apps/details?id=com.robi.myrobi"
   },
   {
     "id": 3,
-    "name": "contact",
-    "category": ["Java", "Xml", "Firebase", "Room Database"],
-    "placeholderSrc": "https://i.ibb.co/CJRKgTC/poject3.jpg",
-    "imageSrc": "https://i.ibb.co/8gbrQzW/poject3.jpg",
-    "source": "https://github.com/tanvir-shaharia/Contract"
+    "name": "My Airtel BD",
+    "category": ["Android Native", "Kotlin", "REST API", "Firebase"],
+    "description": "A user-friendly self-care mobile application for Airtel BD subscribers that enables real-time account balance tracking, bundle purchases, and telecom subscription management.",
+    "contributions": [
+      "Built dynamic promotional campaign screens",
+      "Integrated REST endpoints for real-time account management data",
+      "Resolved UI rendering and navigation bugs across multiple Android device sizes"
+    ],
+    "placeholderSrc": "/my_airtel.webp",
+    "imageSrc": "/my_airtel.webp",
+    "source": "",
+    "link": "https://play.google.com/store/apps/details?id=com.airtel.myairtel"
   },
   {
     "id": 4,
-    "name": "Car rent",
-    "category": ["Java", "Xml", "Firebase"],
-    "placeholderSrc": "https://i.ibb.co/wzS1tvF/poject4.jpg",
-    "imageSrc": "https://i.ibb.co/K53NVmq/poject4.jpg",
-    "source": "https://github.com/tanvir-shaharia/CarsRents"
+    "name": "Weighing Scale App",
+    "category": ["Android Native", "Kotlin", "Bluetooth"],
+    "description": "An industrial utility application that establishes connections with external weighing scale hardware to facilitate real-time weight tracking.",
+    "contributions": [
+      "Managed the Bluetooth communication lifecycle and handled input streams",
+      "Implemented asynchronous listeners to process hardware byte streams",
+      "Built a background connection service with auto-reconnection logic to handle physical hardware disconnections"
+    ],
+    "placeholderSrc": "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=600&auto=format&fit=crop",
+    "imageSrc": "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=600&auto=format&fit=crop",
+    "source": "https://github.com/tanvir-shaharia",
+    "link": ""
   },
   {
     "id": 5,
-    "name": "Todo app",
-    "category": ["Java", "Xml", "Room Database"],
-    "placeholderSrc": "https://i.ibb.co/G9fFPPN/poject5.jpg",
-    "imageSrc": "https://i.ibb.co/Z2PLkdz/poject5.jpg",
-    "source": "https://github.com/tanvir-shaharia/Todo"
+    "name": "CZM Mobile App",
+    "category": ["Flutter", "Dart", "REST API"],
+    "description": "Transparent Zakat fund mobilization and distribution Flutter platform for beneficiaries and donors, featuring Zakat fund calculators, matchmaking lists, and user profile management.",
+    "contributions": [
+      "Integrated REST APIs using code generation (Retrofit/Dio)",
+      "Refactored Provider state trees to ensure layout responsiveness and efficient data loading",
+      "Optimized profile lists via lazy rendering to prevent screen transition lag"
+    ],
+    "placeholderSrc": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop",
+    "imageSrc": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop",
+    "source": "https://github.com/tanvir-shaharia",
+    "link": ""
   },
   {
     "id": 6,
-    "name": "Rpi",
-    "category": ["Java", "Xml", "Firebase", "Room Database", "Api"],
-    "placeholderSrc": "https://i.ibb.co/2gnKjD2/poject6.jpg",
-    "imageSrc": "https://i.ibb.co/ZHLhsfj/poject6.jpg",
-    "source": "https://github.com/tanvir-shaharia/RPI"
+    "name": "Biyeta",
+    "category": ["Flutter", "Dart", "REST API"],
+    "description": "Most trusted matchmaking and matrimony mobile application in Bangladesh featuring profile setups and matchmaking workflows.",
+    "contributions": [
+      "Developed dynamic profile setup modules and updated navigation structures",
+      "Resolved nested profile list rendering and image loading constraints",
+      "Restructured network clients to optimize load latency and performance"
+    ],
+    "placeholderSrc": "/biyeta_loading.png",
+    "imageSrc": "/biyeta_loading.png",
+    "source": "",
+    "link": "https://play.google.com/store/apps/details?id=com.robi.biyeta"
   }
 ]

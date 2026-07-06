@@ -1,6 +1,6 @@
 import React from "react";
 import { Fade, Zoom } from "react-reveal";
-import picture from "../../.../../../assets/images/myPic.jpg";
+import picture from "../../../assets/images/myPic.jpg";
 import Title from "../title";
 import Info from "./info";
 
@@ -22,30 +22,25 @@ export default function About() {
         <div className="md:grid items-center md:gap-3 lg:gap-4 grid-cols-9 md:col-start-9">
           <div className="md:col-span-5 lg:col-span-5 lg:pr-28">
             <Fade up cascade>
-              <h3>Hello! I Am Tanvir Shaharia.</h3>{" "}
-              <p className="text-sm">
-                I am a professional App Developer,Programmer & Graphics designer
-                . I complete my projects with customer satisfaction. I can
-                develop slick Android Applications and will provide you with the
-                source code. Also, the application can be graphically enhanced
-                if you desire. Contact me for further discussion. Anything from
-                offline applications to database-connected online applications,
-                from simple to advanced applications, there is no space for
-                saying "IT CAN'T BE".
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+                Hello! I Am MD Tanvir Shaharia.
+              </h3>
+              <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300 mb-6">
+                I am a Junior Software Engineer (Android & Flutter) with 2.5+ years of experience developing and maintaining production-ready mobile applications. Specializing in Android Native (Kotlin) and Flutter (Dart), I have a strong focus on clean architecture (MVVM, Clean Architecture), scalable application design, REST API integration, and robust state management (Riverpod, Provider). Passionate about modern Android technologies, Jetpack Compose, and AI-powered mobile experiences.
               </p>
               <div className="mt-5">
                 <Fade up>
                   <Info name="email" details="tanvirshaharia120@gmail.com" />
-                  <Info name="phone" details="+8801644566945" />
+                  <Info name="phone" details="+880 1644-566945" />
                   <Info name="address" details="Dhaka, Bangladesh" />
-                  <Info name="status" details="Available" />
+                  <Info name="status" details="Available for Opportunities" />
                 </Fade>
               </div>
             </Fade>
           </div>
           <Zoom>
             <div className="h-auto w-full mt-5 md:mt-0 overflow-hidden rounded-xl md:col-span-4 lg:col-span-4 aspect-[4/4]">
-              <img src={picture} alt="" className="w-full" />
+              <img src={picture} alt="" className="w-full object-cover h-full" />
             </div>{" "}
           </Zoom>
         </div>

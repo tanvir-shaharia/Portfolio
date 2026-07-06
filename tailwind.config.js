@@ -12,9 +12,9 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      sans: ["Nunito Sans", ...defaultTheme.fontFamily.sans],
+      sans: ["Plus Jakarta Sans", ...defaultTheme.fontFamily.sans],
       ubutu: ["Ubuntu", "sans-serif"],
-      nunito: ["Nunito", "sans-serif"],
+      nunito: ["Plus Jakarta Sans", "sans-serif"],
     },
   },
   plugins: [
@@ -62,7 +62,7 @@ module.exports = {
 
         ".darkBg": {
           backgroundImage:
-            "radial-gradient( circle farthest-corner at 10% 20%,  rgba(100,130,159,1) 0%, rgba(103,56,96,1) 90% )",
+            "radial-gradient(circle at 50% 50%, rgba(153,27,27,0.06) 0%, rgba(9,9,11,1) 80%)",
         },
       });
     }),

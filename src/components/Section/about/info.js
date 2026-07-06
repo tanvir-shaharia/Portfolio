@@ -1,12 +1,34 @@
 import React from "react";
 
 export default function Info({ name, details }) {
+  let content = <span className="font-semibold text-gray-800 dark:text-gray-200">{details}</span>;
+
+  if (name.toLowerCase() === "email") {
+    content = (
+      <a
+        href={`mailto:${details}`}
+        className="font-semibold text-red-600 dark:text-red-500 hover:underline transition-colors duration-200"
+      >
+        {details}
+      </a>
+    );
+  } else if (name.toLowerCase() === "phone") {
+    content = (
+      <a
+        href={`tel:${details.replace(/[\s-]/g, "")}`}
+        className="font-semibold text-red-600 dark:text-red-500 hover:underline transition-colors duration-200"
+      >
+        {details}
+      </a>
+    );
+  }
+
   return (
-    <>
-      <div className="flex py-1 flex-wrap">
-        <div className="w-full md:w-[85px] capitalize">{name} :</div>
-        <div className="font-semibold">{details}</div>
+    <div className="flex py-1.5 flex-wrap text-sm">
+      <div className="w-full md:w-[95px] capitalize text-gray-500 dark:text-gray-400 font-medium">
+        {name} :
       </div>
-    </>
+      <div className="flex-1">{content}</div>
+    </div>
   );
 }

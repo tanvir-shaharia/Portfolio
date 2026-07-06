@@ -28,9 +28,7 @@ export default function Navbar({ theme, toggleDarkMode }) {
     <React.Fragment>
       {/* ${scrollY > 280 && "py-3"} */}
       <div
-        className={`backdrop-blur-xl bg-slate-100/40 dark:bg-[#0b1327]/70 w-full top-0 left-0 fixed z-50 py-4 transition-all duration-200 border-b-2 border-inherit dark:border-gray-700 my-collapsible my-collapsible 
-       
-        `}
+        className="backdrop-blur-xl bg-slate-100/40 dark:bg-[#09090b]/80 w-full top-0 left-0 fixed z-50 py-4 transition-all duration-200 border-b border-inherit dark:border-zinc-800/80 my-collapsible"
       >
         <div className="containerCustom flex items-center justify-between h-full">
           <div>
@@ -40,7 +38,7 @@ export default function Navbar({ theme, toggleDarkMode }) {
                   <img src={avatar} alt="avatar" />
                 </div>
                 <div className="ml-3">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18c8fd] to-purple-600 font-extrabold text-2xl">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-rose-600 font-extrabold text-2xl">
                     Tanvir Shaharia
                   </span>
                 </div>
@@ -51,17 +49,18 @@ export default function Navbar({ theme, toggleDarkMode }) {
             <div className=" hidden md:block">
               <ul className="flex">
                 {menuList.map((menu, idx) => (
-                  <Link to={menu?.link} className="capitalize" key={idx}>
-                    <li
-                      className={`px-3 hover:text-transparent bg-clip-text bg-gradient-to-r from-[#18c8fd] to-purple-600 font-medium ${
+                  <li key={idx}>
+                    <Link
+                      to={menu?.link}
+                      className={`px-3 block hover:text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-rose-600 font-medium capitalize transition-all ${
                         path === menu?.link || path === menu?.link + "/"
-                          ? "text-transparent font-semibold"
-                          : ""
+                          ? "text-transparent font-bold"
+                          : "text-gray-700 dark:text-gray-300"
                       }`}
                     >
                       {menu.name}
-                    </li>
-                  </Link>
+                    </Link>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -72,16 +71,28 @@ export default function Navbar({ theme, toggleDarkMode }) {
                 }
                 onChange={toggleDarkMode}
                 size={19}
+                aria-label="Toggle dark mode"
               />
             </div>
             <div
-              className={`md:hidden  menu_icon flex flex-col items-start my-collapsible__toggle ${
+              className={`md:hidden menu_icon flex flex-col items-start my-collapsible__toggle ${
                 openMenu && "change"
               }`}
               onClick={() => {
                 toggle();
                 toggleMenu();
               }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  toggle();
+                  toggleMenu();
+                }
+              }}
+              role="button"
+              aria-label="Toggle navigation menu"
+              aria-expanded={openMenu}
+              tabIndex="0"
             >
               <div className="bar1 bg-black dark:bg-white"></div>
               <div className="bar2 bg-black dark:bg-white"></div>
@@ -93,30 +104,27 @@ export default function Navbar({ theme, toggleDarkMode }) {
           {({ setCollapsibleElement }) => (
             <div className={`${width > 768 && "hidden"}`}>
               <div
-                className={`transition-all containerCustom my-collapsible__content `}
+                className="transition-all containerCustom my-collapsible__content"
                 ref={setCollapsibleElement}
               >
-                <ul className="pt-5 ">
+                <ul className="pt-5 flex flex-col gap-1.5">
                   {menuList.map((menu, idx) => (
-                    <Link
-                      to={menu?.link}
-                      onClick={() => {
-                        toggle();
-                        toggleMenu();
-                      }}
-                      key={idx}
-                    >
-                      <li
-                        key={idx}
-                        className={`py-1 px-4 block w-full capitalize rounded-lg overflow-hidden ${
+                    <li key={idx}>
+                      <Link
+                        to={menu?.link}
+                        onClick={() => {
+                          toggle();
+                          toggleMenu();
+                        }}
+                        className={`py-2.5 px-4 block w-full capitalize rounded-lg overflow-hidden transition-all ${
                           path === menu?.link || path === menu?.link + "/"
-                            ? "bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 text-white"
-                            : "active:bg-gray-300 dark:active:bg-gray-600"
+                            ? "bg-gradient-to-r from-red-600 to-rose-700 text-white font-semibold"
+                            : "active:bg-gray-300 dark:active:bg-zinc-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-900/50"
                         }`}
                       >
                         {menu.name}
-                      </li>
-                    </Link>
+                      </Link>
+                    </li>
                   ))}
                 </ul>
               </div>

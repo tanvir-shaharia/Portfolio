@@ -161,7 +161,7 @@ export default function ContactMe() {
                 <div className="text-center mt-1">
                   <button
                     type="submit"
-                    className="bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 hover:bg-gradient-to-bl font-medium rounded-3xl text-sm px-7 md:hover:px-12 py-3.5 text-center text-white transition-all disabled:opacity-75 disabled:cursor-progress"
+                    className="bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 font-medium rounded-3xl text-sm px-7 md:hover:px-12 py-3.5 text-center text-white transition-all disabled:opacity-75 disabled:cursor-progress"
                     name="message"
                     disabled={loading}
                   >
@@ -173,7 +173,7 @@ export default function ContactMe() {
           ) : (
             <div className="md:col-span-7 lg:col-span-8 w-full h-full flex items-center justify-center">
               <div className="flex flex-col items-center space-y-3">
-                <div className="w-32 h-32 flex items-center justify-center bg-green-500 rounded-full bg-gradient-to-tr from-green-400 via-blue-500 to-purple-600">
+                <div className="w-32 h-32 flex items-center justify-center bg-red-600 rounded-full bg-gradient-to-tr from-red-600 via-rose-600 to-red-700">
                   <img
                     src={ThankYouImg}
                     alt="thank-you-envelope"
@@ -188,7 +188,7 @@ export default function ContactMe() {
                 </p>
                 <button
                   type="submit"
-                  className="bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 hover:bg-gradient-to-bl font-medium rounded-3xl text-sm px-7 md:hover:px-12 py-3.5 text-center text-white transition-all"
+                  className="bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 font-medium rounded-3xl text-sm px-7 md:hover:px-12 py-3.5 text-center text-white transition-all"
                   name="message"
                   onClick={() => setShowContactForm(true)}
                 >

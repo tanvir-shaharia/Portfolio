@@ -9,9 +9,9 @@ export default function Footer() {
         <div className="lg:flex lg:items-center lg:justify-between text-center p-5 lg:p-2 containerCustom">
           <span className="text-sm text-gray-500 lg:text-center dark:text-gray-400">
             © {new Date().getFullYear()}{" "}
-            <a href="https://Qubartech.com/" className="hover:underline">
-              Qubartech
-            </a>
+            <span className="hover:text-red-500 font-semibold transition-colors">
+              MD Tanvir Shaharia
+            </span>
             . All Rights Reserved.
           </span>
           <div className="icons text-gray-600 dark:text-white/60 flex justify-center flex-wrap mt-2 lg:mt-0">

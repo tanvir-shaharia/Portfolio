@@ -1,25 +1,25 @@
 [
   {
     "id": 1,
-    "link": " https://www.facebook.com/profile.php?id=100076360894745",
+    "link": "https://www.facebook.com/profile.php?id=100076360894745",
     "hover": "facebook",
     "icon": "fab fa-facebook-f"
   },
   {
     "id": 2,
-    "link": "https://www.linkedin.com/in/tanvir-shaharia/",
+    "link": "https://www.linkedin.com/in/tanvir-shaharia",
     "hover": "linkedin",
     "icon": "fab fa-linkedin-in"
   },
   {
     "id": 3,
-    "link": "https://twitter.com/tanvir_shaharia",
-    "hover": "twitter",
-    "icon": "fab fa-twitter"
+    "link": "https://x.com/tanvir_shaharia",
+    "hover": "x-twitter",
+    "icon": "fa-brands fa-x-twitter"
   },
   {
     "id": 4,
-    "link": " https://www.instagram.com/tanvir_shaharia/",
+    "link": "https://www.instagram.com/tanvir_shaharia",
     "hover": "instagram",
     "icon": "fab fa-instagram"
   },

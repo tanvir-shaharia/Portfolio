@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,7 +7,7 @@
 
 @layer components {
   body {
-    @apply bg-gray-50 dark:bg-[#111827];
+    @apply bg-gray-50 dark:bg-[#09090b];
   }
 
   .customContainer {
@@ -15,7 +15,7 @@
   }
 
   .background {
-    @apply bg-[url("./../images/light.jpg")] dark:bg-[url("./../images/dark.jpg")] bg-cover;
+    @apply bg-[url("./../images/light.jpg")] dark:bg-none bg-cover;
   }
 
   .customButton {
@@ -85,8 +85,8 @@
 .linkedin:hover {
   background-color: #0a66c2;
 }
-.twitter:hover {
-  background-color: #1da1f2;
+.x-twitter:hover {
+  background-color: #000000;
 }
 .instagram:hover {
   background: radial-gradient(

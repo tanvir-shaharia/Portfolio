@@ -1,26 +1,50 @@
 [
   {
-    "name": "xml",
-    "progress": 80
+    "category": "Programming Languages",
+    "skills": [
+      { "name": "Kotlin", "progress": 90 },
+      { "name": "Dart", "progress": 90 },
+      { "name": "Java", "progress": 85 },
+      { "name": "SQL", "progress": 80 }
+    ]
   },
   {
-    "name": "java",
-    "progress": 85
+    "category": "Mobile Development",
+    "skills": [
+      { "name": "Android SDK", "progress": 90 },
+      { "name": "Flutter SDK", "progress": 90 },
+      { "name": "Jetpack Compose", "progress": 75 },
+      { "name": "XML Layouts", "progress": 85 }
+    ]
   },
   {
-    "name": "Adobe Illustrator",
-    "progress": 85
+    "category": "Architecture & State Management",
+    "skills": [
+      { "name": "Clean Architecture", "progress": 90 },
+      { "name": "MVVM", "progress": 90 },
+      { "name": "SOLID Principles", "progress": 85 },
+      { "name": "Riverpod", "progress": 85 },
+      { "name": "Provider", "progress": 85 },
+      { "name": "StateFlow / LiveData", "progress": 85 },
+      { "name": "Hilt (DI)", "progress": 80 }
+    ]
   },
   {
-    "name": "Adobe Photoshop",
-    "progress": 85
+    "category": "Database & Networking",
+    "skills": [
+      { "name": "REST APIs", "progress": 90 },
+      { "name": "Retrofit / Dio", "progress": 90 },
+      { "name": "Room Database / SQLite", "progress": 85 },
+      { "name": "Firebase Services", "progress": 85 }
+    ]
   },
   {
-    "name": "Python",
-    "progress": 55
-  },
-  {
-    "name": "c++",
-    "progress": 45
+    "category": "Tools & Methodologies",
+    "skills": [
+      { "name": "Git / GitHub", "progress": 90 },
+      { "name": "Android Studio / VS Code", "progress": 90 },
+      { "name": "Postman / Gradle", "progress": 85 },
+      { "name": "Agile / Scrum", "progress": 85 }
+    ]
   }
 ]

@@ -1,22 +1,12 @@
 [
   {
     "id": 1,
-    "workTitle": "Creative It Institute",
-    "startDate": "01-09-2022",
-    "endDate": "31-12-2022",
-    "position": "Andriod App development",
+    "workTitle": "Nascenia Limited",
+    "startDate": "Sep 2023",
+    "endDate": "Present",
+    "position": "Junior Software Engineer",
     "location": "Dhaka, Bangladesh",
-    "description": "I complete my projects with customer satisfaction. I can develop slick Android Applications and will provide you with the source code. Also, the application can be graphically enhanced if you desire. Contact me for further discussion. Anything from offline applications to database-connected online applications, from simple to advanced applications, there is no space for saying IT CAN'T BE.",
-    "certificates": ""
-  },
-  {
-    "id": 2,
-    "workTitle": "Graphics Designer",
-    "startDate": "01-01-2021",
-    "endDate": "Now",
-    "position": "Designer",
-    "location": "Dhaka, Bangladesh",
-    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni natus, sunt, dignissimos repellendus ut rerum inventore tempora consectetur quo iure voluptates velit quam officia cum aperiam animi aspernatur in soluta.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni natus, sunt, dignissimos repellendus ut rerum inventore tempora consectetur quo iure voluptates velit quam officia cum aperiam animi aspernatur in soluta.",
+    "description": "Develop and maintain high-performance, responsive Flutter and Android Native applications in production. Support large-scale telecom applications My Robi and My Airtel BD (serving millions of users) by implementing new features and fixing critical bugs. Co-developed a hospital ecosystem app (Shojja Hospital) in Flutter using Clean Architecture and Riverpod. Integrated secure OTP-based user authentication, localized resources, and Firebase Cloud Messaging (FCM) for real-time notifications. Optimized state management and network clients using Provider and Retrofit for Zakat management (CZM Mobile App) and matchmaking (Biyeta) applications. Establish background Bluetooth connectivity for industrial weighing scale hardware. Collaborate in Agile Scrum teams and perform peer code reviews.",
     "certificates": ""
   }
 ]

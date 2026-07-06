@@ -36,7 +36,7 @@ export default function Layout({ children }) {
   return (
     <div>
       {!loading && (
-        <div className="relative dark:text-white bg-gray-50 dark:bg-[#111827] transition-all overflow-hidden font-nunito">
+        <div className="relative dark:text-white bg-gray-50 dark:bg-[#09090b] transition-all overflow-hidden font-nunito">
           <Navbar theme={theme} toggleDarkMode={toggleDarkMode} />
           {children}
           <Footer />
@@ -44,8 +44,8 @@ export default function Layout({ children }) {
           {path === "/" ? (
             scrollY > 90 && (
               <WhatsAppWidget
-                phoneNumber="+8801610881871"
-                companyName="Tahir Ahmad"
+                phoneNumber="+8801644566945"
+                companyName="MD Tanvir Shaharia"
                 replyTimeText="Typically replies within an hour"
                 sendButton="send"
                 message="Hello! how can I help you?"
@@ -54,8 +54,8 @@ export default function Layout({ children }) {
             )
           ) : (
             <WhatsAppWidget
-              phoneNumber="+8801610881871"
-              companyName="Tahir Ahmad"
+              phoneNumber="+8801644566945"
+              companyName="MD Tanvir Shaharia"
               replyTimeText="Typically replies within an hour"
               sendButton="send"
               message="Hello! how can I help you?"
@@ -66,10 +66,11 @@ export default function Layout({ children }) {
           <button
             x-data="topBtn"
             id="topButton"
-            className={`fixed z-10 p-2 sm:p-3 bg-gray-100 text-black rounded-full shadow-md bottom-[7.4rem] right-[13px]  sm:bottom-[3.4rem] sm:right-24  animate-bounce ${
+            className={`fixed z-10 p-2 sm:p-3 bg-gray-100 hover:bg-gray-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:text-white text-black rounded-full shadow-md bottom-[7.4rem] right-[13px] sm:bottom-[3.4rem] sm:right-24 hover:-translate-y-1 transition-all duration-300 ${
               scrollY > 250 ? "block" : "hidden"
             }`}
             onClick={backToTop}
+            aria-label="Back to top"
           >
             <svg
               className="w-7 h-7"

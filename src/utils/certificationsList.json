@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "title": "Professional Certificate in Android App Development",
+    "institution": "Creative IT Institute",
+    "location": "Dhaka, Bangladesh",
+    "duration": "3 Months",
+    "completionDate": "December 2022",
+    "description": "Comprehensive program covering modern Android SDK, Java/Kotlin development, standard layouts, and mobile UI practices."
+  }
+]

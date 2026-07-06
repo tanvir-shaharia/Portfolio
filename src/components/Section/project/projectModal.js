@@ -1,6 +1,6 @@
 import { Box, Modal, Typography } from "@mui/material";
 import React from "react";
-import projectList from "../../../utils/projectList";
+import projectList from "../../../utils/projectList.json";
 
 const style = {
   position: "absolute",
@@ -23,69 +23,87 @@ function ProjectModal({ setOpen, open, projectId }) {
   let content = null;
 
   content = findProject.map((project, idx) => {
-    const { name, imageSrc, category, link, source } = project || {};
+    const { name, imageSrc, category, link, source, description, contributions } = project || {};
     return (
-      <>
-        <div
-          className="min-h-[5vh] max-h-[42vh] overflow-hidden scrollbar-hide rounded-lg"
-          key={idx}
-        >
-          <img src={imageSrc} alt={name} />
+      <div key={idx} className="flex flex-col md:flex-row gap-6 p-5">
+        {/* Mockup Column */}
+        <div className="flex-shrink-0 flex justify-center items-center md:w-[220px] w-full bg-gray-100/50 dark:bg-zinc-900/50 rounded-xl p-4 border border-gray-200/50 dark:border-zinc-800/80">
+          {/* Smartphone Frame Wrapper */}
+          <div className="relative mx-auto border-[8px] border-zinc-800 dark:border-zinc-700 bg-zinc-800 dark:bg-zinc-700 rounded-[2.5rem] h-[340px] w-[170px] shadow-xl overflow-hidden">
+            {/* Camera notch */}
+            <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-10 h-3 bg-zinc-800 dark:bg-zinc-700 rounded-full z-20"></div>
+            {/* Screen content */}
+            <div className="w-full h-full rounded-[1.8rem] overflow-hidden bg-black flex justify-center items-center">
+              <img src={imageSrc} alt={name} className="w-full h-full object-cover" />
+            </div>
+          </div>
         </div>
-        <div className="py-3 px-3">
-          <Typography
-            id="modal-modal-title"
-            variant="h5"
-            component="h2"
-            className="capitalize font-medium"
-          >
-            {name}
-          </Typography>
 
-          <div className="text-xs md:text-sm text-gray-700 dark:text-gray-400 mt-2 mb-2">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Reprehenderit maiores quasi quod quidem blanditiis culpa, deserunt
-            atque tempore ullam ratione eos quaerat, odit perferendis illum
-            placeat facere recusandae dolore asperiores.
+        {/* Details Column */}
+        <div className="flex-1 flex flex-col justify-between">
+          <div>
+            <Typography
+              id="modal-modal-title"
+              variant="h5"
+              component="h2"
+              className="capitalize font-extrabold text-gray-900 dark:text-white text-xl md:text-2xl"
+            >
+              {name}
+            </Typography>
+
+            <div className="text-xs md:text-sm text-gray-600 dark:text-gray-300 mt-2.5 mb-4 leading-relaxed font-normal">
+              {description}
+            </div>
+
+            {contributions && contributions.length > 0 && (
+              <div className="mb-4">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-red-600 dark:text-red-400 mb-2">
+                  Key Contributions
+                </h4>
+                <ul className="list-disc list-outside ml-4 text-xs text-gray-600 dark:text-gray-300 space-y-1.5">
+                  {contributions.map((con, cIdx) => (
+                    <li key={cIdx} className="leading-relaxed">{con}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
 
-          <div className=" mb-5">
-            {/* <span className="font-medium">Using:</span>{" "} */}
-            {category.map((cat, idx) => (
-              <>
-                {/* <span key={idx}>{(idx ? ", " : "") + cat}</span> */}
-                <div
-                  className="bg-blue-100 text-blue-800 text-xs font-medium mr-1 px-2.5 py-0.5 rounded-2xl dark:bg-blue-200 dark:text-blue-800 capitalize inline-block"
+          <div>
+            <div className="mb-4 flex flex-wrap gap-1.5">
+              {category.map((cat, idx) => (
+                <span
+                  className="bg-red-50 text-red-800 text-[10px] font-bold px-2.5 py-1 rounded dark:bg-red-950/40 dark:text-red-400 border border-red-100/50 dark:border-red-900/40 capitalize inline-block"
                   key={idx}
                 >
                   {cat}
-                </div>
-              </>
-            ))}
-          </div>
-
-          {(link || source) && (
-            <div className="mt-3">
-              {link && (
-                <a href={link} target="_blank" rel="noreferrer">
-                  <button className="bg-violet-700 hover:bg-violet-800 text-sm text-white font-medium py-2 px-3 rounded-lg inline-flex items-center">
-                    <i className="fa-solid fa-share-from-square mr-2"></i>
-                    <span>Live Preview</span>
-                  </button>
-                </a>
-              )}{" "}
-              {source && (
-                <a href={source} target="_blank" rel="noreferrer">
-                  <button className="bg-slate-600 hover:bg-slate-700 text-sm text-white font-medium py-2 px-3 rounded-lg inline-flex items-center">
-                    <i className="fa-brands fa-github mr-2"></i>
-                    <span>Github</span>
-                  </button>
-                </a>
-              )}{" "}
+                </span>
+              ))}
             </div>
-          )}
+
+            {(link || source) && (
+              <div className="flex gap-2.5 pt-2">
+                {link && (
+                  <a href={link} target="_blank" rel="noopener noreferrer" className="flex-1">
+                    <button className="w-full bg-red-600 hover:bg-red-700 text-xs text-white font-bold py-2.5 px-3 rounded-lg inline-flex items-center justify-center transition-colors">
+                      <i className="fa-solid fa-share-from-square mr-1.5"></i>
+                      <span>Get App</span>
+                    </button>
+                  </a>
+                )}
+                {source && (
+                  <a href={source} target="_blank" rel="noopener noreferrer" className="flex-1">
+                    <button className="w-full bg-zinc-800 hover:bg-zinc-900 text-xs text-white font-bold py-2.5 px-3 rounded-lg inline-flex items-center justify-center transition-colors border border-zinc-700 dark:border-zinc-800">
+                      <i className="fa-brands fa-github mr-1.5"></i>
+                      <span>Github</span>
+                    </button>
+                  </a>
+                )}
+              </div>
+            )}
+          </div>
         </div>
-      </>
+      </div>
     );
   });
 
@@ -99,10 +117,10 @@ function ProjectModal({ setOpen, open, projectId }) {
       >
         <Box
           sx={style}
-          className="w-[96%] md:w-[700px] outline-none rounded-xl overflow-x-auto  scrollbar-hide dark:text-white bg-gray-50 dark:bg-[#1f2937]"
+          className="w-[96%] md:w-[700px] outline-none rounded-xl overflow-x-auto scrollbar-hide dark:text-white bg-gray-50 dark:bg-[#121214]"
         >
           <button
-            className="absolute top-3 right-3 h-8 w-8 dark:bg-[#464f56] bg-gray-200 hover:bg-gray-300 dark:hover:bg-[#27282f] dark:text-white text-gray-700 rounded-full"
+            className="absolute top-3 right-3 h-8 w-8 dark:bg-[#32323a] bg-gray-200 hover:bg-gray-300 dark:hover:bg-[#222228] dark:text-white text-gray-700 rounded-full z-50 flex items-center justify-center"
             onClick={handleClose}
           >
             <i className="fa-solid fa-xmark"></i>
