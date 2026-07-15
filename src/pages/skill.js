@@ -7,7 +7,8 @@ export default function Skill() {
   return (
     <>
       <Helmet>
-        <title>Skill - Tanvir Shaharia</title>
+        <title>Skills | MD Tanvir Shaharia</title>
+        <meta name="description" content="Technical skills profile of MD Tanvir Shaharia: Android SDK, Kotlin, Jetpack Compose, Flutter, Dart, Clean Architecture, Bluetooth integration, and MVVM." />
       </Helmet>
 
       <PageLayout>

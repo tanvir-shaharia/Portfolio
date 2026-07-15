@@ -7,7 +7,8 @@ export default function About() {
   return (
     <>
       <Helmet>
-        <title>About - Tanvir Shaharia</title>
+        <title>About | MD Tanvir Shaharia</title>
+        <meta name="description" content="Learn more about MD Tanvir Shaharia, a Software Engineer with 2.5+ years of experience in Android and Flutter development." />
       </Helmet>
 
       <PageLayout>

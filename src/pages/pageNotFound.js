@@ -8,7 +8,8 @@ function PageNotFound() {
   return (
     <>
       <Helmet>
-        <title>404 - Tanvir Shaharia</title>
+        <title>404 Page Not Found | MD Tanvir Shaharia</title>
+        <meta name="robots" content="noindex, follow" />
       </Helmet>
 
       <PageLayout>

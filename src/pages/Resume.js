@@ -7,7 +7,8 @@ export default function Resume() {
   return (
     <>
       <Helmet>
-        <title>Resume - Tanvir Shaharia</title>
+        <title>Resume | MD Tanvir Shaharia</title>
+        <meta name="description" content="Read MD Tanvir Shaharia's professional resume. Specializing in Android Native development (Kotlin) and cross-platform apps (Flutter & Dart)." />
       </Helmet>
       <PageLayout>
         <ResumeSec />

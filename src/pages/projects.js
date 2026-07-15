@@ -7,7 +7,8 @@ export default function Projects() {
   return (
     <>
       <Helmet>
-        <title>Projects - Tanvir Shaharia</title>
+        <title>Projects | MD Tanvir Shaharia</title>
+        <meta name="description" content="View production mobile applications (Kotlin, Flutter, Clean Architecture) developed by Software Engineer MD Tanvir Shaharia." />
       </Helmet>
 
       <PageLayout>

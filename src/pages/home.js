@@ -11,7 +11,8 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Tanvir Shaharia - Portfolio</title>
+        <title>MD Tanvir Shaharia | Software Engineer (Android & Flutter)</title>
+        <meta name="description" content="Software Engineer with 2.5+ years of professional experience in Android and Flutter development, specializing in Kotlin, Dart, Jetpack Compose, Clean Architecture, and production mobile applications." />
       </Helmet>
 
       {/* <PageLayout> */}

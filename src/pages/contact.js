@@ -7,7 +7,8 @@ export default function Contact() {
   return (
     <>
       <Helmet>
-        <title>Contact - Tanvir Shaharia</title>
+        <title>Contact | MD Tanvir Shaharia</title>
+        <meta name="description" content="Get in touch with MD Tanvir Shaharia, Software Engineer specializing in mobile applications development (Android & Flutter)." />
       </Helmet>
 
       <PageLayout>
