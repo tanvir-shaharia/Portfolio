@@ -28,7 +28,7 @@ export default function Navbar({ theme, toggleDarkMode }) {
     <React.Fragment>
       {/* ${scrollY > 280 && "py-3"} */}
       <div
-        className="backdrop-blur-xl bg-slate-100/40 dark:bg-[#09090b]/80 w-full top-0 left-0 fixed z-50 py-4 transition-all duration-200 border-b border-inherit dark:border-zinc-800/80 my-collapsible"
+        className="backdrop-blur-xl bg-slate-100/40 dark:bg-[#09090b]/80 w-full top-0 left-0 fixed z-50 py-4 transition-all duration-200 border-b border-gray-200/60 dark:border-zinc-800 my-collapsible"
       >
         <div className="containerCustom flex items-center justify-between h-full">
           <div>
@@ -38,7 +38,7 @@ export default function Navbar({ theme, toggleDarkMode }) {
                   <img src={avatar} alt="avatar" />
                 </div>
                 <div className="ml-3">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-rose-600 font-extrabold text-2xl">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 via-accent-violet to-brand-600 font-extrabold text-2xl">
                     Tanvir Shaharia
                   </span>
                 </div>
@@ -52,10 +52,10 @@ export default function Navbar({ theme, toggleDarkMode }) {
                   <li key={idx}>
                     <Link
                       to={menu?.link}
-                      className={`px-3 block hover:text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-rose-600 font-medium capitalize transition-all ${
+                      className={`px-3 block hover:text-indigo-500 dark:hover:text-brand-400 font-medium capitalize transition-all ${
                         path === menu?.link || path === menu?.link + "/"
-                          ? "text-transparent font-bold"
-                          : "text-gray-700 dark:text-gray-300"
+                          ? "text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-accent-violet font-bold"
+                          : "text-gray-700 dark:text-zinc-300"
                       }`}
                     >
                       {menu.name}
@@ -118,8 +118,8 @@ export default function Navbar({ theme, toggleDarkMode }) {
                         }}
                         className={`py-2.5 px-4 block w-full capitalize rounded-lg overflow-hidden transition-all ${
                           path === menu?.link || path === menu?.link + "/"
-                            ? "bg-gradient-to-r from-red-600 to-rose-700 text-white font-semibold"
-                            : "active:bg-gray-300 dark:active:bg-zinc-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-900/50"
+                            ? "bg-gradient-to-r from-brand-600 via-brand-500 to-accent-violet text-white font-semibold shadow-sm"
+                            : "active:bg-gray-300 dark:active:bg-zinc-800 text-gray-700 dark:text-zinc-300 hover:bg-gray-100 dark:hover:bg-zinc-900/60"
                         }`}
                       >
                         {menu.name}

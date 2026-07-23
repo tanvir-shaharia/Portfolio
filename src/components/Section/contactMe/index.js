@@ -62,8 +62,8 @@ export default function ContactMe() {
         <Title title="CONTACT" />
         <div className="md:grid grid-cols-12 gap-4">
           <div className="md:col-span-5 lg:col-span-4">
-            <div className="w-full p-4 bg-white border rounded-lg shadow-md sm:p-6 dark:bg-gray-800 dark:border-gray-700">
-              <h5 className="mb-3 text-base font-semibold text-gray-900 md:text-xl dark:text-white">
+            <div className="w-full p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 dark:bg-zinc-900/60 dark:border-zinc-800">
+              <h5 className="mb-3 text-base font-semibold text-gray-900 md:text-xl dark:text-zinc-100">
                 Tell me on
               </h5>
               <ul className="my-4 space-y-3">
@@ -92,9 +92,9 @@ export default function ContactMe() {
                   delay={250}
                 />
                 <SocialContact
-                  icon="fab fa-twitter"
-                  name="twitter"
-                  link="https://twitter.com/tanvir_shaharia"
+                  icon="fa-brands fa-x-twitter"
+                  name="X"
+                  link="https://x.com/tanvir_shaharia"
                   delay={300}
                 />
                 <SocialContact
@@ -107,8 +107,8 @@ export default function ContactMe() {
             </div>
           </div>
           <div className="inline-flex justify-center items-center w-full md:hidden mt-4">
-            <hr className="my-8 w-[70%] h-px bg-gray-200 border-0 dark:bg-gray-700" />
-            <span className="absolute left-1/2 px-3 font-medium text-gray-900 bg-gray-50 -translate-x-1/2 dark:text-white dark:bg-gray-900">
+            <hr className="my-8 w-[70%] h-px bg-gray-200 border-0 dark:bg-zinc-800" />
+            <span className="absolute left-1/2 px-3 font-medium text-gray-900 bg-gray-50 -translate-x-1/2 dark:text-zinc-300 dark:bg-[#09090b]">
               or
             </span>
           </div>
@@ -149,7 +149,7 @@ export default function ContactMe() {
               <div className="w-full  my-4 flex-1">
                 <Fade up delay={240}>
                   <textarea
-                    className="w-full  rounded-md shadow-md pr-5 border-1 border-gray-200 text-black focus:border-transparent focus:outline-transparent focus:ring-0 min-h-[200px] md:min-h-full lg:min-h-full"
+                    className="w-full rounded-lg shadow-sm border border-gray-200 dark:border-zinc-700/80 text-gray-900 dark:text-zinc-100 bg-white dark:bg-zinc-900 placeholder-gray-400 dark:placeholder-zinc-400 focus:border-brand-500 dark:focus:border-brand-500 focus:ring-1 focus:ring-brand-500 min-h-[200px] md:min-h-full p-3.5 text-sm transition-all"
                     placeholder="Your Message"
                     name="message"
                     required
@@ -161,7 +161,7 @@ export default function ContactMe() {
                 <div className="text-center mt-1">
                   <button
                     type="submit"
-                    className="bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 font-medium rounded-3xl text-sm px-7 md:hover:px-12 py-3.5 text-center text-white transition-all disabled:opacity-75 disabled:cursor-progress"
+                    className="bg-gradient-to-r from-brand-600 via-brand-500 to-accent-violet hover:from-brand-500 hover:to-indigo-600 font-medium rounded-3xl text-sm px-8 py-3.5 text-center text-white hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-md hover:shadow-lg disabled:opacity-75 disabled:cursor-progress"
                     name="message"
                     disabled={loading}
                   >
@@ -173,7 +173,7 @@ export default function ContactMe() {
           ) : (
             <div className="md:col-span-7 lg:col-span-8 w-full h-full flex items-center justify-center">
               <div className="flex flex-col items-center space-y-3">
-                <div className="w-32 h-32 flex items-center justify-center bg-red-600 rounded-full bg-gradient-to-tr from-red-600 via-rose-600 to-red-700">
+                <div className="w-32 h-32 flex items-center justify-center bg-brand-500 rounded-full bg-gradient-to-tr from-brand-600 via-brand-500 to-accent-violet">
                   <img
                     src={ThankYouImg}
                     alt="thank-you-envelope"
@@ -188,7 +188,7 @@ export default function ContactMe() {
                 </p>
                 <button
                   type="submit"
-                  className="bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 font-medium rounded-3xl text-sm px-7 md:hover:px-12 py-3.5 text-center text-white transition-all"
+                  className="bg-gradient-to-r from-brand-600 via-brand-500 to-accent-violet hover:from-brand-500 hover:to-indigo-600 font-medium rounded-3xl text-sm px-8 py-3.5 text-center text-white hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-md hover:shadow-lg"
                   name="message"
                   onClick={() => setShowContactForm(true)}
                 >

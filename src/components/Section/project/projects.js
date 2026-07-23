@@ -43,7 +43,7 @@ export default function Projects({ items }) {
               className="w-full flex flex-col mb-4 md:mb-0"
             >
               <div
-                className="relative projectBtn w-full overflow-hidden hover:cursor-pointer h-64 sm:h-52 lg:h-56 rounded-xl border border-gray-150 dark:border-zinc-800/80 group"
+                className="relative projectBtn w-full overflow-hidden hover:cursor-pointer rounded-xl border border-gray-200 dark:border-zinc-800 shadow-sm hover:border-brand-500/50 dark:hover:border-brand-400/50 hover:shadow-[0_4px_20px_rgba(99,102,241,0.15)] dark:hover:shadow-[0_4px_20px_rgba(129,140,248,0.2)] transition-all duration-300 ease-out group bg-white dark:bg-zinc-900/90 flex flex-col justify-between"
                 onClick={() => handleOpen(id)}
                 role="button"
                 tabIndex="0"
@@ -55,53 +55,43 @@ export default function Projects({ items }) {
                 }}
                 aria-label={`View details for ${name}`}
               >
-                {/* Tech Badges */}
-                <div className="absolute top-3 left-3 z-20 flex gap-1">
-                  {category.slice(0, 2).map((cat, cIdx) => (
-                    <span key={cIdx} className="bg-black/75 backdrop-blur-sm text-white text-[9px] font-extrabold tracking-wide uppercase px-2.5 py-1 rounded-md border border-white/10 shadow-md">
-                      {cat}
-                    </span>
-                  ))}
+                {/* Image Container */}
+                <div className="relative w-full h-44 sm:h-40 lg:h-44 overflow-hidden rounded-t-xl bg-gray-100 dark:bg-zinc-800">
+                  {/* Tech Badges */}
+                  <div className="absolute top-3 left-3 z-20 flex gap-1">
+                    {category.slice(0, 2).map((cat, cIdx) => (
+                      <span key={cIdx} className="bg-black/75 backdrop-blur-sm text-white text-[9px] font-extrabold tracking-wide uppercase px-2.5 py-1 rounded-md border border-white/10 shadow-md">
+                        {cat}
+                      </span>
+                    ))}
+                  </div>
+                  <LazyLoadImage
+                    src={imageSrc}
+                    placeholderSrc={placeholderSrc ? placeholderSrc : blur}
+                    threshold="100"
+                    alt={name}
+                    effect="blur"
+                    height="100%"
+                    width="100%"
+                    className="object-cover h-full w-full block transition-transform duration-300 ease-out group-hover:scale-[1.03]"
+                    key={idx}
+                    loading="lazy"
+                  />
                 </div>
-                <LazyLoadImage
-                  src={imageSrc}
-                  placeholderSrc={placeholderSrc ? placeholderSrc : blur}
-                  threshold="100"
-                  alt={name}
-                  effect="blur"
-                  height="100%"
-                  width="100%"
-                  className="object-cover min-h-full w-full block transition-transform duration-500 group-hover:scale-105"
-                  key={idx}
-                  loading="lazy"
-                />
-                <div className="absolute bg-zinc-950/90 backdrop-blur-sm h-[80px] w-full -bottom-full left-0 z-30 md:flex flex-col justify-center items-center slide-up transition-all ease-in-out duration-500 text-white hidden">
-                  <div className="px-4 text-center">
-                    <div className="font-bold capitalize text-sm mb-0.5">
+
+                {/* Card Info Bar */}
+                <div className="p-4 flex items-center justify-between gap-3 border-t border-gray-100 dark:border-zinc-800/80 bg-white dark:bg-zinc-900/90 group-hover:bg-gray-50/80 dark:group-hover:bg-zinc-800/60 transition-colors">
+                  <div className="truncate">
+                    <h5 className="font-bold capitalize text-sm text-gray-900 dark:text-zinc-100 group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors truncate">
                       {name}
-                    </div>
-                    <div className="text-xs text-red-400 font-medium">
-                      {category.map((cat, idx) => (
-                        <span key={idx}>{(idx ? ", " : "") + cat}</span>
-                      ))}
-                    </div>
+                    </h5>
+                    <p className="text-[11px] text-gray-500 dark:text-zinc-400 font-medium mt-0.5 truncate">
+                      {category.join(", ")}
+                    </p>
                   </div>
-                </div>
-              </div>
-              <div 
-                className="md:hidden mt-3 px-2 flex justify-between items-center cursor-pointer" 
-                onClick={() => handleOpen(id)}
-              >
-                <div>
-                  <div className="font-bold capitalize text-sm text-gray-900 dark:text-white">
-                    {name}
+                  <div className="w-8 h-8 rounded-full bg-gray-100 dark:bg-zinc-800 group-hover:bg-brand-500 group-hover:text-white text-gray-600 dark:text-zinc-300 flex items-center justify-center text-xs transition-all flex-shrink-0">
+                    <i className="fa-solid fa-arrow-right text-[10px]"></i>
                   </div>
-                  <div className="text-xs text-red-600 dark:text-red-400 font-semibold mt-0.5">
-                    {category.join(", ")}
-                  </div>
-                </div>
-                <div className="text-red-600 dark:text-red-500 text-xs font-bold flex items-center gap-1">
-                  Details <i className="fa-solid fa-arrow-right text-[10px]"></i>
                 </div>
               </div>
             </motion.div>

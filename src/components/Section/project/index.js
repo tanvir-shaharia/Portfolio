@@ -16,7 +16,7 @@ export default function Project() {
   return (
     <div className="containerCustom gap">
       <Title title="projects" />
-      {path !== "/" && <ProjectButton setItem={setItems} items={items} />}
+      <ProjectButton setItem={setItems} items={items} />
 
       <AnimatePresence>
         <div className="grid lg:grid-cols-3 sm:grid-cols-2 columns-1 gap-1 justify-items-center">
@@ -30,10 +30,10 @@ export default function Project() {
             <Link to="/projects">
               <button
                 type="button"
-                className=" bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 font-medium rounded-3xl text-sm px-5 md:px-9 md:hover:px-16 py-3.5 text-center mr-2 mb-2 text-white transition-all flex items-center justify-center"
+                className="bg-gradient-to-r from-brand-600 via-brand-500 to-accent-violet hover:from-brand-500 hover:to-indigo-600 font-medium rounded-3xl text-sm px-8 py-3.5 text-center text-white hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center gap-1.5"
               >
                 Show more
-                <i className="fa-solid fa-arrow-right pl-1"></i>
+                <i className="fa-solid fa-arrow-right text-xs"></i>
               </button>
             </Link>
           </div>

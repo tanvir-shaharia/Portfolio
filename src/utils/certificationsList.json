@@ -7,5 +7,15 @@
     "duration": "3 Months",
     "completionDate": "December 2022",
     "description": "Comprehensive program covering modern Android SDK, Java/Kotlin development, standard layouts, and mobile UI practices."
+  },
+  {
+    "id": 2,
+    "title": "Practical Prompt Engineering",
+    "institution": "Frontend Masters",
+    "location": "Online Professional Training",
+    "duration": "Professional Course",
+    "completionDate": "2026",
+    "description": "Completed professional training covering structured prompt design, context optimization, and utilizing AI coding agents into daily software development workflows.",
+    "certificateUrl": "/prompt-engineering-dark.pdf"
   }
 ]

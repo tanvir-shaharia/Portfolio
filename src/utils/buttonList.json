@@ -1,13 +1,13 @@
 [
   {
     "id": 1,
-    "name": "all",
-    "category": "all"
+    "name": "All",
+    "category": "All"
   },
   {
     "id": 2,
-    "name": "Android Native",
-    "category": "Android Native"
+    "name": "Android",
+    "category": "Android"
   },
   {
     "id": 3,
@@ -16,21 +16,6 @@
   },
   {
     "id": 4,
-    "name": "Kotlin",
-    "category": "Kotlin"
-  },
-  {
-    "id": 5,
-    "name": "Dart",
-    "category": "Dart"
-  },
-  {
-    "id": 6,
-    "name": "Firebase",
-    "category": "Firebase"
-  },
-  {
-    "id": 7,
     "name": "Bluetooth / IoT",
     "category": "Bluetooth"
   }

@@ -42,9 +42,18 @@
     "category": "Tools & Methodologies",
     "skills": [
       { "name": "Git / GitHub", "progress": 90 },
-      { "name": "Android Studio / VS Code", "progress": 90 },
+      { "name": "Android Studio / IntelliJ IDEA / VS Code", "progress": 90 },
       { "name": "Postman / Gradle", "progress": 85 },
       { "name": "Agile / Scrum", "progress": 85 }
+    ]
+  },
+  {
+    "category": "AI & Developer Workflows",
+    "skills": [
+      { "name": "AI-Assisted Development", "progress": 85 },
+      { "name": "Antigravity AI Agent", "progress": 85 },
+      { "name": "Codex / AI Workflows", "progress": 85 },
+      { "name": "Practical Prompt Engineering", "progress": 85 }
     ]
   }
 ]

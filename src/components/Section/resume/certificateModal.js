@@ -39,9 +39,9 @@ function CertificateModal({ setOpen, open, contents }) {
       >
         <Box
           sx={style}
-          className="w-[96%] md:w-[700px] outline-none overflow-auto scrollbar-hide rounded-xl dark:text-white bg-gray-50 dark:bg-[#1f2937]"
+          className="w-[96%] md:w-[700px] outline-none overflow-auto scrollbar-hide rounded-xl dark:text-zinc-100 bg-gray-50 dark:bg-zinc-900 dark:border dark:border-zinc-800"
         >
-          <div className="px-3 pt-3 pb-2 flex items-center justify-between sticky top-0 left-0 dark:text-white bg-gray-50 dark:bg-[#1f2937]">
+          <div className="px-3 pt-3 pb-2 flex items-center justify-between sticky top-0 left-0 dark:text-zinc-100 bg-gray-50 dark:bg-zinc-900 border-b border-gray-200/60 dark:border-zinc-800">
             <div>
               {contents.map((content, idx) => (
                 <span key={idx} className="capitalize font-medium">
@@ -50,7 +50,7 @@ function CertificateModal({ setOpen, open, contents }) {
               ))}
             </div>
             <button
-              className="h-8 w-8 dark:bg-[#464f56] bg-gray-200 hover:bg-gray-300 dark:hover:bg-[#27282f] dark:text-white text-gray-700 rounded-full"
+              className="h-8 w-8 dark:bg-zinc-800 bg-gray-200 hover:bg-gray-300 dark:hover:bg-zinc-700 dark:text-zinc-200 text-gray-700 rounded-full transition-colors"
               onClick={handleClose}
             >
               <i className="fa-solid fa-xmark"></i>

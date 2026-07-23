@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 import Typed from "react-typed";
 import Wave from "react-wavify";
 import avatar from "../../../assets/images/avater.jpg";
-import cv from "../../../assets/pdf/cv.pdf";
 import useWindowDimensions from "../../../hook/getWindowDimensions";
 import SocialBtn from "../../socialBtn";
 import socialBtnList from "./../../../utils/socialBtnList.json";
 import Button from "./button";
+import ResumeDownloadBtn from "../../ResumeDownloadBtn";
 
 export default function Home() {
   const { height, width } = useWindowDimensions();
@@ -22,14 +22,14 @@ export default function Home() {
       <div className="w-full h-full background">
         {" "}
         <div className="h-auto md:h-full bg-black/15 pt-24 py-8 containerCustom relative z-10">
-          <div className="backdrop-blur-xl bg-white/40 dark:bg-[#0b1327]/60 rounded-2xl h-full w-full relative overflow-hidden">
+          <div className="backdrop-blur-xl bg-white/40 dark:bg-zinc-900/60 border border-gray-200/60 dark:border-zinc-800 rounded-xl shadow-sm h-full w-full relative overflow-hidden">
             <div
               className={`flex items-center justify-center flex-col overflow-hidden h-full w-full relative z-20 pt-20 md:pb-28 pb-32`}
             >
               <div className="h-28 w-28 md:h-36 md:w-36 overflow-hidden rounded-full bg-white mb-4">
                 <img src={avatar} alt="avatar" />
               </div>
-              <h2 className="text-3xl md:text-4xl font-medium pb-4 pt-2 ">
+              <h2 className="text-3xl md:text-4xl font-medium pb-4 pt-2 text-gray-900 dark:text-zinc-100">
                 <Fade up cascade>
                   MD Tanvir Shaharia
                 </Fade>
@@ -44,9 +44,9 @@ export default function Home() {
                 typeSpeed={90}
                 backSpeed={80}
                 loop
-                className="text-md md:text-xl text-gray-600 dark:text-gray-300 font-semibold"
+                className="text-md md:text-xl text-gray-600 dark:text-zinc-300 font-semibold"
               />
-              <div className="icons mt-4 text-gray-600 dark:text-white/60 flex justify-center flex-wrap">
+              <div className="icons mt-4 text-gray-600 dark:text-zinc-300 flex justify-center flex-wrap">
                 {socialBtnList.map((btn, idx) => {
                   const { link, hover, icon } = btn || {};
                   return (
@@ -59,17 +59,12 @@ export default function Home() {
                   );
                 })}
               </div>
-              <div className="flex mt-5">
+              <div className="flex mt-5 flex-wrap justify-center items-center">
                 <Link to="/contact">
                   <Button name="Get in touch" />
                 </Link>
 
-                <a
-                  href={cv}
-                  download="MD_Tanvir_Shaharia_CV.pdf"
-                >
-                  <Button name="Download CV" />
-                </a>
+                <ResumeDownloadBtn />
               </div>
             </div>
             <Wave

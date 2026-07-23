@@ -27,7 +27,7 @@ function ProjectModal({ setOpen, open, projectId }) {
     return (
       <div key={idx} className="flex flex-col md:flex-row gap-6 p-5">
         {/* Mockup Column */}
-        <div className="flex-shrink-0 flex justify-center items-center md:w-[220px] w-full bg-gray-100/50 dark:bg-zinc-900/50 rounded-xl p-4 border border-gray-200/50 dark:border-zinc-800/80">
+        <div className="flex-shrink-0 flex justify-center items-center md:w-[220px] w-full bg-gray-100/50 dark:bg-zinc-900/80 rounded-xl p-4 border border-gray-200/50 dark:border-zinc-800">
           {/* Smartphone Frame Wrapper */}
           <div className="relative mx-auto border-[8px] border-zinc-800 dark:border-zinc-700 bg-zinc-800 dark:bg-zinc-700 rounded-[2.5rem] h-[340px] w-[170px] shadow-xl overflow-hidden">
             {/* Camera notch */}
@@ -46,21 +46,21 @@ function ProjectModal({ setOpen, open, projectId }) {
               id="modal-modal-title"
               variant="h5"
               component="h2"
-              className="capitalize font-extrabold text-gray-900 dark:text-white text-xl md:text-2xl"
+              className="capitalize font-extrabold text-gray-900 dark:text-zinc-100 text-xl md:text-2xl"
             >
               {name}
             </Typography>
 
-            <div className="text-xs md:text-sm text-gray-600 dark:text-gray-300 mt-2.5 mb-4 leading-relaxed font-normal">
+            <div className="text-xs md:text-sm text-gray-600 dark:text-zinc-300 mt-2.5 mb-4 leading-relaxed font-normal">
               {description}
             </div>
 
             {contributions && contributions.length > 0 && (
               <div className="mb-4">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-red-600 dark:text-red-400 mb-2">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-brand-500 dark:text-brand-400 mb-2">
                   Key Contributions
                 </h4>
-                <ul className="list-disc list-outside ml-4 text-xs text-gray-600 dark:text-gray-300 space-y-1.5">
+                <ul className="list-disc list-outside ml-4 text-xs text-gray-600 dark:text-zinc-300 space-y-1.5">
                   {contributions.map((con, cIdx) => (
                     <li key={cIdx} className="leading-relaxed">{con}</li>
                   ))}
@@ -73,7 +73,7 @@ function ProjectModal({ setOpen, open, projectId }) {
             <div className="mb-4 flex flex-wrap gap-1.5">
               {category.map((cat, idx) => (
                 <span
-                  className="bg-red-50 text-red-800 text-[10px] font-bold px-2.5 py-1 rounded dark:bg-red-950/40 dark:text-red-400 border border-red-100/50 dark:border-red-900/40 capitalize inline-block"
+                  className="bg-indigo-50 text-indigo-700 text-[10px] font-bold px-2.5 py-1 rounded dark:bg-brand-950/40 dark:text-brand-400 border border-indigo-100/50 dark:border-brand-900/40 capitalize inline-block"
                   key={idx}
                 >
                   {cat}
@@ -85,7 +85,7 @@ function ProjectModal({ setOpen, open, projectId }) {
               <div className="flex gap-2.5 pt-2">
                 {link && (
                   <a href={link} target="_blank" rel="noopener noreferrer" className="flex-1">
-                    <button className="w-full bg-red-600 hover:bg-red-700 text-xs text-white font-bold py-2.5 px-3 rounded-lg inline-flex items-center justify-center transition-colors">
+                    <button className="w-full bg-brand-500 hover:bg-brand-600 text-xs text-white font-bold py-2.5 px-3 rounded-lg inline-flex items-center justify-center transition-colors">
                       <i className="fa-solid fa-share-from-square mr-1.5"></i>
                       <span>Get App</span>
                     </button>
@@ -117,10 +117,10 @@ function ProjectModal({ setOpen, open, projectId }) {
       >
         <Box
           sx={style}
-          className="w-[96%] md:w-[700px] outline-none rounded-xl overflow-x-auto scrollbar-hide dark:text-white bg-gray-50 dark:bg-[#121214]"
+          className="w-[96%] md:w-[700px] outline-none rounded-xl overflow-x-auto scrollbar-hide dark:text-zinc-100 bg-gray-50 dark:bg-zinc-900 dark:border dark:border-zinc-800"
         >
           <button
-            className="absolute top-3 right-3 h-8 w-8 dark:bg-[#32323a] bg-gray-200 hover:bg-gray-300 dark:hover:bg-[#222228] dark:text-white text-gray-700 rounded-full z-50 flex items-center justify-center"
+            className="absolute top-3 right-3 h-8 w-8 dark:bg-zinc-800 bg-gray-200 hover:bg-gray-300 dark:hover:bg-zinc-700 dark:text-zinc-200 text-gray-700 rounded-full z-50 flex items-center justify-center transition-colors"
             onClick={handleClose}
           >
             <i className="fa-solid fa-xmark"></i>

@@ -19,16 +19,13 @@
   }
 
   .customButton {
-    @apply bg-white dark:bg-[#464f56]  h-[34px] w-[34px] md:h-[40px] md:w-[40px] text-[18px] md:text-[20px] m-[3px] md:m-[5px] hover:text-white md:rounded-xl rounded-lg dark:text-white;
+    @apply bg-white dark:bg-zinc-800 dark:hover:bg-zinc-700 border border-gray-200/60 dark:border-zinc-700/60 h-[34px] w-[34px] md:h-[40px] md:w-[40px] text-[18px] md:text-[20px] m-[3px] md:m-[5px] hover:text-white md:rounded-xl rounded-lg text-gray-700 dark:text-zinc-200 transition-colors duration-200;
   }
 
   .icons a i {
     @apply w-full h-full flex justify-center items-center;
   }
 
-  .projectBtn:hover div {
-    bottom: 0% !important;
-  }
 
   /* container */
   .containerCustom {

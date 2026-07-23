@@ -13,23 +13,23 @@ function PageNotFound() {
       </Helmet>
 
       <PageLayout>
-        <section className="flex items-center h-full p-16 dark:bg-gray-900 dark:text-gray-100 md:h-[calc(100vh-8rem)]">
+        <section className="flex items-center h-full p-16 dark:bg-[#09090b] dark:text-zinc-100 md:h-[calc(100vh-8rem)]">
           <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
             <div className="max-w-lg text-center">
-              <h2 className="mb-8 font-extrabold text-9xl dark:text-gray-600">
+              <h2 className="mb-8 font-extrabold text-9xl dark:text-zinc-800">
                 <span className="sr-only">Error</span>404
               </h2>
               <p className="text-2xl font-semibold md:text-3xl">
                 Sorry, we couldn't find this page.
               </p>
-              <p className="mt-4 mb-8 dark:text-gray-400">
+              <p className="mt-4 mb-8 dark:text-zinc-400">
                 But dont worry, you can find plenty of other things on our
                 homepage.
               </p>
               <Link to="/">
                 <button
                   type="button"
-                  className=" bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 hover:bg-gradient-to-bl font-medium rounded-3xl text-sm px-5 md:px-9 py-3.5 text-center mr-2 mb-2 text-white   "
+                  className="bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 hover:bg-gradient-to-bl font-medium rounded-3xl text-sm px-6 md:px-8 py-3.5 text-center mr-2 mb-2 text-white hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-md hover:shadow-lg"
                 >
                   Back to home
                 </button>

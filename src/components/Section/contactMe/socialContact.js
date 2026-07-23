@@ -9,7 +9,7 @@ function SocialContact({ link, name, icon, delay }) {
         <a
           href={link}
           target="_blank"
-          className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:text-white"
+          className="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-zinc-800/80 dark:hover:bg-zinc-800 dark:border dark:border-zinc-700/60 dark:text-zinc-200 transition-colors"
           rel="noopener noreferrer"
         >
           <i className={icon}></i>
