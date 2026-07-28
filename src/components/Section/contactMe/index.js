@@ -1,4 +1,3 @@
-import emailjs from "@emailjs/browser";
 import React, { useRef, useState } from "react";
 import { Fade } from "react-reveal";
 import swal from "sweetalert";
@@ -16,45 +15,53 @@ export default function ContactMe() {
     e.preventDefault();
     setLoading(true);
 
-    await emailjs
-      .sendForm(
-        "service_2x0ooox", //SERVICE ID
-        "template_qaeo3sv", //TEMPLATE ID
-        form.current,
-        "bgpIbO0GlRBgWuCzu" // PUBLIC KEY
-      )
-      .then(
-        (result) => {
-          swal({
-            title: "E-mail sent successful",
-            icon: "success",
-            button: "Close",
-            dangerMode: true,
-          }).then(setShowContactForm(false));
-        },
-        (err) => {
-          swal({
-            title: "Something went wrong",
-            icon: "error",
-            button: "close",
-            dangerMode: true,
-          });
-          console.log(err);
-        }
-      );
+    const apiUrl =
+      process.env.REACT_APP_API_URL || "http://localhost:5000/api/send-email";
 
-    setLoading(false);
+    const formData = new FormData(e.target);
+    const payload = {
+      from_name: formData.get("from_name") || "",
+      email: formData.get("email") || "",
+      phone: formData.get("phone") || "",
+      subject: formData.get("subject") || "",
+      message: formData.get("message") || "",
+    };
+
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        await swal({
+          title: "E-mail sent successfully!",
+          text: "Your message has been delivered via Gmail SMTP.",
+          icon: "success",
+          button: "Close",
+        });
+        setShowContactForm(false);
+      } else {
+        throw new Error(data.error || "Failed to send email.");
+      }
+    } catch (err) {
+      console.error("Gmail SMTP Submission Error:", err);
+      const rawError = err?.message || String(err);
+
+      await swal({
+        title: "Message Delivery Failed",
+        text: `Failed to deliver email via Gmail SMTP: ${rawError}`,
+        icon: "error",
+        button: "Close",
+        dangerMode: true,
+      });
+    } finally {
+      setLoading(false);
+    }
   };
-
-  if (loading) {
-    swal({
-      title: "Sending message",
-      icon: "warning",
-      text: "Please wait ...",
-      button: false,
-      closeOnClickOutside: false,
-    });
-  }
 
   return (
     <>
@@ -162,10 +169,9 @@ export default function ContactMe() {
                   <button
                     type="submit"
                     className="bg-gradient-to-r from-brand-600 via-brand-500 to-accent-violet hover:from-brand-500 hover:to-indigo-600 font-medium rounded-3xl text-sm px-8 py-3.5 text-center text-white hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-md hover:shadow-lg disabled:opacity-75 disabled:cursor-progress"
-                    name="message"
                     disabled={loading}
                   >
-                    Send Message
+                    {loading ? "Sending..." : "Send Message"}
                   </button>
                 </div>
               </Fade>
@@ -187,9 +193,8 @@ export default function ContactMe() {
                   message is received.
                 </p>
                 <button
-                  type="submit"
+                  type="button"
                   className="bg-gradient-to-r from-brand-600 via-brand-500 to-accent-violet hover:from-brand-500 hover:to-indigo-600 font-medium rounded-3xl text-sm px-8 py-3.5 text-center text-white hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-md hover:shadow-lg"
-                  name="message"
                   onClick={() => setShowContactForm(true)}
                 >
                   Send Another
@@ -202,3 +207,6 @@ export default function ContactMe() {
     </>
   );
 }
+
+
+
