@@ -41,7 +41,7 @@ describe('ContactMe Component (Gmail SMTP)', () => {
 
     await waitFor(() => {
       expect(global.fetch).toHaveBeenCalledWith(
-        'http://localhost:5000/api/send-email',
+        process.env.REACT_APP_API_URL || '/api/send-email',
         expect.objectContaining({
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

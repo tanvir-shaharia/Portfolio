@@ -16,7 +16,7 @@ export default function ContactMe() {
     setLoading(true);
 
     const apiUrl =
-      process.env.REACT_APP_API_URL || "http://localhost:5000/api/send-email";
+      process.env.REACT_APP_API_URL || "/api/send-email";
 
     const formData = new FormData(e.target);
     const payload = {
