@@ -1,6 +1,6 @@
 import React from "react";
 import { Fade, Zoom } from "react-reveal";
-import picture from "../../../assets/images/myPic.jpg";
+import picture from "../../../assets/images/tanvir_shaharia.png";
 import Title from "../title";
 import Info from "./info";
 
