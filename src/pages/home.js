@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import About from "../components/Section/about";
 import ContactMe from "../components/Section/contactMe";
 import TopSec from "../components/Section/home";
+import MobileApps from "../components/Section/mobileApps";
 import Project from "../components/Section/project";
 import Resume from "../components/Section/resume";
 import Skill from "../components/Section/skill";
@@ -19,6 +20,7 @@ export default function Home() {
       <TopSec />
       <About />
       <Skill />
+      <MobileApps />
       <Project />
       <Resume />
       <ContactMe />

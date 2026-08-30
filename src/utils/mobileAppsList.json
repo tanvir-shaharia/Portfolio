@@ -1,0 +1,60 @@
+[
+  {
+    "id": "pocketlog",
+    "name": "PocketLog",
+    "platform": "Android",
+    "shortDescription": "A secure, local-first personal expense and habit tracking app for Android. Built with Kotlin, Jetpack Compose, and Room, it operates completely on-device with zero internet permission, protecting your financial privacy.",
+    "longDescription": "PocketLog is a lightweight, offline-first personal finance and habit analytics application. It enables users to record daily transactions, monitor item quantities (such as coffee or cigarette consumption) alongside monetary costs, and automatically turns this data into visual dashboards, period-over-period trends, and downloadable reports—all running securely on your physical device.",
+    "iconSrc": "/play_console/pocketlog-play-store-icon.png",
+    "featureGraphic": "/play_console/pocketlog-feature-graphic.png",
+    "status": "closed-testing",
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.tanvir.pocketlog",
+    "sourceUrl": "",
+    "privacyPolicyUrl": "/pocketlog/privacy",
+    "version": "1.0.0",
+    "versionCode": 3,
+    "technologies": ["Kotlin", "Jetpack Compose", "Material 3", "Room", "Hilt", "WorkManager", "AlarmManager"],
+    "problemsSolved": [
+      {
+        "title": "Logging Friction",
+        "description": "Standard trackers require navigating complex forms. PocketLog resolves this with a quick-add interface that caches and pre-fills the last-used amount and unit values for each category."
+      },
+      {
+        "title": "Lack of Quantity Tracking",
+        "description": "Typical apps only track money. PocketLog allows simultaneous tracking of monetary cost and quantity/units (e.g., piece, pack, meal, trip) for specific habit-tracking categories."
+      },
+      {
+        "title": "Data Privacy Risks",
+        "description": "Most financial tools upload sensitive records to external cloud servers. PocketLog has no internet permission, keeping all logs fully private on the physical device."
+      }
+    ],
+    "highlights": [
+      "Offline-first Clean Architecture (Presentation, Domain, and Data layers) with MVVM.",
+      "Native Canvas PDF Generation writing structured monthly reports directly to cache without external libraries.",
+      "Exact-time wakeups using AlarmManager and WorkManager for boot-resilient logging reminders.",
+      "Precise financial representation using Long integers (Poisha) to eliminate floating-point rounding errors."
+    ],
+    "screenshots": [
+      "/play_console/01-dashboard.png",
+      "/play_console/02-expense-entry.png",
+      "/play_console/03-history.png",
+      "/play_console/04-analytics.png",
+      "/play_console/06-monthly-report.png",
+      "/play_console/07-settings.png"
+    ],
+    "challenges": [
+      {
+        "title": "AlarmManager alarms cleared upon system reboot",
+        "solution": "Registered a BootReceiver to capture the system's ACTION_BOOT_COMPLETED broadcast. When triggered, it reads saved reminder preferences from local settings and schedules a new exact alarm using Hilt-injected schedulers."
+      },
+      {
+        "title": "Standard native text drawing ignores locale configurations",
+        "solution": "Implemented a string-filtering mapper in the report generator that manually translates English numeral characters into their Bangla equivalents prior to canvas draw operations, ensuring consistent localization across generated reports."
+      },
+      {
+        "title": "Modern sandboxing prevents sharing files via standard paths",
+        "solution": "Configured androidx.core.content.FileProvider to expose directories securely. PocketLog generates a temporary content:// URI with transient read permissions, allowing users to send PDF exports to other apps safely."
+      }
+    ]
+  }
+]

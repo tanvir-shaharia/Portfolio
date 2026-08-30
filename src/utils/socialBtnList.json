@@ -28,5 +28,11 @@
     "link": "https://github.com/tanvir-shaharia",
     "hover": "github",
     "icon": "fab fa-github"
+  },
+  {
+    "id": 6,
+    "link": "https://play.google.com/store/apps/developer?id=Tanvir+Shaharia",
+    "hover": "google-play",
+    "icon": "fab fa-google-play"
   }
 ]
