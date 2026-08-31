@@ -102,3 +102,12 @@
 .google-play:hover {
   background-color: #00c6ff !important;
 }
+
+@keyframes fadeIn {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out forwards;
+}

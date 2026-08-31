@@ -66,6 +66,14 @@ export default function AppModal({ setOpen, open, app }) {
     }
   };
 
+  const handlePrev = () => {
+    setActiveScreenIdx((prev) => (prev - 1 + screens.length) % screens.length);
+  };
+
+  const handleNext = () => {
+    setActiveScreenIdx((prev) => (prev + 1) % screens.length);
+  };
+
   return (
     <Modal
       open={open}
@@ -75,7 +83,7 @@ export default function AppModal({ setOpen, open, app }) {
     >
       <Box
         sx={style}
-        className="w-[96%] md:w-[750px] outline-none rounded-xl overflow-x-auto scrollbar-hide dark:text-zinc-100 bg-gray-50 dark:bg-zinc-900 dark:border dark:border-zinc-800"
+        className="w-[96%] md:w-[780px] lg:w-[850px] outline-none rounded-xl overflow-x-auto scrollbar-hide dark:text-zinc-100 bg-gray-50 dark:bg-zinc-900 dark:border dark:border-zinc-800"
       >
         <button
           className="absolute top-3 right-3 h-8 w-8 dark:bg-zinc-800 bg-gray-200 hover:bg-gray-300 dark:hover:bg-zinc-700 dark:text-zinc-200 text-gray-700 rounded-full z-50 flex items-center justify-center transition-colors"
@@ -84,54 +92,69 @@ export default function AppModal({ setOpen, open, app }) {
           <i className="fa-solid fa-xmark"></i>
         </button>
 
-        <div className="flex flex-col md:flex-row gap-6 p-5">
-          {/* Mockup Column */}
+        <div className="flex flex-col md:flex-row gap-6 lg:gap-8 p-5 md:p-6">
+          {/* Screenshot Gallery Column (Left Column) */}
           {screens.length > 0 && (
-            <div className="flex-shrink-0 flex flex-col items-center justify-center md:w-[220px] w-full bg-gray-100/50 dark:bg-zinc-900/80 rounded-xl p-4 border border-gray-200/50 dark:border-zinc-800/80">
-              {/* Smartphone Frame Wrapper */}
-              <div className="relative mx-auto border-[8px] border-zinc-800 dark:border-zinc-700 bg-zinc-800 dark:bg-zinc-700 rounded-[2.5rem] h-[340px] w-[170px] shadow-xl overflow-hidden group">
-                {/* Camera notch */}
-                <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-10 h-3 bg-zinc-800 dark:bg-zinc-700 rounded-full z-20"></div>
-                {/* Screen content */}
-                <div
-                  className="w-full h-full rounded-[1.8rem] overflow-hidden bg-black flex justify-center items-center cursor-pointer relative"
-                  onClick={() => {
-                    setActiveScreenIdx((prev) => (prev + 1) % screens.length);
-                  }}
-                  title="Click to see next screenshot"
-                >
-                  <img
-                    src={currentScreen}
-                    alt={`${name} screenshot ${activeScreenIdx + 1}`}
-                    className="w-full h-full object-cover transition-all duration-300"
-                  />
-                </div>
+            <div className="flex-shrink-0 flex flex-col items-center justify-start md:w-[260px] lg:w-[320px] w-full gap-4 bg-gray-100/40 dark:bg-zinc-950/10 rounded-2xl p-4 border border-gray-200/50 dark:border-zinc-800/80">
+              {/* Large Active Screenshot Viewer */}
+              <div className="relative w-full aspect-[3/4] flex items-center justify-center bg-zinc-950/5 dark:bg-zinc-950/20 rounded-xl border border-gray-200 dark:border-zinc-800 p-2 overflow-hidden group/gallery shadow-inner">
+                <img
+                  key={activeScreenIdx}
+                  src={currentScreen}
+                  alt={`${name} screenshot ${activeScreenIdx + 1}`}
+                  className="max-h-[300px] md:max-h-[320px] lg:max-h-[380px] w-auto object-contain rounded-lg shadow-md animate-fade-in"
+                />
+
+                {/* Left/Right Navigation Chevron Overlays */}
+                {screens.length > 1 && (
+                  <>
+                    <button
+                      onClick={handlePrev}
+                      className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/90 dark:bg-zinc-800/90 hover:bg-white dark:hover:bg-zinc-700 text-gray-800 dark:text-zinc-100 flex items-center justify-center border border-gray-200 dark:border-zinc-700/80 shadow-md transition-all opacity-0 group-hover/gallery:opacity-100 duration-200 cursor-pointer z-20"
+                      aria-label="Previous screenshot"
+                    >
+                      <i className="fa-solid fa-chevron-left text-[11px]"></i>
+                    </button>
+                    <button
+                      onClick={handleNext}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/90 dark:bg-zinc-800/90 hover:bg-white dark:hover:bg-zinc-700 text-gray-800 dark:text-zinc-100 flex items-center justify-center border border-gray-200 dark:border-zinc-700/80 shadow-md transition-all opacity-0 group-hover/gallery:opacity-100 duration-200 cursor-pointer z-20"
+                      aria-label="Next screenshot"
+                    >
+                      <i className="fa-solid fa-chevron-right text-[11px]"></i>
+                    </button>
+                  </>
+                )}
               </div>
 
-              {/* Dot Indicators */}
+              {/* Thumbnails Row */}
               {screens.length > 1 && (
-                <div className="flex gap-1.5 mt-3 justify-center flex-wrap">
-                  {screens.map((_, sIdx) => (
+                <div className="flex gap-2 overflow-x-auto w-full justify-start py-1 scrollbar-hide">
+                  {screens.map((screen, sIdx) => (
                     <button
                       key={sIdx}
                       onClick={() => setActiveScreenIdx(sIdx)}
-                      className={`w-1.5 h-1.5 rounded-full transition-all ${
-                        activeScreenIdx === sIdx
-                          ? "bg-brand-500 scale-125"
-                          : "bg-gray-300 dark:bg-zinc-700 hover:bg-gray-400"
+                      className={`flex-shrink-0 h-14 w-auto rounded-lg overflow-hidden border-2 transition-all cursor-pointer ${
+                        activeScreenIdx === sIdx 
+                          ? "border-brand-500 scale-[1.04]" 
+                          : "border-transparent hover:border-gray-300 dark:hover:border-zinc-700 opacity-60 hover:opacity-100"
                       }`}
-                      aria-label={`Go to screenshot ${sIdx + 1}`}
-                    />
+                    >
+                      <img
+                        src={screen}
+                        alt={`Thumbnail preview ${sIdx + 1}`}
+                        className="h-full w-auto object-contain block bg-zinc-900/5 dark:bg-zinc-950/20"
+                      />
+                    </button>
                   ))}
                 </div>
               )}
-              <span className="text-[10px] text-gray-400 dark:text-zinc-500 mt-2 font-medium">
-                Tap mockup screen to cycle
+              <span className="text-[10px] text-gray-400 dark:text-zinc-500 font-medium">
+                Tap arrows or thumbnails to navigate
               </span>
             </div>
           )}
 
-          {/* Details Column */}
+          {/* Details Column (Right Column) */}
           <div className="flex-1 flex flex-col justify-between max-h-[75vh] overflow-y-auto pr-1">
             <div>
               {/* Header with App Icon */}

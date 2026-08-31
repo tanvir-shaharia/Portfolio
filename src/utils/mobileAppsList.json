@@ -5,15 +5,15 @@
     "platform": "Android",
     "shortDescription": "A secure, local-first personal expense and habit tracking app for Android. Built with Kotlin, Jetpack Compose, and Room, it operates completely on-device with zero internet permission, protecting your financial privacy.",
     "longDescription": "PocketLog is a lightweight, offline-first personal finance and habit analytics application. It enables users to record daily transactions, monitor item quantities (such as coffee or cigarette consumption) alongside monetary costs, and automatically turns this data into visual dashboards, period-over-period trends, and downloadable reports—all running securely on your physical device.",
-    "iconSrc": "/play_console/pocketlog-play-store-icon.png",
-    "featureGraphic": "/play_console/pocketlog-feature-graphic.png",
+    "iconSrc": "/play_store/pocketlog_app_icon.png",
+    "featureGraphic": "/play_store/feature_graphic.png",
     "status": "closed-testing",
     "playStoreUrl": "https://play.google.com/store/apps/details?id=com.tanvir.pocketlog",
     "sourceUrl": "",
     "privacyPolicyUrl": "/pocketlog/privacy",
     "version": "1.0.0",
     "versionCode": 3,
-    "technologies": ["Kotlin", "Jetpack Compose", "Material 3", "Room", "Hilt", "WorkManager", "AlarmManager"],
+    "technologies": ["Kotlin", "Jetpack Compose", "Room", "Hilt", "Clean Architecture", "MVVM", "Material 3", "WorkManager", "AlarmManager"],
     "problemsSolved": [
       {
         "title": "Logging Friction",
@@ -35,12 +35,13 @@
       "Precise financial representation using Long integers (Poisha) to eliminate floating-point rounding errors."
     ],
     "screenshots": [
-      "/play_console/01-dashboard.png",
-      "/play_console/02-expense-entry.png",
-      "/play_console/03-history.png",
-      "/play_console/04-analytics.png",
-      "/play_console/06-monthly-report.png",
-      "/play_console/07-settings.png"
+      "/play_store/01_dashboard.png",
+      "/play_store/02_add_expense.png",
+      "/play_store/03_analytics.png",
+      "/play_store/04_history.png",
+      "/play_store/05_dark_mode.png",
+      "/play_store/06_monthly_report.png",
+      "/play_store/07_settings.png"
     ],
     "challenges": [
       {
