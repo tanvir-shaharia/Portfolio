@@ -1,123 +1,127 @@
 # Privacy Policy for PocketLog
 
-**Last Updated: August 18, 2026**
+**Last Updated: September 6, 2026**
 
-Welcome to PocketLog. We respect your privacy and are committed to protecting the information you record in our application.
+Welcome to PocketLog. We respect your privacy and are committed to protecting the financial and personal information you record in our application.
 
-This Privacy Policy explains how PocketLog handles your data. PocketLog is designed as a secure, local-first, offline-only application.
-
----
-
-### 1. Introduction
-PocketLog is a personal expense and budget tracking application for Android. 
-* It operates **entirely offline**.
-* The application does not require user registration, account creation, or login.
-* The application does **not** connect to any external servers or transmit any data over the internet.
+This Privacy Policy explains how PocketLog handles your data. PocketLog is designed from the ground up as a secure, privacy-first, and offline-first personal expense tracking application.
 
 ---
 
-### 2. Information We Collect
-Because PocketLog runs entirely locally on your device, we (the developer) do not collect, see, or store any of your data. However, the application processes and stores the following information locally on your device to function:
+### 1. Introduction & Core Architecture
+PocketLog is an offline-first personal expense and budget tracking application for Android. 
+* **Offline-First Operation**: PocketLog operates 100% locally on your physical device by default. No account creation, login, or registration is required.
+* **Strictly Scoped Network Usage**: The application requests the Android `android.permission.INTERNET` permission strictly and exclusively for optional, user-initiated Google Drive Cloud Backup & Restore.
+* **Zero Background Telemetry**: When Google Drive backup is not actively triggered or connected, PocketLog transmits zero data across the network.
+
+---
+
+### 2. Information We Process
+Because PocketLog runs locally on your device, we (the developer) do not collect, monitor, or store any of your data on private servers. The application processes and stores the following information locally on your device:
 
 * **Financial and Transactional Data**: 
-  * Expense amounts (stored in local Poisha/cents currency units).
-  * Spending categories (e.g. food, transport, grocery, custom categories).
-  * Expense quantities, units, dates, times, and optional descriptive text notes.
+  * Expense amounts and monetary values.
+  * Preferred local currency settings (including BDT ৳, INR ₹, USD $, EUR €, and custom currency formats).
+  * Spending categories (e.g. food, transport, grocery, and user-customized categories).
+  * Expense quantities, units (e.g., piece, pack, trip, meal), dates, timestamps, and optional text notes.
   * Payment methods used (e.g. Cash, Card, Mobile Banking).
-  * Monthly budget limits set by you.
+  * Monthly budget limits and spending goals set by you.
 * **Application Settings and Preferences**:
   * Visual theme settings (Light, Dark, or System default).
   * Selected application language (English or Bangla).
   * Notification preferences and scheduled reminder times.
   * Last-used amounts and units for each category (saved locally to simplify future entries).
+  * Optional Google Drive backup metadata (such as last backup timestamp).
 
-We **do not** collect any Personal Identifiable Information (PII) such as your name, email address, phone number, physical address, or device unique identifiers.
+We **do not** collect Personal Identifiable Information (PII) such as your name, phone number, contacts, location, or device hardware identifiers.
 
 ---
 
 ### 3. How Your Data Is Stored
-All data you input is stored in a private, local SQLite database managed via Android's Room Persistence Library and in local SharedPreferences.
-* All calculations, analytics, graphs, and summaries are computed locally on your device.
-* No data is transmitted to or stored on any external servers or cloud services.
+All transaction records and configuration options are saved directly in a private, sandboxed SQLite database managed via Android's Room Persistence Library and Jetpack DataStore / SharedPreferences.
+* All computations, analytics, category breakdowns, and monthly summaries are executed 100% locally on your device.
+* Your financial records are never uploaded to any developer-owned, third-party, or commercial databases.
 
 ---
 
 ### 4. How We Use Information
-The information stored locally on your device is used solely to:
-* Display your transactional history and daily, weekly, or monthly spending totals.
-* Present visual graphs, category breakdowns, and monthly budget utilization.
-* Show local notifications (such as daily expense reminders and budget warnings).
+The data processed locally on your device is used solely to:
+* Display your transaction history and daily, weekly, and monthly totals.
+* Present visual analytics, category distribution charts, and budget limits.
+* Trigger local reminder notifications (such as daily logging alerts).
 * Generate monthly spending summaries and export them locally as PDF documents.
-* Auto-populate entry fields with your last-used settings to save you time.
+* Execute optional, user-initiated cloud backup and restore operations to your personal Google Drive account.
 
 ---
 
 ### 5. Data Sharing and Disclosure
-We do not share, sell, rent, trade, or disclose your data to any third parties. Since your data is stored locally on your device and the app has no network access, your data never leaves your device unless you choose to share it yourself.
+We do not sell, rent, trade, share, or disclose your financial records to any third party. Your data never leaves your device unless you explicitly initiate an encrypted backup to your own Google Drive account or manually share an exported PDF report.
 
 ---
 
-### 6. Third-Party Services
-PocketLog does **not** integrate with any third-party SDKs or cloud services.
-* There are no advertising networks (like Google AdMob).
-* There are no third-party analytics platforms (like Firebase Analytics or Google Analytics).
-* There are no automated crash reporting SDKs that transmit telemetry online.
+### 6. Third-Party Services & Zero Tracking Commitment
+PocketLog adheres to a strict zero-tracking policy:
+* **No Advertising SDKs**: There are no ad networks (e.g., Google AdMob, Unity Ads) integrated into the application.
+* **No Analytics or Tracking SDKs**: There is no Firebase Analytics, Google Analytics, Mixpanel, or Facebook SDK embedded in the app.
+* **No Telemetry or Crash Loggers**: There are no automated crash or telemetry reporting SDKs transmitting device data online.
 
 ---
 
-### 7. Notifications
-PocketLog uses Android’s local AlarmManager and WorkManager APIs to schedule and trigger reminders (e.g., daily logging reminders and budget alerts).
-* These notifications are generated and displayed **entirely locally** on your device.
-* They do not rely on external push notification servers.
-* This feature requires the Android `POST_NOTIFICATIONS` permission.
+### 7. Notifications & System Permissions
+PocketLog utilizes Android's local AlarmManager and WorkManager APIs to schedule reminders:
+* All reminder notifications are scheduled and displayed **entirely on-device** without external push notification servers.
+* `POST_NOTIFICATIONS`: Required on Android 13+ to post local alarm notifications.
+* `RECEIVE_BOOT_COMPLETED`: Used solely to reschedule your existing local reminders when your device is restarted.
 
 ---
 
-### 8. Data Backup / Device Storage
-PocketLog supports the standard **Android Auto Backup** feature.
-* If you have enabled automatic system backups on your Android device, the operating system may upload a copy of PocketLog's local database and preferences to your personal Google Drive cloud storage.
-* This backup is encrypted and managed entirely by Google and your Android system. 
-* We (the developer) have no access to this backup or your Google Drive storage.
-* You can manage or disable these backups in your Android system settings.
+### 8. Google Drive Cloud Backup & Restore (Opt-In)
+PocketLog provides an optional, user-initiated cloud backup and restore feature using Google Sign-In (OAuth 2.0) and the Google Drive REST API.
+* **Restricted Scope Isolation (`drive.appdata`)**: The app requests only the restricted Application Data Folder scope. PocketLog can **only** create, read, and write its own backup archive (`pocketlog_backup_v1.json.gz`) inside this hidden folder. It has **NO access** to your personal files, documents, photos, or other contents on your Google Drive.
+* **Backup Contents**: The backup file contains your expenses, monthly budget goals, custom category settings, preferences (currency, language, theme, reminder times), and a SHA-256 integrity checksum to verify authenticity upon restoration.
+* **Security Exclusions**: The backup strictly excludes passwords, OAuth tokens, secrets, encryption keys, or device hardware IDs.
+* **User Revocation and Control**: You can disconnect your Google Account at any time directly from the app's Settings screen or permanently revoke PocketLog's authorization via your [Google Account Security Dashboard](https://myaccount.google.com/permissions).
+* **Android Auto Backup**: PocketLog additionally supports Android's system-level Auto Backup, which may upload an encrypted device snapshot to your Google Account based on your OS settings.
 
 ---
 
-### 9. Data Export and Sharing
-PocketLog allows you to generate Monthly Report summaries as PDF files.
-* These reports are written to the application’s local cache directory on your device.
-* If you choose to export or share these reports, the application uses Android's secure `FileProvider` system to send the file via a temporary `content://` URI to other apps on your device (e.g., Email, messaging apps, or cloud drives).
-* This sharing process is initiated entirely and manually by you. No background transmission takes place.
+### 9. Data Export and PDF Generation
+PocketLog enables users to generate Monthly Summary reports in PDF format:
+* Reports are rendered locally using Android's native Canvas graphics APIs and saved into the app's local cache directory.
+* When sharing reports, the application employs Android's secure `FileProvider` mechanism to deliver a temporary `content://` URI with read-only permissions to your chosen destination app (e.g. Email, WhatsApp, Drive).
+* This process is initiated manually by the user; no automated background file transfers occur.
 
 ---
 
 ### 10. Data Security
-Your data is protected by Android’s sandbox security model, which isolates PocketLog's database and storage from other applications on your device. However, please remember that the security of your data ultimately depends on your physical device security. We recommend securing your device with a PIN, pattern, password, or biometric lock.
+Your data is protected by Android's application sandboxing architecture, ensuring no unauthorized application can access PocketLog's database. Cloud backups are isolated in your personal Google Drive AppData container and validated with cryptographic SHA-256 checksums. We advise securing your mobile device with biometric authentication, a PIN, or a secure passphrase.
 
 ---
 
 ### 11. Children's Privacy
-Our application does not request, collect, or transmit any personal information, and it is suitable for users of all ages, including children.
+PocketLog does not collect or solicit personal information from any user, including children under the age of 13. The application is completely family-safe and complies with COPPA and GDPR requirements.
 
 ---
 
-### 12. Your Choices and Data Deletion
-You have complete control over your data:
-* **Manual Deletion**: You can delete all your stored financial data, budgets, and settings at any time by clearing the application's storage/cache in your Android system settings:
+### 12. User Choices & Data Deletion
+You maintain complete autonomy over all your data:
+* **Local Data Deletion**: You can purge all expenses, categories, and settings instantly via Android settings:
   `Settings > Apps > PocketLog > Storage > Clear Data`
-* **Uninstall**: Uninstalling PocketLog from your device will permanently delete all locally stored databases, preferences, and cached PDF files. Note that you may also need to delete any system backups stored in your personal Google Drive.
+* **Cloud Backup Deletion**: You can delete your cloud backup archive by managing hidden application data in Google Drive or clearing the AppData folder.
+* **App Uninstallation**: Uninstalling PocketLog immediately removes all sandboxed databases, preferences, and cached PDF files from your physical device.
 
 ---
 
 ### 13. Changes to This Privacy Policy
-We may update our Privacy Policy from time to time. Since the app does not have network access to notify you, any updates will be posted on the hosting website:
-`[Insert Hosting URL/Portfolio Path, e.g., https://yourportfolio.com/pocketlog/privacy]`
+We may periodically update this Privacy Policy. Any modifications will be published on the official web portal:
+[https://tanvirshaharia.vercel.app/pocketlog/privacy](https://tanvirshaharia.vercel.app/pocketlog/privacy)
 
 ---
 
 ### 14. Contact Information
-If you have any questions or feedback about this Privacy Policy or the app's privacy practices, please contact us at:
-* **Developer**: Tanvir
-* **Email**: `[Insert Developer Contact Email, e.g., tanvir.shaharia.dev@gmail.com]`
+If you have inquiries, feedback, or suggestions regarding this Privacy Policy or PocketLog's privacy architecture, please contact:
+* **Developer**: MD Tanvir Shaharia
+* **Email**: tanvirking29@gmail.com
 
 ---
 ---
@@ -125,29 +129,31 @@ If you have any questions or feedback about this Privacy Policy or the app's pri
 # INTERNAL DEVELOPER NOTE: DATA SAFETY CROSS-CHECK
 *This section is for reference when filling out the Google Play Console Data Safety Form and is NOT part of the public Privacy Policy.*
 
-To complete the Play Console's Data Safety questionnaire, use the following verified details based on the codebase audit:
+To complete the Play Console's Data Safety questionnaire for v1.2.0, use the following verified details based on the codebase audit:
 
 ### 1. Data Collection and Security
 * **Is data collected or shared?** 
-  * **No**. The app does not collect or share any user data. All data is processed locally. Under Play Store rules, data that is processed locally on-device and not sent off the device does **not** count as "collection" or "sharing." You can select **"No"** to the question of whether your app collects or shares user data.
+  * **No**. All financial data is processed locally on-device. The optional Google Drive backup is stored directly in the user's personal Google Drive AppData space and is not accessible to the developer or any third party. Under Google Play policies, data transferred directly to a user's cloud account at their explicit direction does not constitute third-party collection.
 * **Is data encrypted in transit?** 
-  * **Not Applicable**. The app does not transmit data over the internet because it does not request `android.permission.INTERNET`.
+  * **Yes**. When using the optional Google Drive Cloud Backup feature, network traffic is encrypted over secure HTTPS / TLS connections directly to Google Drive endpoints.
 * **Can users request deletion?** 
-  * **Yes**. Users can clear all app data in Android settings or uninstall the app to instantly delete everything.
+  * **Yes**. Users can delete local data at any time via Android app settings or delete their cloud backup via Google Drive account settings.
 
-### 2. Data Types Handled (Processed locally only, not collected)
-If you choose to declare local processing for transparency, the types of data are:
+### 2. Data Types Handled (Processed locally / User cloud backup)
 * **Financial Info**:
-  * "Other Financial Info" (Expense transactions, budgets, payment methods).
+  * "Other Financial Info" (Expense transactions, budgets, payment methods, local currency preference).
 * **App Info and Performance**:
-  * None (No crash logs, diagnostics, or performance data are collected).
+  * None (No telemetry, crash SDKs, or performance profiling data).
 * **Personal / Device IDs**:
-  * None (No names, emails, contacts, location, or device identifiers are accessed).
+  * None (No user profiles, passwords, device identifiers, or location data collected).
 
 ### 3. Declared Permissions
-The app only requests and uses two permissions:
-1. `android.permission.POST_NOTIFICATIONS`: Required on Android 13+ to post local alarms and notifications.
-2. `android.permission.RECEIVE_BOOT_COMPLETED`: Required to reschedule local logging reminders after a device reboot.
+1. `android.permission.INTERNET`: Required solely for optional, user-initiated Google Drive Cloud Backup & Restore.
+2. `android.permission.POST_NOTIFICATIONS`: Required on Android 13+ to post local alarms and notifications.
+3. `android.permission.RECEIVE_BOOT_COMPLETED`: Required to reschedule local logging reminders after a device reboot.
 
 ### 4. SDK Audit
-* The project has **no** integrated third-party SDKs that transmit data (No Firebase, No AdMob, No Analytics). Only standard Jetpack libraries, Hilt, Room, and WorkManager are used.
+* **Included SDKs**:
+  * Google Sign-In (`play-services-auth`) & Google Drive REST API (`google-api-services-drive`) for user-initiated AppData cloud backup.
+  * Android Jetpack libraries (Compose, Material 3, Room, DataStore, WorkManager, Hilt).
+* **Excluded SDKs**: Zero advertising networks (No AdMob), zero analytics SDKs (No Firebase Analytics, No Google Analytics), zero tracking SDKs.

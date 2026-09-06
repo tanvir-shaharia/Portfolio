@@ -10,42 +10,43 @@ export default function PocketLogPrivacy() {
         <title>PocketLog Privacy Policy</title>
         <meta
           name="description"
-          content="Privacy Policy for PocketLog, a personal expense and budget tracking Android application."
+          content="Privacy Policy for PocketLog, a secure, offline-first personal expense and budget tracking Android application."
         />
       </Helmet>
 
       <PageLayout>
         <div className="flex items-center flex-wrap relative min-h-screen">
           <div className="containerCustom gap overflow-hidden max-w-4xl mx-auto px-4 sm:px-6">
-            <Title title="PocketLog Privacy Policy" titleDes="Last Updated: August 18, 2026" />
+            <Title title="PocketLog Privacy Policy" titleDes="Last Updated: September 6, 2026" />
 
             <div className="mt-8 space-y-8 text-gray-700 dark:text-zinc-300 font-nunito text-[15px] sm:text-base leading-relaxed">
               <p>
                 Welcome to PocketLog. We respect your privacy and are committed to protecting the
-                information you record in our application.
+                financial and personal information you record in our application.
               </p>
               <p>
                 This Privacy Policy explains how PocketLog handles your data. PocketLog is designed
-                as a secure, local-first, offline-only application.
+                from the ground up as a secure, privacy-first, and offline-first personal expense tracking application.
               </p>
 
               <hr className="border-gray-200/80 dark:border-zinc-800" />
 
               <section>
                 <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-zinc-100">
-                  1. Introduction
+                  1. Introduction &amp; Core Architecture
                 </h3>
                 <p className="mb-3">
-                  PocketLog is a personal expense and budget tracking application for Android.
+                  PocketLog is an offline-first personal expense and budget tracking application for Android.
                 </p>
                 <ul className="list-disc pl-6 space-y-1.5">
                   <li>
-                    It operates <strong>entirely offline</strong>.
+                    <strong>Offline-First Operation</strong>: PocketLog operates 100% locally on your physical device by default. No account creation, login, or registration is required.
                   </li>
-                  <li>The application does not require user registration, account creation, or login.</li>
                   <li>
-                    The application does <strong>not</strong> connect to any external servers or
-                    transmit any data over the internet.
+                    <strong>Strictly Scoped Network Usage</strong>: The application requests the Android <code>android.permission.INTERNET</code> permission strictly and exclusively for optional, user-initiated Google Drive Cloud Backup &amp; Restore.
+                  </li>
+                  <li>
+                    <strong>Zero Background Telemetry</strong>: When Google Drive backup is not actively triggered or connected, PocketLog transmits zero data across the network.
                   </li>
                 </ul>
               </section>
@@ -54,12 +55,10 @@ export default function PocketLogPrivacy() {
 
               <section>
                 <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-zinc-100">
-                  2. Information We Collect
+                  2. Information We Process
                 </h3>
                 <p className="mb-4">
-                  Because PocketLog runs entirely locally on your device, we (the developer) do not
-                  collect, see, or store any of your data. However, the application processes and
-                  stores the following information locally on your device to function:
+                  Because PocketLog runs locally on your device, we (the developer) do not collect, monitor, or store any of your data on private servers. The application processes and stores the following information locally on your device:
                 </p>
                 <ul className="list-disc pl-6 space-y-4">
                   <li>
@@ -69,14 +68,16 @@ export default function PocketLogPrivacy() {
                       </strong>
                       :
                       <ul className="list-[circle] pl-6 mt-2 space-y-1.5">
-                        <li>Expense amounts (stored in local Poisha/cents currency units).</li>
-                        <li>Spending categories (e.g. food, transport, grocery, custom categories).</li>
+                        <li>Expense amounts and monetary values.</li>
                         <li>
-                          Expense quantities, units, dates, times, and optional descriptive text
-                          notes.
+                          Preferred local currency settings (including BDT ৳, INR ₹, USD $, EUR €, and custom currency formats).
+                        </li>
+                        <li>Spending categories (e.g. food, transport, grocery, and custom categories).</li>
+                        <li>
+                          Expense quantities, units (e.g., piece, pack, trip, meal), dates, timestamps, and optional text notes.
                         </li>
                         <li>Payment methods used (e.g. Cash, Card, Mobile Banking).</li>
-                        <li>Monthly budget limits set by you.</li>
+                        <li>Monthly budget limits and spending goals set by you.</li>
                       </ul>
                     </div>
                   </li>
@@ -91,17 +92,15 @@ export default function PocketLogPrivacy() {
                         <li>Selected application language (English or Bangla).</li>
                         <li>Notification preferences and scheduled reminder times.</li>
                         <li>
-                          Last-used amounts and units for each category (saved locally to simplify
-                          future entries).
+                          Last-used amounts and units for each category (saved locally to simplify future entries).
                         </li>
+                        <li>Optional Google Drive backup metadata (such as last backup timestamp).</li>
                       </ul>
                     </div>
                   </li>
                 </ul>
                 <p className="mt-4">
-                  We <strong>do not</strong> collect any Personal Identifiable Information (PII) such
-                  as your name, email address, phone number, physical address, or device unique
-                  identifiers.
+                  We <strong>do not</strong> collect Personal Identifiable Information (PII) such as your name, phone number, contacts, location, or device hardware identifiers.
                 </p>
               </section>
 
@@ -112,15 +111,15 @@ export default function PocketLogPrivacy() {
                   3. How Your Data Is Stored
                 </h3>
                 <p className="mb-3">
-                  All data you input is stored in a private, local SQLite database managed via Android's
-                  Room Persistence Library and in local SharedPreferences.
+                  All transaction records and configuration options are saved directly in a private, sandboxed SQLite database managed via Android's Room Persistence Library and Jetpack DataStore / SharedPreferences.
                 </p>
                 <ul className="list-disc pl-6 space-y-1.5">
                   <li>
-                    All calculations, analytics, graphs, and summaries are computed locally on your
-                    device.
+                    All computations, analytics, category breakdowns, and monthly summaries are executed 100% locally on your device.
                   </li>
-                  <li>No data is transmitted to or stored on any external servers or cloud services.</li>
+                  <li>
+                    Your financial records are never uploaded to any developer-owned, third-party, or commercial databases.
+                  </li>
                 </ul>
               </section>
 
@@ -131,14 +130,14 @@ export default function PocketLogPrivacy() {
                   4. How We Use Information
                 </h3>
                 <p className="mb-3">
-                  The information stored locally on your device is used solely to:
+                  The data processed locally on your device is used solely to:
                 </p>
                 <ul className="list-disc pl-6 space-y-1.5">
-                  <li>Display your transactional history and daily, weekly, or monthly spending totals.</li>
-                  <li>Present visual graphs, category breakdowns, and monthly budget utilization.</li>
-                  <li>Show local notifications (such as daily expense reminders and budget warnings).</li>
+                  <li>Display your transaction history and daily, weekly, and monthly totals.</li>
+                  <li>Present visual analytics, category distribution charts, and budget limits.</li>
+                  <li>Trigger local reminder notifications (such as daily logging alerts).</li>
                   <li>Generate monthly spending summaries and export them locally as PDF documents.</li>
-                  <li>Auto-populate entry fields with your last-used settings to save you time.</li>
+                  <li>Execute optional, user-initiated cloud backup and restore operations to your personal Google Drive account.</li>
                 </ul>
               </section>
 
@@ -149,9 +148,7 @@ export default function PocketLogPrivacy() {
                   5. Data Sharing and Disclosure
                 </h3>
                 <p>
-                  We do not share, sell, rent, trade, or disclose your data to any third parties.
-                  Since your data is stored locally on your device and the app has no network access,
-                  your data never leaves your device unless you choose to share it yourself.
+                  We do not sell, rent, trade, share, or disclose your financial records to any third party. Your data never leaves your device unless you explicitly initiate an encrypted backup to your own Google Drive account or manually share an exported PDF report.
                 </p>
               </section>
 
@@ -159,39 +156,20 @@ export default function PocketLogPrivacy() {
 
               <section>
                 <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-zinc-100">
-                  6. Third-Party Services
+                  6. Third-Party Services &amp; Zero Tracking Commitment
                 </h3>
                 <p className="mb-3">
-                  PocketLog does <strong>not</strong> integrate with any third-party SDKs or cloud services.
-                </p>
-                <ul className="list-disc pl-6 space-y-1.5">
-                  <li>There are no advertising networks (like Google AdMob).</li>
-                  <li>
-                    There are no third-party analytics platforms (like Firebase Analytics or Google
-                    Analytics).
-                  </li>
-                  <li>There are no automated crash reporting SDKs that transmit telemetry online.</li>
-                </ul>
-              </section>
-
-              <hr className="border-gray-200/80 dark:border-zinc-800" />
-
-              <section>
-                <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-zinc-100">
-                  7. Notifications
-                </h3>
-                <p className="mb-3">
-                  PocketLog uses Android’s local AlarmManager and WorkManager APIs to schedule and trigger
-                  reminders (e.g., daily logging reminders and budget alerts).
+                  PocketLog adheres to a strict zero-tracking policy:
                 </p>
                 <ul className="list-disc pl-6 space-y-1.5">
                   <li>
-                    These notifications are generated and displayed <strong>entirely locally</strong> on
-                    your device.
+                    <strong>No Advertising SDKs</strong>: There are no ad networks (e.g., Google AdMob, Unity Ads) integrated into the application.
                   </li>
-                  <li>They do not rely on external push notification servers.</li>
                   <li>
-                    This feature requires the Android <code>POST_NOTIFICATIONS</code> permission.
+                    <strong>No Analytics or Tracking SDKs</strong>: There is no Firebase Analytics, Google Analytics, Mixpanel, or Facebook SDK embedded in the app.
+                  </li>
+                  <li>
+                    <strong>No Telemetry or Crash Loggers</strong>: There are no automated crash or telemetry reporting SDKs transmitting device data online.
                   </li>
                 </ul>
               </section>
@@ -200,22 +178,21 @@ export default function PocketLogPrivacy() {
 
               <section>
                 <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-zinc-100">
-                  8. Data Backup / Device Storage
+                  7. Notifications &amp; System Permissions
                 </h3>
                 <p className="mb-3">
-                  PocketLog supports the standard <strong>Android Auto Backup</strong> feature.
+                  PocketLog utilizes Android's local AlarmManager and WorkManager APIs to schedule reminders:
                 </p>
                 <ul className="list-disc pl-6 space-y-1.5">
                   <li>
-                    If you have enabled automatic system backups on your Android device, the operating
-                    system may upload a copy of PocketLog's local database and preferences to your
-                    personal Google Drive cloud storage.
+                    All reminder notifications are scheduled and displayed <strong>entirely on-device</strong> without external push notification servers.
                   </li>
                   <li>
-                    This backup is encrypted and managed entirely by Google and your Android system.
+                    <code>POST_NOTIFICATIONS</code>: Required on Android 13+ to post local alarm notifications.
                   </li>
-                  <li>We (the developer) have no access to this backup or your Google Drive storage.</li>
-                  <li>You can manage or disable these backups in your Android system settings.</li>
+                  <li>
+                    <code>RECEIVE_BOOT_COMPLETED</code>: Used solely to reschedule your existing local reminders when your device is restarted.
+                  </li>
                 </ul>
               </section>
 
@@ -223,24 +200,56 @@ export default function PocketLogPrivacy() {
 
               <section>
                 <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-zinc-100">
-                  9. Data Export and Sharing
+                  8. Google Drive Cloud Backup &amp; Restore (Opt-In)
                 </h3>
                 <p className="mb-3">
-                  PocketLog allows you to generate Monthly Report summaries as PDF files.
+                  PocketLog provides an optional, user-initiated cloud backup and restore feature using Google Sign-In (OAuth 2.0) and the Google Drive REST API.
+                </p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>
+                    <strong>Restricted Scope Isolation (<code>drive.appdata</code>)</strong>: The app requests only the restricted Application Data Folder scope. PocketLog can <strong>only</strong> create, read, and write its own backup archive (<code>pocketlog_backup_v1.json.gz</code>) inside this hidden folder. It has <strong>NO access</strong> to your personal files, documents, photos, or other contents on your Google Drive.
+                  </li>
+                  <li>
+                    <strong>Backup Contents</strong>: The backup file contains your expenses, monthly budget goals, custom category settings, preferences (currency, language, theme, reminder times), and a SHA-256 integrity checksum to verify authenticity upon restoration.
+                  </li>
+                  <li>
+                    <strong>Security Exclusions</strong>: The backup strictly excludes passwords, OAuth tokens, secrets, encryption keys, or device hardware IDs.
+                  </li>
+                  <li>
+                    <strong>User Revocation and Control</strong>: You can disconnect your Google Account at any time directly from the app's Settings screen or permanently revoke PocketLog's authorization via your{" "}
+                    <a
+                      href="https://myaccount.google.com/permissions"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-brand-500 hover:text-brand-600 dark:text-brand-400 dark:hover:text-brand-300 font-semibold underline"
+                    >
+                      Google Account Security Dashboard
+                    </a>.
+                  </li>
+                  <li>
+                    <strong>Android Auto Backup</strong>: PocketLog additionally supports Android's system-level Auto Backup, which may upload an encrypted device snapshot to your Google Account based on your OS settings.
+                  </li>
+                </ul>
+              </section>
+
+              <hr className="border-gray-200/80 dark:border-zinc-800" />
+
+              <section>
+                <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-zinc-100">
+                  9. Data Export and PDF Generation
+                </h3>
+                <p className="mb-3">
+                  PocketLog enables users to generate Monthly Summary reports in PDF format:
                 </p>
                 <ul className="list-disc pl-6 space-y-1.5">
                   <li>
-                    These reports are written to the application’s local cache directory on your device.
+                    Reports are rendered locally using Android's native Canvas graphics APIs and saved into the app's local cache directory.
                   </li>
                   <li>
-                    If you choose to export or share these reports, the application uses Android's
-                    secure <code>FileProvider</code> system to send the file via a temporary{" "}
-                    <code>content://</code> URI to other apps on your device (e.g., Email, messaging
-                    apps, or cloud drives).
+                    When sharing reports, the application employs Android's secure <code>FileProvider</code> mechanism to deliver a temporary <code>content://</code> URI with read-only permissions to your chosen destination app (e.g. Email, WhatsApp, Drive).
                   </li>
                   <li>
-                    This sharing process is initiated entirely and manually by you. No background
-                    transmission takes place.
+                    This process is initiated manually by the user; no automated background file transfers occur.
                   </li>
                 </ul>
               </section>
@@ -252,11 +261,7 @@ export default function PocketLogPrivacy() {
                   10. Data Security
                 </h3>
                 <p>
-                  Your data is protected by Android’s sandbox security model, which isolates PocketLog's
-                  database and storage from other applications on your device. However, please
-                  remember that the security of your data ultimately depends on your physical device
-                  security. We recommend securing your device with a PIN, pattern, password, or
-                  biometric lock.
+                  Your data is protected by Android's application sandboxing architecture, ensuring no unauthorized application can access PocketLog's database. Cloud backups are isolated in your personal Google Drive AppData container and validated with cryptographic SHA-256 checksums. We advise securing your mobile device with biometric authentication, a PIN, or a secure passphrase.
                 </p>
               </section>
 
@@ -267,8 +272,7 @@ export default function PocketLogPrivacy() {
                   11. Children's Privacy
                 </h3>
                 <p>
-                  Our application does not request, collect, or transmit any personal information,
-                  and it is suitable for users of all ages, including children.
+                  PocketLog does not collect or solicit personal information from any user, including children under the age of 13. The application is completely family-safe and complies with COPPA and GDPR requirements.
                 </p>
               </section>
 
@@ -276,26 +280,24 @@ export default function PocketLogPrivacy() {
 
               <section>
                 <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-zinc-100">
-                  12. Your Choices and Data Deletion
+                  12. User Choices &amp; Data Deletion
                 </h3>
                 <p className="mb-3">
-                  You have complete control over your data:
+                  You maintain complete autonomy over all your data:
                 </p>
                 <ul className="list-disc pl-6 space-y-3">
                   <li>
-                    <strong>Manual Deletion</strong>: You can delete all your stored financial data,
-                    budgets, and settings at any time by clearing the application's storage/cache in
-                    your Android system settings:
+                    <strong>Local Data Deletion</strong>: You can purge all expenses, categories, and settings instantly via Android settings:
                     <br />
                     <code className="inline-block mt-1 bg-gray-100 dark:bg-zinc-800 px-2 py-1 rounded text-sm font-mono break-all">
                       Settings &gt; Apps &gt; PocketLog &gt; Storage &gt; Clear Data
                     </code>
                   </li>
                   <li>
-                    <strong>Uninstall</strong>: Uninstalling PocketLog from your device will
-                    permanently delete all locally stored databases, preferences, and cached PDF
-                    files. Note that you may also need to delete any system backups stored in your
-                    personal Google Drive.
+                    <strong>Cloud Backup Deletion</strong>: You can delete your cloud backup archive by managing hidden application data in Google Drive or clearing the AppData folder.
+                  </li>
+                  <li>
+                    <strong>App Uninstallation</strong>: Uninstalling PocketLog immediately removes all sandboxed databases, preferences, and cached PDF files from your physical device.
                   </li>
                 </ul>
               </section>
@@ -307,8 +309,7 @@ export default function PocketLogPrivacy() {
                   13. Changes to This Privacy Policy
                 </h3>
                 <p>
-                  We may update our Privacy Policy from time to time. Since the app does not have
-                  network access to notify you, any updates will be posted on the hosting website:
+                  We may periodically update this Privacy Policy. Any modifications will be published on the official web portal:
                   <br />
                   <a
                     href="https://tanvirshaharia.vercel.app/pocketlog/privacy"
@@ -326,8 +327,7 @@ export default function PocketLogPrivacy() {
                   14. Contact Information
                 </h3>
                 <p className="mb-3">
-                  If you have any questions or feedback about this Privacy Policy or the app's privacy
-                  practices, please contact us at:
+                  If you have inquiries, feedback, or suggestions regarding this Privacy Policy or PocketLog's privacy architecture, please contact:
                 </p>
                 <ul className="list-disc pl-6 space-y-1.5">
                   <li>
@@ -351,3 +351,4 @@ export default function PocketLogPrivacy() {
     </>
   );
 }
+

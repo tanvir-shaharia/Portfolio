@@ -3,17 +3,30 @@
     "id": "pocketlog",
     "name": "PocketLog",
     "platform": "Android",
-    "shortDescription": "A secure, local-first personal expense and habit tracking app for Android. Built with Kotlin, Jetpack Compose, and Room, it operates completely on-device with zero internet permission, protecting your financial privacy.",
-    "longDescription": "PocketLog is a lightweight, offline-first personal finance and habit analytics application. It enables users to record daily transactions, monitor item quantities (such as coffee or cigarette consumption) alongside monetary costs, and automatically turns this data into visual dashboards, period-over-period trends, and downloadable reports—all running securely on your physical device.",
+    "shortDescription": "A secure, offline-first personal expense and habit tracking app for Android. Built with Jetpack Compose, Room, and Material 3, it offers 100% on-device operation, multi-currency support, and optional private Google Drive cloud backups.",
+    "longDescription": "PocketLog is a lightweight, offline-first personal finance and habit analytics application. It enables users to record daily transactions, monitor item quantities (such as coffee or grocery consumption) alongside monetary costs, and automatically turns this data into visual dashboards, period-over-period trends, and downloadable PDF reports—with multi-currency customization and optional private Google Drive cloud backup.",
     "iconSrc": "/play_store/pocketlog_app_icon.png",
     "featureGraphic": "/play_store/feature_graphic.png",
     "status": "closed-testing",
     "playStoreUrl": "https://play.google.com/store/apps/details?id=com.tanvir.pocketlog",
     "sourceUrl": "",
     "privacyPolicyUrl": "/pocketlog/privacy",
-    "version": "1.0.0",
-    "versionCode": 3,
-    "technologies": ["Kotlin", "Jetpack Compose", "Room", "Hilt", "Clean Architecture", "MVVM", "Material 3", "WorkManager", "AlarmManager"],
+    "version": "1.2.0",
+    "versionCode": 6,
+    "technologies": [
+      "Kotlin",
+      "Jetpack Compose",
+      "Material 3",
+      "Clean Architecture",
+      "MVVM",
+      "Hilt",
+      "Room (SQLite)",
+      "DataStore",
+      "Google Drive REST API",
+      "WorkManager",
+      "AlarmManager",
+      "Kotlin Coroutines"
+    ],
     "problemsSolved": [
       {
         "title": "Logging Friction",
@@ -25,14 +38,15 @@
       },
       {
         "title": "Data Privacy Risks",
-        "description": "Most financial tools upload sensitive records to external cloud servers. PocketLog has no internet permission, keeping all logs fully private on the physical device."
+        "description": "Most financial tools upload sensitive records to external cloud servers. PocketLog operates 100% locally with zero tracking SDKs, optional user-initiated Google Drive AppData backups, and zero mandatory accounts."
       }
     ],
     "highlights": [
-      "Offline-first Clean Architecture (Presentation, Domain, and Data layers) with MVVM.",
+      "Google Drive Cloud Backup & Restore — Private, encrypted, and isolated in your personal Drive AppData folder.",
+      "Multi-Currency Support — Seamlessly switch between BDT (৳), INR (₹), USD ($), and EUR (€).",
+      "Privacy-First Architecture — 100% local database with zero tracking and zero mandatory accounts.",
       "Native Canvas PDF Generation writing structured monthly reports directly to cache without external libraries.",
-      "Exact-time wakeups using AlarmManager and WorkManager for boot-resilient logging reminders.",
-      "Precise financial representation using Long integers (Poisha) to eliminate floating-point rounding errors."
+      "Exact-time wakeups using AlarmManager and WorkManager for boot-resilient logging reminders."
     ],
     "screenshots": [
       "/play_store/01_dashboard.png",
@@ -44,6 +58,10 @@
       "/play_store/07_settings.png"
     ],
     "challenges": [
+      {
+        "title": "Tamper-resistant cloud backups without compromising Google Drive privacy",
+        "solution": "Integrated Google Drive REST API using the restricted drive.appdata scope. PocketLog isolates compressed Gzip backups in the user's hidden AppData folder with SHA-256 integrity verification, ensuring zero access to personal drive files."
+      },
       {
         "title": "AlarmManager alarms cleared upon system reboot",
         "solution": "Registered a BootReceiver to capture the system's ACTION_BOOT_COMPLETED broadcast. When triggered, it reads saved reminder preferences from local settings and schedules a new exact alarm using Hilt-injected schedulers."
