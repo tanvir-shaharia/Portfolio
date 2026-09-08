@@ -27,13 +27,13 @@ export default function Home() {
               className={`flex items-center justify-center flex-col overflow-hidden h-full w-full relative z-20 pt-20 md:pb-28 pb-32`}
             >
               <div className="h-28 w-28 md:h-36 md:w-36 overflow-hidden rounded-full bg-white mb-4">
-                <img src={avatar} alt="avatar" />
+                <img src={avatar} alt="MD Tanvir Shaharia" />
               </div>
-              <h2 className="text-3xl md:text-4xl font-medium pb-4 pt-2 text-gray-900 dark:text-zinc-100">
+              <h1 className="text-3xl md:text-4xl font-medium pb-4 pt-2 text-gray-900 dark:text-zinc-100">
                 <Fade up cascade>
                   MD Tanvir Shaharia
                 </Fade>
-              </h2>{" "}
+              </h1>{" "}
               <Typed
                 strings={[
                   "Software Engineer",

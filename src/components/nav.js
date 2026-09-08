@@ -35,7 +35,7 @@ export default function Navbar({ theme, toggleDarkMode }) {
             <Link to="/">
               <h4 className="flex items-center text-xl">
                 <div className="h-9 w-9 overflow-hidden rounded-full bg-transparent">
-                  <img src={avatar} alt="avatar" />
+                  <img src={avatar} alt="MD Tanvir Shaharia" />
                 </div>
                 <div className="ml-3">
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 via-accent-violet to-brand-600 font-extrabold text-2xl">

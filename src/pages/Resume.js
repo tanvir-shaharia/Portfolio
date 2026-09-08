@@ -9,6 +9,7 @@ export default function Resume() {
       <Helmet>
         <title>Resume | MD Tanvir Shaharia</title>
         <meta name="description" content="Read MD Tanvir Shaharia's professional resume. Specializing in Android Native development (Kotlin) and cross-platform apps (Flutter & Dart)." />
+        <link rel="canonical" href="https://tanvirshaharia.vercel.app/resume" />
       </Helmet>
       <PageLayout>
         <ResumeSec />

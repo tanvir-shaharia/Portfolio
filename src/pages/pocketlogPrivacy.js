@@ -7,11 +7,12 @@ export default function PocketLogPrivacy() {
   return (
     <>
       <Helmet>
-        <title>PocketLog Privacy Policy</title>
+        <title>PocketLog Privacy Policy | MD Tanvir Shaharia</title>
         <meta
           name="description"
-          content="Privacy Policy for PocketLog, a secure, offline-first personal expense and budget tracking Android application."
+          content="Privacy Policy for PocketLog, a secure, offline-first personal expense and budget tracking Android application developed by MD Tanvir Shaharia."
         />
+        <link rel="canonical" href="https://tanvirshaharia.vercel.app/pocketlog/privacy" />
       </Helmet>
 
       <PageLayout>

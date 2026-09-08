@@ -9,6 +9,7 @@ export default function Contact() {
       <Helmet>
         <title>Contact | MD Tanvir Shaharia</title>
         <meta name="description" content="Get in touch with MD Tanvir Shaharia, Software Engineer specializing in mobile applications development (Android & Flutter)." />
+        <link rel="canonical" href="https://tanvirshaharia.vercel.app/contact" />
       </Helmet>
 
       <PageLayout>

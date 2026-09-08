@@ -1,4 +1,6 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
+Allow: /
 
 Sitemap: https://tanvirshaharia.vercel.app/sitemap.xml
+

@@ -48,7 +48,7 @@ export default function About() {
 
           <Zoom>
             <div className="h-auto w-full mt-5 md:mt-0 overflow-hidden rounded-xl md:col-span-4 lg:col-span-4 aspect-[4/4]">
-              <img src={picture} alt="" className="w-full object-cover h-full" />
+              <img src={picture} alt="MD Tanvir Shaharia - Software Engineer" className="w-full object-cover h-full" />
             </div>{" "}
           </Zoom>
         </div>

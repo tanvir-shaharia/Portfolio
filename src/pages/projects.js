@@ -9,6 +9,7 @@ export default function Projects() {
       <Helmet>
         <title>Projects | MD Tanvir Shaharia</title>
         <meta name="description" content="View production mobile applications (Kotlin, Flutter, Clean Architecture) developed by Software Engineer MD Tanvir Shaharia." />
+        <link rel="canonical" href="https://tanvirshaharia.vercel.app/projects" />
       </Helmet>
 
       <PageLayout>

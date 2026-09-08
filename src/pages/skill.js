@@ -9,6 +9,7 @@ export default function Skill() {
       <Helmet>
         <title>Skills | MD Tanvir Shaharia</title>
         <meta name="description" content="Technical skills profile of MD Tanvir Shaharia: Android SDK, Kotlin, Jetpack Compose, Flutter, Dart, Clean Architecture, Bluetooth integration, and MVVM." />
+        <link rel="canonical" href="https://tanvirshaharia.vercel.app/skill" />
       </Helmet>
 
       <PageLayout>
