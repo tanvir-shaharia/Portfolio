@@ -29,3 +29,5 @@ package-lock.json*
 package-lock.json
 yarn.lock*
 /play_console
+*.zip
+tanvir_shaharia.png

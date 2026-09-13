@@ -3,6 +3,7 @@
     "id": "pocketlog",
     "name": "PocketLog",
     "platform": "Android",
+    "tagline": "Track Better. Spend Smarter.",
     "shortDescription": "A secure, offline-first personal expense and habit tracking app for Android. Built with Jetpack Compose, Room, and Material 3, it offers 100% on-device operation, multi-currency support, and optional private Google Drive cloud backups.",
     "longDescription": "PocketLog is a lightweight, offline-first personal finance and habit analytics application. It enables users to record daily transactions, monitor item quantities (such as coffee or grocery consumption) alongside monetary costs, and automatically turns this data into visual dashboards, period-over-period trends, and downloadable PDF reports—with multi-currency customization and optional private Google Drive cloud backup.",
     "iconSrc": "/play_store/pocketlog_app_icon.png",
@@ -13,6 +14,13 @@
     "privacyPolicyUrl": "/pocketlog/privacy",
     "version": "1.2.0",
     "versionCode": 6,
+    "featuredTech": [
+      "Kotlin",
+      "Jetpack Compose",
+      "Room",
+      "Hilt",
+      "Clean Architecture"
+    ],
     "technologies": [
       "Kotlin",
       "Jetpack Compose",
@@ -73,6 +81,88 @@
       {
         "title": "Modern sandboxing prevents sharing files via standard paths",
         "solution": "Configured androidx.core.content.FileProvider to expose directories securely. PocketLog generates a temporary content:// URI with transient read permissions, allowing users to send PDF exports to other apps safely."
+      }
+    ]
+  },
+  {
+    "id": "trade-memo",
+    "name": "Trade Memo",
+    "platform": "Android (KMP)",
+    "tagline": "The Anti-Tilt Journal in Your Pocket.",
+    "shortDescription": "An Android-first, local-first behavioral trading companion designed to eliminate emotional indiscipline and execution drift. Built with Kotlin Multiplatform, Compose Multiplatform, and Room KMP, it enables rapid trade logging in under 30 seconds, tracks execution discipline via Process Scores, and quantifies the financial impact of emotional errors (Avoidable Loss).",
+    "longDescription": "Trade Memo is a native Android-first, local-first behavioral execution journal designed to combat the primary cause of retail trader failure: emotional indiscipline, revenge trading, and execution drift. Departing from complex desktop accounting ledgers and fragile broker API syncs, Trade Memo serves as an 'Anti-Tilt Pocket Coach.' Discretionary crypto and futures traders can record trades in under 30 seconds, measure rule compliance with a 3-point execution checkpoint, and isolate normal system drawdowns from self-inflicted Avoidable Loss. Operating 100% locally with an on-device Room KMP SQLite database and an AMOLED Obsidian Terminal interface, sensitive trading records stay strictly on-device.",
+    "iconSrc": "/trade_memo/trade_memo_icon.png",
+    "featureGraphic": "/trade_memo/feature_graphic.png",
+    "status": "under-development",
+    "playStoreUrl": "",
+    "sourceUrl": "",
+    "privacyPolicyUrl": "",
+    "version": "In Development",
+    "versionCode": null,
+    "featuredTech": [
+      "Kotlin Multiplatform",
+      "Compose Multiplatform",
+      "Room KMP",
+      "Clean Architecture",
+      "MVI"
+    ],
+    "technologies": [
+      "Kotlin 2.x",
+      "Kotlin Multiplatform (KMP)",
+      "Compose Multiplatform",
+      "Material 3",
+      "Clean Architecture",
+      "MVI / StateFlow",
+      "Koin",
+      "Room KMP (SQLite)",
+      "Multiplatform DataStore",
+      "Navigation Compose",
+      "Compose Canvas Charts",
+      "Coil 3"
+    ],
+    "problemsSolved": [
+      {
+        "title": "The 14-Day Journaling Abandonment Cliff",
+        "description": "Standard trading journals require 15–25 cumbersome form fields and take 1–3 minutes per trade, causing traders to abandon journaling during drawdowns. Trade Memo solves this with a single-screen rapid entry flow completed in under 30 seconds."
+      },
+      {
+        "title": "The 'Coroner' Journal Syndrome",
+        "description": "Conventional platforms perform autopsies on blown accounts by plotting retrospective P&L curves without addressing real-time discipline. Trade Memo calculates Avoidable Loss to explicitly separate healthy system losses from emotional errors like FOMO and moving stop-losses."
+      },
+      {
+        "title": "Broker Sync Fragility & Privacy Risks",
+        "description": "Over 80% of competitor 1-star complaints stem from broken third-party broker API integrations and cloud sync mismatches. Trade Memo adopts a reliable, 100% local-first on-device Room KMP database with zero server lock-in and complete offline privacy."
+      }
+    ],
+    "highlights": [
+      "Rapid Trade Entry (<30s) — Single-screen ergonomic logging with quick-tap asset chips, Long/Short toggle, and automatic R-multiple calculations.",
+      "Avoidable Loss & Process Engine — Clearly separates strategic system losses from emotional discipline slips (FOMO, oversized entries, moved stop-losses).",
+      "Planned vs. Actual Checkpoint — Binary 3-point post-trade review verifying price entry discipline, stop-loss adherence, and strategy exit targets.",
+      "High-Contrast Visual Calendar — Monthly calendar grid with color-coded session P&L pills, trade counts, and daily journal breakdown.",
+      "Obsidian Terminal Design — Fluid native Compose Multiplatform interface adhering to an 8dp precision grid and dark AMOLED aesthetics.",
+      "100% Local-First Data Engine — On-device Room KMP SQLite storage with complete offline functionality and full CSV data export."
+    ],
+    "screenshots": [
+      "/trade_memo/01_dashboard.png",
+      "/trade_memo/02_quick_trade_entry.png",
+      "/trade_memo/03_monthly_calendar.png"
+    ],
+    "challenges": [
+      {
+        "title": "Eliminating broker API fragility without introducing manual friction",
+        "solution": "Rejected high-maintenance third-party broker API syncs in favor of an ergonomic Compose Multiplatform bottom sheet with quick asset chips, custom financial keypad, and automated P&L / R-multiple calculations, achieving trade entry in under 30 seconds."
+      },
+      {
+        "title": "Mathematical quantification of System Loss vs. Avoidable Emotional Loss",
+        "solution": "Engineered a deterministic behavioral scoring engine that cross-references defined golden rules and trade checkpoints against actual execution, isolating strategy variance from behavioral slips and computing an actionable Process Score (0–100%)."
+      },
+      {
+        "title": "Zero-cloud local persistence across multiplatform targets",
+        "solution": "Architected the storage layer using AndroidX Room KMP and Multiplatform DataStore to store trade logs, screenshots, and golden rules entirely on-device, eliminating cloud server dependencies and ensuring complete offline reliability."
+      },
+      {
+        "title": "Lightweight high-performance charting on 120Hz mobile displays",
+        "solution": "Implemented custom Compose Canvas lightweight drawing layers for calendar pills and performance trajectories, eliminating heavy third-party charting libraries while preserving fluid 120fps scrolling on AMOLED displays."
       }
     ]
   }

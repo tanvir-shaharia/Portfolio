@@ -45,15 +45,17 @@ export default function AppModal({ setOpen, open, app }) {
   if (!app) return null;
 
   const isClosedTesting = status === "closed-testing";
+  const isUnderDevelopment = status === "under-development";
   const btnLabel = isClosedTesting ? "Check Availability" : "View on Google Play";
   const currentScreen = screens[activeScreenIdx];
+  const formattedVersion = version ? (version.toLowerCase().startsWith("v") || version.toLowerCase().includes("dev") ? version : `v${version}`) : "";
 
   const handleAvailabilityClick = (e) => {
     if (isClosedTesting) {
       e.preventDefault();
       swal({
-        title: "PocketLog Closed Testing",
-        text: "PocketLog is currently in Google Play Closed Testing and is not publicly available yet. Public access will be available after the testing requirements are completed.",
+        title: `${name} Closed Testing`,
+        text: `${name} is currently in Google Play Closed Testing and is not publicly available yet. Public access will be available after the testing requirements are completed.`,
         icon: "info",
         button: {
           text: "Close",
@@ -179,9 +181,11 @@ export default function AppModal({ setOpen, open, app }) {
                     <span className="bg-brand-50 text-brand-700 dark:bg-brand-950/40 dark:text-brand-400 border border-brand-100 dark:border-brand-900/30 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase tracking-wider">
                       {platform}
                     </span>
-                    <span className="text-[11px] text-gray-500 dark:text-zinc-400 font-medium">
-                      v{version} ({versionCode})
-                    </span>
+                    {formattedVersion && (
+                      <span className="text-[11px] text-gray-500 dark:text-zinc-400 font-medium">
+                        {formattedVersion}{versionCode ? ` (${versionCode})` : ""}
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
@@ -194,6 +198,16 @@ export default function AppModal({ setOpen, open, app }) {
                     <span className="block font-bold">Currently in Google Play Closed Testing</span>
                     <span className="block text-[10px] text-amber-700/80 dark:text-amber-400/70 font-medium mt-0.5">
                       Production release is pending completion of Google's 14-day consecutive testing requirements.
+                    </span>
+                  </div>
+                </div>
+              ) : isUnderDevelopment ? (
+                <div className="mt-2.5 mb-4 flex items-start gap-2 bg-sky-500/10 border border-sky-500/25 rounded-lg p-2.5 text-xs text-sky-800 dark:text-sky-400 font-semibold leading-relaxed">
+                  <i className="fa-solid fa-code text-sm mt-0.5 flex-shrink-0 text-sky-600 dark:text-sky-400"></i>
+                  <div>
+                    <span className="block font-bold">Under Active Development</span>
+                    <span className="block text-[10px] text-sky-700/80 dark:text-sky-400/70 font-medium mt-0.5">
+                      Native Android-first app built with Kotlin Multiplatform & Compose Multiplatform. In active development and not yet published.
                     </span>
                   </div>
                 </div>
@@ -282,36 +296,38 @@ export default function AppModal({ setOpen, open, app }) {
               )}
 
               {/* Actions Footer */}
-              <div className="flex gap-2.5 pt-2">
-                {playStoreUrl && (
-                  <div className="flex-1">
-                    {isClosedTesting ? (
-                      <button
-                        onClick={handleAvailabilityClick}
-                        className="w-full bg-brand-500 hover:bg-brand-600 text-xs text-white font-bold py-2.5 px-3 rounded-lg inline-flex items-center justify-center transition-colors shadow-sm cursor-pointer"
-                      >
-                        <i className="fa-brands fa-google-play mr-1.5"></i>
-                        <span>{btnLabel}</span>
-                      </button>
-                    ) : (
-                      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" className="block w-full">
-                        <button className="w-full bg-brand-500 hover:bg-brand-600 text-xs text-white font-bold py-2.5 px-3 rounded-lg inline-flex items-center justify-center transition-colors shadow-sm cursor-pointer">
+              {(Boolean(playStoreUrl && !isUnderDevelopment) || Boolean(privacyPolicyUrl)) && (
+                <div className="flex gap-2.5 pt-2">
+                  {playStoreUrl && !isUnderDevelopment && (
+                    <div className="flex-1">
+                      {isClosedTesting ? (
+                        <button
+                          onClick={handleAvailabilityClick}
+                          className="w-full bg-brand-500 hover:bg-brand-600 text-xs text-white font-bold py-2.5 px-3 rounded-lg inline-flex items-center justify-center transition-colors shadow-sm cursor-pointer"
+                        >
                           <i className="fa-brands fa-google-play mr-1.5"></i>
                           <span>{btnLabel}</span>
                         </button>
-                      </a>
-                    )}
-                  </div>
-                )}
-                {privacyPolicyUrl && (
-                  <Link to={privacyPolicyUrl} className="flex-1" onClick={handleClose}>
-                    <button className="w-full bg-gray-100 dark:bg-zinc-800 hover:bg-gray-200 dark:hover:bg-zinc-700 text-xs text-gray-700 dark:text-zinc-300 font-bold py-2.5 px-3 rounded-lg inline-flex items-center justify-center transition-colors border border-gray-200/80 dark:border-zinc-700 shadow-sm cursor-pointer">
-                      <i className="fa-solid fa-shield-halved mr-1.5"></i>
-                      <span>Privacy Policy</span>
-                    </button>
-                  </Link>
-                )}
-              </div>
+                      ) : (
+                        <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" className="block w-full">
+                          <button className="w-full bg-brand-500 hover:bg-brand-600 text-xs text-white font-bold py-2.5 px-3 rounded-lg inline-flex items-center justify-center transition-colors shadow-sm cursor-pointer">
+                            <i className="fa-brands fa-google-play mr-1.5"></i>
+                            <span>{btnLabel}</span>
+                          </button>
+                        </a>
+                      )}
+                    </div>
+                  )}
+                  {privacyPolicyUrl && (
+                    <Link to={privacyPolicyUrl} className="flex-1" onClick={handleClose}>
+                      <button className="w-full bg-gray-100 dark:bg-zinc-800 hover:bg-gray-200 dark:hover:bg-zinc-700 text-xs text-gray-700 dark:text-zinc-300 font-bold py-2.5 px-3 rounded-lg inline-flex items-center justify-center transition-colors border border-gray-200/80 dark:border-zinc-700 shadow-sm cursor-pointer">
+                        <i className="fa-solid fa-shield-halved mr-1.5"></i>
+                        <span>Privacy Policy</span>
+                      </button>
+                    </Link>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         </div>
