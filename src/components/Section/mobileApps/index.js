@@ -44,7 +44,12 @@ export default function MobileApps() {
           const { name, platform, shortDescription, iconSrc, featureGraphic, status, playStoreUrl, version, tagline } = app;
           const isClosedTesting = status === "closed-testing";
           const isUnderDevelopment = status === "under-development";
-          const btnLabel = isClosedTesting ? "Check Availability" : "View on Google Play";
+          const statusLabel = app.statusLabel || (
+            isClosedTesting ? "Currently in Google Play Closed Testing" :
+            isUnderDevelopment ? "Under Active Development" :
+            "Available on Google Play"
+          );
+          const btnLabel = app.ctaLabel || (isClosedTesting ? "Check Availability" : "View on Google Play");
           
           const featuredTech = app.featuredTech || (app.technologies ? app.technologies.slice(0, 5) : ["Kotlin", "Jetpack Compose", "Room", "Hilt", "Clean Architecture"]);
           const formattedVersion = version ? (version.toLowerCase().startsWith("v") || version.toLowerCase().includes("dev") ? version : `v${version}`) : "";
@@ -144,17 +149,17 @@ export default function MobileApps() {
                   {isClosedTesting ? (
                     <div className="mb-4 flex items-center gap-2 text-xs text-amber-600 dark:text-amber-400 font-semibold bg-amber-500/5 dark:bg-amber-500/10 border border-amber-500/20 rounded-lg py-1.5 px-2.5">
                       <i className="fa-solid fa-flask text-xs text-amber-600 dark:text-amber-500 flex-shrink-0"></i>
-                      <span className="truncate">Currently in Google Play Closed Testing</span>
+                      <span className="truncate">{statusLabel}</span>
                     </div>
                   ) : isUnderDevelopment ? (
                     <div className="mb-4 flex items-center gap-2 text-xs text-sky-600 dark:text-sky-400 font-semibold bg-sky-500/5 dark:bg-sky-500/10 border border-sky-500/20 rounded-lg py-1.5 px-2.5">
                       <i className="fa-solid fa-code text-xs text-sky-600 dark:text-sky-400 flex-shrink-0"></i>
-                      <span className="truncate">Under Active Development</span>
+                      <span className="truncate">{statusLabel}</span>
                     </div>
                   ) : (
                     <div className="mb-4 flex items-center gap-2 text-xs text-emerald-600 dark:text-emerald-400 font-semibold bg-emerald-500/5 dark:bg-emerald-500/10 border border-emerald-500/20 rounded-lg py-1.5 px-2.5">
                       <i className="fa-solid fa-circle-check text-xs text-emerald-600 dark:text-emerald-500 flex-shrink-0"></i>
-                      <span className="truncate">Available on Google Play</span>
+                      <span className="truncate">{statusLabel}</span>
                     </div>
                   )}
 

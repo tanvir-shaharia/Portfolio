@@ -46,7 +46,12 @@ export default function AppModal({ setOpen, open, app }) {
 
   const isClosedTesting = status === "closed-testing";
   const isUnderDevelopment = status === "under-development";
-  const btnLabel = isClosedTesting ? "Check Availability" : "View on Google Play";
+  const statusLabel = app.statusLabel || (
+    isClosedTesting ? "Currently in Google Play Closed Testing" :
+    isUnderDevelopment ? "Under Active Development" :
+    "Available on Google Play"
+  );
+  const btnLabel = app.ctaLabel || (isClosedTesting ? "Check Availability" : "View on Google Play");
   const currentScreen = screens[activeScreenIdx];
   const formattedVersion = version ? (version.toLowerCase().startsWith("v") || version.toLowerCase().includes("dev") ? version : `v${version}`) : "";
 
@@ -195,7 +200,7 @@ export default function AppModal({ setOpen, open, app }) {
                 <div className="mt-2.5 mb-4 flex items-start gap-2 bg-amber-500/10 border border-amber-500/25 rounded-lg p-2.5 text-xs text-amber-800 dark:text-amber-400 font-semibold leading-relaxed">
                   <i className="fa-solid fa-flask text-sm mt-0.5 flex-shrink-0 text-amber-600 dark:text-amber-500"></i>
                   <div>
-                    <span className="block font-bold">Currently in Google Play Closed Testing</span>
+                    <span className="block font-bold">{statusLabel}</span>
                     <span className="block text-[10px] text-amber-700/80 dark:text-amber-400/70 font-medium mt-0.5">
                       Production release is pending completion of Google's 14-day consecutive testing requirements.
                     </span>
@@ -205,7 +210,7 @@ export default function AppModal({ setOpen, open, app }) {
                 <div className="mt-2.5 mb-4 flex items-start gap-2 bg-sky-500/10 border border-sky-500/25 rounded-lg p-2.5 text-xs text-sky-800 dark:text-sky-400 font-semibold leading-relaxed">
                   <i className="fa-solid fa-code text-sm mt-0.5 flex-shrink-0 text-sky-600 dark:text-sky-400"></i>
                   <div>
-                    <span className="block font-bold">Under Active Development</span>
+                    <span className="block font-bold">{statusLabel}</span>
                     <span className="block text-[10px] text-sky-700/80 dark:text-sky-400/70 font-medium mt-0.5">
                       Native Android-first app built with Kotlin Multiplatform & Compose Multiplatform. In active development and not yet published.
                     </span>
@@ -214,7 +219,7 @@ export default function AppModal({ setOpen, open, app }) {
               ) : (
                 <div className="mt-2.5 mb-4 flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/25 rounded-lg p-2.5 text-xs text-emerald-800 dark:text-emerald-400 font-semibold">
                   <i className="fa-solid fa-circle-check text-emerald-600 dark:text-emerald-500"></i>
-                  <span>Available on Google Play</span>
+                  <span>{statusLabel}</span>
                 </div>
               )}
 
