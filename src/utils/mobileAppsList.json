@@ -1,21 +1,21 @@
 [
   {
     "id": "pocketlog",
-    "name": "PocketLog",
+    "name": "PocketLog: Budget & Spending",
     "platform": "Android",
     "tagline": "Track Better. Spend Smarter.",
     "shortDescription": "A secure, offline-first personal expense and habit tracking app for Android. Built with Jetpack Compose, Room, and Material 3, it offers 100% on-device operation, multi-currency support, and optional private Google Drive cloud backups.",
     "longDescription": "PocketLog is a lightweight, offline-first personal finance and habit analytics application. It enables users to record daily transactions, monitor item quantities (such as coffee or grocery consumption) alongside monetary costs, and automatically turns this data into visual dashboards, period-over-period trends, and downloadable PDF reports—with multi-currency customization and optional private Google Drive cloud backup.",
-    "iconSrc": "/play_store/pocketlog_app_icon.png",
-    "featureGraphic": "/play_store/feature_graphic.png",
+    "iconSrc": "/play_store/play_store_icon_512.png",
+    "featureGraphic": "/play_store/google_play_feature_graphic_1024x500.png",
     "status": "available",
     "statusLabel": "Available on Google Play",
     "ctaLabel": "View on Google Play",
     "playStoreUrl": "https://play.google.com/store/apps/details?id=com.tanvir.pocketlog",
     "sourceUrl": "",
     "privacyPolicyUrl": "/pocketlog/privacy",
-    "version": "1.2.0",
-    "versionCode": 6,
+    "version": "v1.2.3",
+    "versionCode": 9,
     "featuredTech": [
       "Kotlin",
       "Jetpack Compose",
@@ -61,11 +61,12 @@
     "screenshots": [
       "/play_store/01_dashboard.png",
       "/play_store/02_add_expense.png",
-      "/play_store/03_analytics.png",
-      "/play_store/04_history.png",
-      "/play_store/05_dark_mode.png",
+      "/play_store/03_expense_history.png",
+      "/play_store/04_spending_analytics.png",
+      "/play_store/05_budget_management.png",
       "/play_store/06_monthly_report.png",
-      "/play_store/07_settings.png"
+      "/play_store/07_google_drive_backup.png",
+      "/play_store/08_settings.png"
     ],
     "challenges": [
       {

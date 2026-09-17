@@ -178,7 +178,7 @@ export default function AppModal({ setOpen, open, app }) {
                     id="app-modal-title"
                     variant="h5"
                     component="h2"
-                    className="capitalize font-extrabold text-gray-900 dark:text-zinc-100 text-xl md:text-2xl"
+                    className="font-extrabold text-gray-900 dark:text-zinc-100 text-xl md:text-2xl"
                   >
                     {name}
                   </Typography>

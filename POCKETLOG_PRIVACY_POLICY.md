@@ -129,7 +129,7 @@ If you have inquiries, feedback, or suggestions regarding this Privacy Policy or
 # INTERNAL DEVELOPER NOTE: DATA SAFETY CROSS-CHECK
 *This section is for reference when filling out the Google Play Console Data Safety Form and is NOT part of the public Privacy Policy.*
 
-To complete the Play Console's Data Safety questionnaire for v1.2.0, use the following verified details based on the codebase audit:
+To complete the Play Console's Data Safety questionnaire for v1.2.3, use the following verified details based on the codebase audit:
 
 ### 1. Data Collection and Security
 * **Is data collected or shared?** 
