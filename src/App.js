@@ -10,6 +10,7 @@ import PageNotFound from "./pages/pageNotFound";
 import Projects from "./pages/projects";
 import Skill from "./pages/skill";
 import PocketLogPrivacy from "./pages/pocketlogPrivacy";
+import PocketLogTerms from "./pages/pocketlogTerms";
 
 function App() {
   const location = useLocation();
@@ -28,6 +29,7 @@ function App() {
         <Route path="/resume" element={<Experience />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/pocketlog/privacy" element={<PocketLogPrivacy />} />
+        <Route path="/pocketlog/terms" element={<PocketLogTerms />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </Layout>

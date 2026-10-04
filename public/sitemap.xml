@@ -38,8 +38,14 @@
   </url>
   <url>
     <loc>https://tanvirshaharia.vercel.app/pocketlog/privacy</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tanvirshaharia.vercel.app/pocketlog/terms</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

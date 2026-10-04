@@ -17,7 +17,7 @@ describe('MobileApps Component', () => {
     renderMobileApps();
 
     // Verify PocketLog app title is rendered
-    expect(screen.getByText('PocketLog: Budget & Spending')).toBeInTheDocument();
+    expect(screen.getByText('PocketLog: Personal Finance')).toBeInTheDocument();
 
     // Verify status badge on PocketLog card
     const availableBadges = screen.getAllByText('Available on Google Play');

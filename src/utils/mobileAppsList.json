@@ -1,27 +1,29 @@
 [
   {
     "id": "pocketlog",
-    "name": "PocketLog: Budget & Spending",
+    "name": "PocketLog: Personal Finance",
     "platform": "Android",
     "tagline": "Track Better. Spend Smarter.",
-    "shortDescription": "A secure, offline-first personal expense and habit tracking app for Android. Built with Jetpack Compose, Room, and Material 3, it offers 100% on-device operation, multi-currency support, and optional private Google Drive cloud backups.",
-    "longDescription": "PocketLog is a lightweight, offline-first personal finance and habit analytics application. It enables users to record daily transactions, monitor item quantities (such as coffee or grocery consumption) alongside monetary costs, and automatically turns this data into visual dashboards, period-over-period trends, and downloadable PDF reports—with multi-currency customization and optional private Google Drive cloud backup.",
+    "shortDescription": "A modern, 100% offline-first personal finance application for Android. Built with Jetpack Compose, Material 3, Clean Architecture, and Room, featuring deterministic ledger reconciliation, multi-account & multi-currency tracking (14 currencies), cash flow analytics, and optional user-directed Google Drive private backups.",
+    "longDescription": "PocketLog is a lightweight, 100% offline-first personal finance and habit tracking application for Android. Architected with Kotlin, Jetpack Compose, Material 3, and Clean Architecture + MVVM, PocketLog operates with deterministic ledger balance reconciliation across multiple accounts (Cash, Bank, Mobile Wallet, Credit Card, Savings, Investments). It supports 14 world currencies with automated daily exchange rate sync and cross-currency transfers, monthly and category budgets with proactive alerts, native A4 PDF monthly report generation, biometric/PIN security, and optional user-directed Google Drive AppData private cloud backups.",
     "iconSrc": "/play_store/play_store_icon_512.png",
-    "featureGraphic": "/play_store/google_play_feature_graphic_1024x500.png",
+    "featureGraphic": "/play_store/feature_graphic_refined.png",
     "status": "available",
     "statusLabel": "Available on Google Play",
     "ctaLabel": "View on Google Play",
     "playStoreUrl": "https://play.google.com/store/apps/details?id=com.tanvir.pocketlog",
     "sourceUrl": "",
     "privacyPolicyUrl": "/pocketlog/privacy",
-    "version": "v1.2.3",
-    "versionCode": 9,
+    "termsUrl": "/pocketlog/terms",
+    "version": "v2.0.0",
+    "versionCode": 11,
     "featuredTech": [
       "Kotlin",
       "Jetpack Compose",
+      "Material 3",
+      "Clean Architecture",
       "Room",
-      "Hilt",
-      "Clean Architecture"
+      "Hilt"
     ],
     "technologies": [
       "Kotlin",
@@ -31,59 +33,68 @@
       "MVVM",
       "Hilt",
       "Room (SQLite)",
+      "Google Drive API v3",
       "DataStore",
-      "Google Drive REST API",
       "WorkManager",
       "AlarmManager",
-      "Kotlin Coroutines"
+      "BiometricPrompt",
+      "Kotlin Coroutines & Flow"
     ],
     "problemsSolved": [
       {
-        "title": "Logging Friction",
-        "description": "Standard trackers require navigating complex forms. PocketLog resolves this with a quick-add interface that caches and pre-fills the last-used amount and unit values for each category."
+        "title": "Logging Friction & Speed",
+        "description": "Standard personal finance apps suffer from tedious transaction entry. PocketLog eliminates logging friction with an intuitive quick-entry interface that caches and pre-fills last-used amounts and units for each category."
       },
       {
-        "title": "Lack of Quantity Tracking",
-        "description": "Typical apps only track money. PocketLog allows simultaneous tracking of monetary cost and quantity/units (e.g., piece, pack, meal, trip) for specific habit-tracking categories."
+        "title": "Single-Account & Currency Limitations",
+        "description": "Most lightweight budget trackers restrict users to a single account or currency. PocketLog supports multi-account tracking across 6 distinct account types and 14 world currencies with automated daily exchange rate sync."
       },
       {
-        "title": "Data Privacy Risks",
-        "description": "Most financial tools upload sensitive records to external cloud servers. PocketLog operates 100% locally with zero tracking SDKs, optional user-initiated Google Drive AppData backups, and zero mandatory accounts."
+        "title": "Historical Ledger Corruption on Currency Changes",
+        "description": "Mutating an account's currency directly breaks historical bookkeeping. PocketLog implements an audited Account Currency Conversion flow that creates the target account, transfers the converted balance, and safely archives the source account."
+      },
+      {
+        "title": "Cloud Privacy & Data Ownership Concerns",
+        "description": "Modern financial tools frequently transmit sensitive records to external cloud servers and ad brokers. PocketLog operates 100% locally with zero tracking SDKs, device-level biometric lock, and user-directed Google Drive AppData private cloud backups."
       }
     ],
     "highlights": [
-      "Google Drive Cloud Backup & Restore — Private, encrypted, and isolated in your personal Drive AppData folder.",
-      "Multi-Currency Support — Seamlessly switch between BDT (৳), INR (₹), USD ($), and EUR (€).",
-      "Privacy-First Architecture — 100% local database with zero tracking and zero mandatory accounts.",
-      "Native Canvas PDF Generation writing structured monthly reports directly to cache without external libraries.",
-      "Exact-time wakeups using AlarmManager and WorkManager for boot-resilient logging reminders."
+      "100% Offline-first core personal financial tracking with deterministic ledger balance reconciliation.",
+      "Multi-account management across Cash, Bank, Mobile Wallet, Credit Card, Savings, and Investments.",
+      "14 world currencies supported with automated daily exchange rate updates and cross-currency transfers.",
+      "Audited Account Currency Conversion flow (creates target account, transfers balance, and archives source account).",
+      "Monthly & category budgets with 80%/100% alerts and daily safe burn allowance.",
+      "Cash flow analytics, net savings rate, and native A4 PDF monthly report export.",
+      "Optional user-directed Google Drive App Data private cloud backup & restore (GZIP + SHA-256 integrity).",
+      "Biometric / PIN app lock with 30-second background grace period.",
+      "English & Bangla dual-language support with 100% string parity and native Bangla numeral formatting."
     ],
     "screenshots": [
-      "/play_store/01_dashboard.png",
-      "/play_store/02_add_expense.png",
-      "/play_store/03_expense_history.png",
-      "/play_store/04_spending_analytics.png",
-      "/play_store/05_budget_management.png",
-      "/play_store/06_monthly_report.png",
-      "/play_store/07_google_drive_backup.png",
-      "/play_store/08_settings.png"
+      "/play_store/pocketlog_01_dashboard.png",
+      "/play_store/pocketlog_02_add_expense.png",
+      "/play_store/pocketlog_03_budgets.png",
+      "/play_store/pocketlog_04_analytics.png",
+      "/play_store/pocketlog_05_accounts.png",
+      "/play_store/pocketlog_06_transfer.png",
+      "/play_store/pocketlog_07_monthly_report.png",
+      "/play_store/pocketlog_08_security_backup.png"
     ],
     "challenges": [
       {
-        "title": "Tamper-resistant cloud backups without compromising Google Drive privacy",
-        "solution": "Integrated Google Drive REST API using the restricted drive.appdata scope. PocketLog isolates compressed Gzip backups in the user's hidden AppData folder with SHA-256 integrity verification, ensuring zero access to personal drive files."
+        "title": "Deterministic Cross-Currency Transfers & Historical Ledger Integrity",
+        "solution": "Modeled transfers with atomic two-sided debit/credit entries storing source amount, destination amount in minor units, and agreed exchange rate (fxRateSource). Implemented an audited account conversion flow that creates a target account, transfers balance, and safely archives the source account."
       },
       {
-        "title": "AlarmManager alarms cleared upon system reboot",
-        "solution": "Registered a BootReceiver to capture the system's ACTION_BOOT_COMPLETED broadcast. When triggered, it reads saved reminder preferences from local settings and schedules a new exact alarm using Hilt-injected schedulers."
+        "title": "Tamper-Resistant Cloud Backups with Strict Privacy Scopes",
+        "solution": "Integrated Google Drive REST API v3 using the restricted drive.appdata scope. PocketLog isolates compressed Gzip backups in the user's hidden AppData folder with SHA-256 integrity verification, ensuring zero access to personal drive files."
       },
       {
-        "title": "Standard native text drawing ignores locale configurations",
-        "solution": "Implemented a string-filtering mapper in the report generator that manually translates English numeral characters into their Bangla equivalents prior to canvas draw operations, ensuring consistent localization across generated reports."
+        "title": "Zero-Library Native A4 PDF Report Generation & Number Localization",
+        "solution": "Built a custom native Canvas renderer using Android's PdfDocument API. Incorporated a locale string-filtering mapper that translates English numeral characters into native Bangla equivalents (০-৯) before drawing to Canvas, and exposed reports securely via androidx.core.content.FileProvider."
       },
       {
-        "title": "Modern sandboxing prevents sharing files via standard paths",
-        "solution": "Configured androidx.core.content.FileProvider to expose directories securely. PocketLog generates a temporary content:// URI with transient read permissions, allowing users to send PDF exports to other apps safely."
+        "title": "Resilient Exact-Time Reminders Across System Reboots",
+        "solution": "Registered a BootReceiver to capture the system's ACTION_BOOT_COMPLETED broadcast. When triggered, it reads saved reminder preferences from local settings and schedules a new exact alarm using Hilt-injected schedulers, surviving device restarts."
       }
     ]
   },

@@ -26,6 +26,7 @@ export default function AppModal({ setOpen, open, app }) {
     status,
     playStoreUrl,
     privacyPolicyUrl,
+    termsUrl,
     version,
     versionCode,
     technologies,
@@ -301,35 +302,48 @@ export default function AppModal({ setOpen, open, app }) {
               )}
 
               {/* Actions Footer */}
-              {(Boolean(playStoreUrl && !isUnderDevelopment) || Boolean(privacyPolicyUrl)) && (
-                <div className="flex gap-2.5 pt-2">
+              {(Boolean(playStoreUrl && !isUnderDevelopment) || Boolean(privacyPolicyUrl) || Boolean(termsUrl)) && (
+                <div className="space-y-2.5 pt-2">
                   {playStoreUrl && !isUnderDevelopment && (
-                    <div className="flex-1">
+                    <div>
                       {isClosedTesting ? (
                         <button
                           onClick={handleAvailabilityClick}
-                          className="w-full bg-brand-500 hover:bg-brand-600 text-xs text-white font-bold py-2.5 px-3 rounded-lg inline-flex items-center justify-center transition-colors shadow-sm cursor-pointer"
+                          className="w-full bg-brand-500 hover:bg-brand-600 text-xs sm:text-sm text-white font-bold py-2.5 px-4 rounded-lg inline-flex items-center justify-center transition-colors shadow-sm cursor-pointer gap-2"
                         >
-                          <i className="fa-brands fa-google-play mr-1.5"></i>
+                          <i className="fa-brands fa-google-play"></i>
                           <span>{btnLabel}</span>
                         </button>
                       ) : (
                         <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" className="block w-full">
-                          <button className="w-full bg-brand-500 hover:bg-brand-600 text-xs text-white font-bold py-2.5 px-3 rounded-lg inline-flex items-center justify-center transition-colors shadow-sm cursor-pointer">
-                            <i className="fa-brands fa-google-play mr-1.5"></i>
+                          <button className="w-full bg-brand-500 hover:bg-brand-600 text-xs sm:text-sm text-white font-bold py-2.5 px-4 rounded-lg inline-flex items-center justify-center transition-colors shadow-sm cursor-pointer gap-2">
+                            <i className="fa-brands fa-google-play"></i>
                             <span>{btnLabel}</span>
                           </button>
                         </a>
                       )}
                     </div>
                   )}
-                  {privacyPolicyUrl && (
-                    <Link to={privacyPolicyUrl} className="flex-1" onClick={handleClose}>
-                      <button className="w-full bg-gray-100 dark:bg-zinc-800 hover:bg-gray-200 dark:hover:bg-zinc-700 text-xs text-gray-700 dark:text-zinc-300 font-bold py-2.5 px-3 rounded-lg inline-flex items-center justify-center transition-colors border border-gray-200/80 dark:border-zinc-700 shadow-sm cursor-pointer">
-                        <i className="fa-solid fa-shield-halved mr-1.5"></i>
-                        <span>Privacy Policy</span>
-                      </button>
-                    </Link>
+
+                  {(Boolean(privacyPolicyUrl) || Boolean(termsUrl)) && (
+                    <div className="flex items-center gap-2">
+                      {privacyPolicyUrl && (
+                        <Link to={privacyPolicyUrl} className="flex-1" onClick={handleClose}>
+                          <button className="w-full bg-gray-100 dark:bg-zinc-800 hover:bg-gray-200 dark:hover:bg-zinc-700 text-xs text-gray-700 dark:text-zinc-300 font-bold py-2 px-3 rounded-lg inline-flex items-center justify-center transition-colors border border-gray-200/80 dark:border-zinc-700 shadow-sm cursor-pointer gap-1.5">
+                            <i className="fa-solid fa-shield-halved text-[11px]"></i>
+                            <span>Privacy Policy</span>
+                          </button>
+                        </Link>
+                      )}
+                      {termsUrl && (
+                        <Link to={termsUrl} className="flex-1" onClick={handleClose}>
+                          <button className="w-full bg-gray-100 dark:bg-zinc-800 hover:bg-gray-200 dark:hover:bg-zinc-700 text-xs text-gray-700 dark:text-zinc-300 font-bold py-2 px-3 rounded-lg inline-flex items-center justify-center transition-colors border border-gray-200/80 dark:border-zinc-700 shadow-sm cursor-pointer gap-1.5">
+                            <i className="fa-solid fa-file-contract text-[11px]"></i>
+                            <span>Terms of Service</span>
+                          </button>
+                        </Link>
+                      )}
+                    </div>
                   )}
                 </div>
               )}

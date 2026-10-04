@@ -20,6 +20,13 @@ export default function Footer() {
             >
               PocketLog Privacy Policy
             </Link>
+            {" | "}
+            <Link
+              to="/pocketlog/terms"
+              className="hover:text-brand-500 dark:hover:text-brand-400 font-semibold transition-colors"
+            >
+              PocketLog Terms of Service
+            </Link>
           </span>
           <div className="icons text-gray-600 dark:text-zinc-300 flex justify-center flex-wrap mt-2 lg:mt-0">
             {socialBtnList.map((btn, idx) => {

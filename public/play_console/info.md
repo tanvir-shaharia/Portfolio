@@ -2,17 +2,17 @@
 
 ## App Information
 
-- App Name: PocketLog: Budget & Spending
+- App Name: PocketLog: Personal Finance
 - Platform: Android
 - Package Name: com.tanvir.pocketlog
 - Developer: MD Tanvir Shaharia
 
 ## Current Release
 
-- Version: 1.2.3
-- Version Code: 9
+- Version: 2.0.0
+- Version Code: 11
 - Google Play Status: Available on Google Play
-- Release Phase: Production Release (1.2.3)
+- Release Phase: Production Release (2.0.0)
 
 ## Key Features
 
