@@ -102,4 +102,33 @@ describe('ContactMe Component (Gmail SMTP)', () => {
     expect(screen.getByPlaceholderText('Your Message')).toBeInTheDocument();
     expect(screen.queryByText('Thank You !')).not.toBeInTheDocument();
   });
+
+  test('resets form back to editable state when clicking Send Another', async () => {
+    global.fetch.mockResolvedValueOnce({
+      ok: true,
+      json: async () => ({ success: true, message: 'Delivered' }),
+    });
+    swal.mockResolvedValueOnce(true);
+
+    render(<ContactMe />);
+
+    fireEvent.change(screen.getByPlaceholderText('Your Name'), { target: { value: 'Alice' } });
+    fireEvent.change(screen.getByPlaceholderText('Your Email'), { target: { value: 'alice@example.com' } });
+    fireEvent.change(screen.getByPlaceholderText('Subject'), { target: { value: 'Inquiry' } });
+    fireEvent.change(screen.getByPlaceholderText('Your Message'), { target: { value: 'Hello' } });
+
+    fireEvent.click(screen.getByRole('button', { name: /send message/i }));
+
+    await waitFor(() => {
+      expect(screen.getByText('Thank You !')).toBeInTheDocument();
+    });
+
+    const sendAnotherBtn = screen.getByRole('button', { name: /send another/i });
+    expect(sendAnotherBtn).toBeInTheDocument();
+    fireEvent.click(sendAnotherBtn);
+
+    expect(screen.getByPlaceholderText('Your Name')).toBeInTheDocument();
+    expect(screen.queryByText('Thank You !')).not.toBeInTheDocument();
+  });
 });
+

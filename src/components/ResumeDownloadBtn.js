@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { handleMagneticMove, handleMagneticLeave } from "../utils/motion";
 
 export default function ResumeDownloadBtn({ className = "" }) {
   const [open, setOpen] = useState(false);
@@ -19,29 +20,40 @@ export default function ResumeDownloadBtn({ className = "" }) {
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="bg-gradient-to-r from-brand-600 via-brand-500 to-accent-violet hover:from-brand-500 hover:to-indigo-600 font-medium rounded-3xl text-sm px-6 md:px-8 py-3.5 text-center mr-2 mb-2 text-white hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-md hover:shadow-lg flex items-center gap-2 cursor-pointer"
+        onMouseMove={handleMagneticMove}
+        onMouseLeave={handleMagneticLeave}
+        onBlur={handleMagneticLeave}
+        className="btn-magnetic inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/80 hover:bg-white dark:bg-surface-glass dark:hover:bg-surface-glass-subtle border border-gray-200/80 dark:border-white/15 text-gray-800 dark:text-on-surface font-label-ui text-sm font-medium hover:border-secondary/40 hover:text-secondary dark:hover:text-secondary shadow-sm backdrop-blur-xl cursor-pointer"
         aria-haspopup="true"
         aria-expanded={open}
       >
-        <i className="fa-solid fa-download text-xs"></i>
-        <span>Download Resume</span>
-        <i className={`fa-solid fa-chevron-down text-[10px] transition-transform duration-200 ${open ? "rotate-180" : ""}`}></i>
+        <span className="material-symbols-outlined text-lg text-secondary">download</span>
+        <span>Download Resume (PDF)</span>
+        <i
+          className={`fa-solid fa-chevron-down text-[10px] text-gray-500 dark:text-on-surface-variant transition-transform duration-200 ${
+            open ? "rotate-180" : ""
+          }`}
+        ></i>
       </button>
 
       {open && (
-        <div className="origin-top-right absolute right-0 mt-1 w-64 rounded-xl shadow-xl bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 z-50 p-2 space-y-1 backdrop-blur-xl">
+        <div className="origin-top-left sm:origin-top-right absolute left-0 sm:right-0 mt-2 w-72 rounded-2xl shadow-2xl bg-white/95 dark:bg-surface-panel/95 border border-gray-200/80 dark:border-white/15 z-50 p-2.5 space-y-1.5 backdrop-blur-2xl animate-fade-in">
+          <div className="px-3 py-1 text-[10px] font-mono-tag text-secondary uppercase tracking-wider border-b border-gray-100 dark:border-white/5 pb-1.5 mb-1">
+            {"// Select Targeted Track"}
+          </div>
+
           <a
             href={process.env.PUBLIC_URL + "/Resume_Android_ATS.pdf"}
             download="MD_Tanvir_Shaharia_Android_Resume.pdf"
             onClick={() => setOpen(false)}
-            className="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-xs font-semibold text-gray-700 dark:text-zinc-200 hover:bg-indigo-50 dark:hover:bg-zinc-800/80 hover:text-brand-600 dark:hover:text-brand-400 transition-all"
+            className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold text-gray-800 dark:text-on-surface hover:bg-gray-100 dark:hover:bg-white/[0.06] hover:text-secondary dark:hover:text-secondary transition-all"
           >
-            <div className="w-8 h-8 rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold text-sm flex-shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-sm flex-shrink-0">
               <i className="fa-brands fa-android"></i>
             </div>
             <div className="flex flex-col text-left">
-              <span className="font-bold">Android Native Resume</span>
-              <span className="text-[10px] text-gray-400 font-normal">Kotlin, Jetpack, MVVM (PDF)</span>
+              <span className="font-bold text-gray-900 dark:text-text-primary">Android Native Resume</span>
+              <span className="text-[10px] text-gray-500 dark:text-text-muted font-normal">Kotlin, Jetpack, MVVM (PDF)</span>
             </div>
           </a>
 
@@ -49,14 +61,14 @@ export default function ResumeDownloadBtn({ className = "" }) {
             href={process.env.PUBLIC_URL + "/Resume_Flutter_ATS.pdf"}
             download="MD_Tanvir_Shaharia_Flutter_Resume.pdf"
             onClick={() => setOpen(false)}
-            className="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-xs font-semibold text-gray-700 dark:text-zinc-200 hover:bg-indigo-50 dark:hover:bg-zinc-800/80 hover:text-brand-600 dark:hover:text-brand-400 transition-all"
+            className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold text-gray-800 dark:text-on-surface hover:bg-gray-100 dark:hover:bg-white/[0.06] hover:text-secondary dark:hover:text-secondary transition-all"
           >
-            <div className="w-8 h-8 rounded-md bg-sky-500/10 text-sky-600 dark:text-sky-400 flex items-center justify-center font-bold text-sm flex-shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-cyan-500/15 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 flex items-center justify-center text-sm flex-shrink-0">
               <i className="fa-solid fa-layer-group"></i>
             </div>
             <div className="flex flex-col text-left">
-              <span className="font-bold">Flutter Resume</span>
-              <span className="text-[10px] text-gray-400 font-normal">Dart, Riverpod, Clean Arch (PDF)</span>
+              <span className="font-bold text-gray-900 dark:text-text-primary">Flutter Resume</span>
+              <span className="text-[10px] text-gray-500 dark:text-text-muted font-normal">Dart, Riverpod, Clean Arch (PDF)</span>
             </div>
           </a>
         </div>

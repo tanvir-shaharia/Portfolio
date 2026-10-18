@@ -1,6 +1,5 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import About from "../components/Section/about";
 import ContactMe from "../components/Section/contactMe";
 import TopSec from "../components/Section/home";
 import MobileApps from "../components/Section/mobileApps";
@@ -20,15 +19,23 @@ export default function Home() {
         <link rel="canonical" href="https://tanvirshaharia.vercel.app/" />
       </Helmet>
 
-      {/* <PageLayout> */}
+      {/* 1. Hero, Telemetry Metrics Bar & Enterprise Ecosystems Strip */}
       <TopSec />
-      <About />
-      <Skill />
+
+      {/* 2. Flagship Mobile Products & Enterprise Solutions Showcase (#products) */}
       <MobileApps />
+
+      {/* 3. Complete Shipped & Client Engineering Roster (#projects) */}
       <Project />
+
+      {/* 4. Specialized Capabilities Bento Grid (#services) & Technical Stack Matrix (#skills) */}
+      <Skill />
+
+      {/* 5. Career Timeline & Academic Credentials (#experience & #credentials) */}
       <Resume />
+
+      {/* 6. Engineering Inquiries & In-Depth Connect (#contact) */}
       <ContactMe />
-      {/* </PageLayout> */}
     </>
   );
 }

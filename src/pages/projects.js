@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import PageLayout from "../components/pageLayout";
+import MobileApps from "../components/Section/mobileApps";
 import Project from "../components/Section/project";
 
 export default function Projects() {
@@ -13,6 +14,7 @@ export default function Projects() {
       </Helmet>
 
       <PageLayout>
+        <MobileApps />
         <Project />
       </PageLayout>
     </>

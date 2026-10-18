@@ -36,9 +36,19 @@ export default function Layout({ children }) {
   return (
     <div>
       {!loading && (
-        <div className="relative dark:text-white bg-gray-50 dark:bg-[#09090b] transition-all overflow-hidden font-nunito">
+        <div className="relative text-gray-900 dark:text-on-surface bg-surface-canvas/5 dark:bg-surface-canvas transition-all overflow-hidden font-sans min-h-screen">
+          {/* Ambient Lighting & Cyber Grid Atmosphere */}
+          <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+            <div className="absolute -top-40 left-1/4 w-[550px] h-[550px] rounded-full bg-primary/10 blur-[130px] animate-orb-drift-1"></div>
+            <div className="absolute top-1/3 -right-32 w-[600px] h-[600px] rounded-full bg-secondary/10 blur-[150px] animate-orb-drift-2"></div>
+            <div className="absolute -bottom-40 left-1/3 w-[500px] h-[500px] rounded-full bg-tertiary/5 blur-[140px] animate-orb-drift-3"></div>
+            <div className="absolute inset-0 ambient-grid opacity-50 dark:opacity-100"></div>
+          </div>
+
           <Navbar theme={theme} toggleDarkMode={toggleDarkMode} />
-          {children}
+          <main className="relative z-10 w-full min-h-[calc(100vh-16rem)]">
+            {children}
+          </main>
           <Footer />
 
           {path === "/" ? (
