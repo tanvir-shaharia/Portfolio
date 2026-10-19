@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>MD Tanvir Shaharia | Senior Mobile Architect</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"tertiary-fixed-dim":"#4edea3","on-tertiary-fixed":"#002113","background":"#131315","outline-variant":"#464554","on-tertiary-fixed-variant":"#005236","on-surface":"#e5e1e4","tertiary-container":"#00885d","surface-canvas":"#09090b","surface-dim":"#131315","primary-fixed":"#e1e0ff","primary":"#c0c1ff","tertiary-fixed":"#6ffbbe","glow-emerald":"rgba(16, 185, 129, 0.30)","on-primary":"#1000a9","on-secondary-container":"#00424e","on-tertiary-container":"#000703","surface-container-highest":"#353437","on-secondary-fixed-variant":"#004e5c","on-background":"#e5e1e4","text-primary":"#f8fafc","primary-fixed-dim":"#c0c1ff","on-surface-variant":"#c7c4d7","secondary-fixed":"#acedff","on-secondary-fixed":"#001f26","border-glass-highlight":"rgba(6, 182, 212, 0.35)","secondary-fixed-dim":"#4cd7f6","error-container":"#93000a","surface-container-low":"#1c1b1d","surface-variant":"#353437","secondary-container":"#03b5d3","surface-tint":"#c0c1ff","outline":"#908fa0","glow-cyan":"rgba(6, 182, 212, 0.25)","tertiary":"#4edea3","on-primary-fixed-variant":"#2f2ebe","primary-container":"#8083ff","text-muted":"#94a3b8","on-error-container":"#ffdad6","surface-container-high":"#2a2a2c","surface-glass-subtle":"rgba(255, 255, 255, 0.03)","accent-pink":"#ec4899","inverse-surface":"#e5e1e4","on-error":"#690005","surface-container":"#201f22","border-glass":"rgba(255, 255, 255, 0.10)","on-primary-fixed":"#07006c","on-secondary":"#003640","glow-primary":"rgba(99, 102, 241, 0.25)","inverse-primary":"#494bd6","surface-glass":"rgba(15, 23, 42, 0.65)","surface-bright":"#39393b","surface-panel":"#0f172a","secondary":"#4cd7f6","surface-container-lowest":"#0e0e10","error":"#ffb4ab","on-tertiary":"#003824","on-primary-container":"#0d0096","inverse-on-surface":"#313032","surface":"#131315"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-md":"1rem","space-2xl":"4rem","space-lg":"1.5rem","margin":"2rem","gutter-mobile":"1rem","space-xs":"0.25rem","space-section":"6rem","space-xl":"2.5rem","space-sm":"0.5rem","margin-desktop":"3rem","gutter":"1.5rem","margin-mobile":"1rem"},"fontFamily":{"display-hero":["Plus Jakarta Sans"],"body-lg":["Inter"],"body-md":["Inter"],"headline-lg":["Plus Jakarta Sans"],"mono-tag":["JetBrains Mono"],"headline-sm":["Plus Jakarta Sans"],"mono-code":["JetBrains Mono"],"display-hero-mobile":["Plus Jakarta Sans"],"body-sm":["Inter"],"label-ui":["Inter"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"]},"fontSize":{"display-hero":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"800"}],"body-lg":["18px",{"lineHeight":"28px","letterSpacing":"-0.005em","fontWeight":"400"}],"body-md":["15px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"700"}],"mono-tag":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"500"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"mono-code":["13px",{"lineHeight":"20px","fontWeight":"400"}],"display-hero-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.025em","fontWeight":"800"}],"body-sm":["13px",{"lineHeight":"20px","fontWeight":"400"}],"label-ui":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface-canvas text-on-surface antialiased selection:bg-secondary/30 selection:text-secondary relative min-h-screen"><div class="pointer-events-none fixed inset-0 z-0 overflow-hidden"><div class="absolute -top-40 left-1/4 w-[550px] h-[550px] rounded-full bg-primary/10 blur-[130px]"></div><div class="absolute top-1/3 -right-32 w-[600px] h-[600px] rounded-full bg-secondary/10 blur-[150px]"></div><div class="absolute -bottom-40 left-1/3 w-[500px] h-[500px] rounded-full bg-tertiary/5 blur-[140px]"></div><div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div></div><header class="fixed top-0 inset-x-0 z-50 bg-surface-glass backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.5)]"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-4"><div class="flex items-center gap-4 flex-shrink-0"><a class="flex items-center gap-3 group" data-path="home" href="#"><img alt="TS Tech Monogram" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WQzahPQGdF-BT0Pqjy2vpuAwxWlP7f0YAOGfVk0kPyvPmJ8dNZpmwHias4GMu-51-JfRy3IMGGBXE96szymUrybxoEPBCKf1oqJAX_oFRPiiIctEuQwlZmOSOcOmnZm1BbK-NaJy6E2sPed01tyohx2dtFk-SUiJuzsXO8wqEovOWKyYOWdNWreFVBJ0w5RkMIC8Q_6j9QCyacS9losad7rZ6KjCDCFA-5_SdJeJFUsbAu9GULjEAmzSQ"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-text-primary tracking-tight transition-colors group-hover:text-primary">Tanvir Shaharia</span><span class="font-mono-tag text-mono-tag text-secondary uppercase tracking-widest">// MOBILE_ARCHITECT</span></div></a><div class="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-surface-glass-subtle"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span></span><span class="font-mono-tag text-mono-tag text-tertiary tracking-wider font-semibold">AVAILABLE FOR WORK</span></div></div><nav class="hidden lg:flex items-center gap-1 xl:gap-2" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a aria-current="page" class="px-3 py-2 transition-all bg-primary-container text-on-primary-container font-semibold rounded-lg" data-path="home" href="#">Home</a><a class="px-3 py-2 rounded-lg font-label-ui text-label-ui text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="products" href="#">Products</a><a class="px-3 py-2 rounded-lg font-label-ui text-label-ui text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="experience" href="#">Experience</a><a class="px-3 py-2 rounded-lg font-label-ui text-label-ui text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="skills" href="#">Skills</a><a class="px-3 py-2 rounded-lg font-label-ui text-label-ui text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="services" href="#">Services</a><a class="px-3 py-2 rounded-lg font-label-ui text-label-ui text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="contact" href="#">Contact</a></nav><div class="flex items-center gap-3 flex-shrink-0"><button aria-label="Toggle UI Shell Mode" class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-xl">dark_mode</span></button><a class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-lg bg-primary font-label-ui text-label-ui text-on-primary font-semibold transition-all hover:shadow-[0_0_24px_rgba(99,102,241,0.5)] hover:scale-[1.02] active:scale-[0.98]" data-path="contact" href="#">Let's Talk</a><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/40 ring-offset-2 ring-offset-surface-canvas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3iZnKKAYJMkF-ic_WFZ-VtTN377kHkkayiqS3P0wmgJfc2b_hxcOwZwLcTqDF369AhD89_4XLSIEGl85x-yb9QOd-ZjkKxXFERZ9ltvXgjIh1Vev1w396HE-1xJnHb9WgGk6fUBObbWfbFDS_C1bbTWXL-tz3HJt62l93Sx1GIToz_Vs_FEet7Cj0Slonvz4-caNoLnDqL7s4B5bqJf1NLzs6_OWP_isKtpKgbbvlD56KVA0sbKLC"/></div></div></header><main class="relative z-10 w-full pt-20 bg-transparent min-h-[calc(100vh-20rem)]"><div class="flex flex-col w-full text-on-surface">
+<!-- Ambient Light Halos -->
+<div class="relative w-full max-w-7xl mx-auto px-6 lg:px-12 py-8 lg:py-16">
+<div class="absolute -top-12 left-1/4 w-96 h-96 bg-primary/15 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="absolute top-1/2 -right-24 w-96 h-96 bg-secondary/15 rounded-full blur-[140px] pointer-events-none"></div>
+<!-- 1. HERO SECTION (2-Column Asymmetric Layout) -->
+<section class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+<!-- Left Column: Content (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<!-- Live Status Pill Badge -->
+<div class="flex items-center">
+<span class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-surface-glass border border-tertiary/30 backdrop-blur-xl shadow-[0_0_15px_rgba(16,185,129,0.15)]">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span>
+</span>
+<span class="font-mono-tag text-mono-tag text-tertiary font-semibold tracking-wide uppercase">Available for Remote &amp; High-Impact Mobile Roles</span>
+</span>
+</div>
+<!-- Main Headline -->
+<div class="flex flex-col gap-2">
+<h1 class="font-display-hero text-display-hero text-text-primary tracking-tight">
+            Hi, I'm <span class="bg-gradient-to-r from-primary-container via-secondary to-tertiary-fixed-dim bg-clip-text text-transparent">MD Tanvir Shaharia</span>
+</h1>
+<h2 class="font-headline-sm text-headline-sm text-on-surface-variant flex flex-wrap items-center gap-2 mt-1">
+<span class="text-secondary font-mono-code font-bold">&gt;</span> Senior Software Engineer 
+            <span class="font-mono-tag text-mono-tag px-2.5 py-1 rounded bg-primary/10 text-primary border border-primary/20">Android Native &amp; Flutter</span>
+</h2>
+</div>
+<!-- Pitch Paragraph -->
+<p class="font-body-lg text-body-lg text-text-muted max-w-2xl leading-relaxed">
+          Senior Software Engineer with 3+ years of professional production experience building scalable, mission-critical mobile applications. Specialized in Android Native (Kotlin, Jetpack Compose), Flutter (Dart), Clean Architecture, and offline-first deterministic engines powering millions of users across telecom, healthcare, and finance.
+        </p>
+<!-- Action CTAs -->
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-primary-container via-indigo-600 to-secondary text-text-primary font-label-ui text-label-ui shadow-[0_0_24px_rgba(99,102,241,0.4)] hover:shadow-[0_0_32px_rgba(6,182,212,0.6)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300" href="#contact">
+<span class="">Start a Project</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</a>
+<a class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-surface-glass border border-white/10 text-on-surface font-label-ui text-label-ui hover:bg-surface-glass-subtle hover:border-secondary/40 transition-all duration-300 shadow-sm backdrop-blur-xl" href="#contact">
+<span class="material-symbols-outlined text-lg text-secondary">download</span>
+<span class="">Download Resume (PDF)</span>
+</a>
+<a class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-surface-glass-subtle border border-secondary/30 text-secondary font-label-ui text-label-ui hover:bg-secondary/10 transition-all duration-300" href="#products">
+<span class="material-symbols-outlined text-lg">code_blocks</span>
+<span class="">Explore Shipped Apps</span>
+</a>
+</div>
+<!-- Social & Direct Profile Strip -->
+<div class="flex items-center gap-4 pt-4 text-on-surface-variant font-mono-tag text-mono-tag">
+<span class="text-text-muted">// REPOSITORIES &amp; CONNECT:</span>
+<div class="flex items-center gap-3">
+<a aria-label="GitHub Profile" class="p-2 rounded-lg bg-surface-glass border border-white/5 hover:border-secondary/50 text-on-surface hover:text-secondary transition-all" href="https://github.com" rel="noreferrer" target="_blank">
+<span class="material-symbols-outlined text-lg">terminal</span>
+</a>
+<a aria-label="LinkedIn Profile" class="p-2 rounded-lg bg-surface-glass border border-white/5 hover:border-secondary/50 text-on-surface hover:text-secondary transition-all" href="https://linkedin.com" rel="noreferrer" target="_blank">
+<span class="material-symbols-outlined text-lg">work</span>
+</a>
+<a aria-label="Play Console Profile" class="p-2 rounded-lg bg-surface-glass border border-white/5 hover:border-secondary/50 text-on-surface hover:text-secondary transition-all" href="https://play.google.com" rel="noreferrer" target="_blank">
+<span class="material-symbols-outlined text-lg">shop</span>
+</a>
+<a class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-glass border border-white/5 hover:border-secondary/50 text-on-surface-variant hover:text-secondary transition-all" href="mailto:tanvirshaharia120@gmail.com">
+<span class="material-symbols-outlined text-sm text-tertiary">mail</span>
+<span class="">tanvirshaharia120@gmail.com</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Right Column: High-Tech Glass Frame Portrait (5 cols) -->
+<div class="lg:col-span-5 relative flex items-center justify-center">
+<!-- Ambient Radial Glow Behind Frame -->
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/30 to-secondary/30 rounded-3xl blur-3xl opacity-60"></div>
+<div class="relative w-full max-w-md bg-surface-glass border border-white/15 backdrop-blur-2xl rounded-3xl p-4 shadow-2xl overflow-hidden group">
+<!-- Glass Top Specular Shine -->
+<div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+<!-- Portrait Image -->
+<div class="relative w-full aspect-[4/5] rounded-2xl overflow-hidden border border-white/10 bg-surface-container-lowest">
+<img alt="MD Tanvir Shaharia - Senior Mobile Architect and Software Engineer" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3iZnKKAYJMkF-ic_WFZ-VtTN377kHkkayiqS3P0wmgJfc2b_hxcOwZwLcTqDF369AhD89_4XLSIEGl85x-yb9QOd-ZjkKxXFERZ9ltvXgjIh1Vev1w396HE-1xJnHb9WgGk6fUBObbWfbFDS_C1bbTWXL-tz3HJt62l93Sx1GIToz_Vs_FEet7Cj0Slonvz4-caNoLnDqL7s4B5bqJf1NLzs6_OWP_isKtpKgbbvlD56KVA0sbKLC"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-canvas via-transparent to-transparent opacity-40"></div>
+</div>
+<!-- Overlaid Glass Badge 1 (Floating Top Right) -->
+<div class="absolute -top-3 -right-3 sm:top-6 sm:-right-4 bg-surface-panel/90 border border-secondary/40 backdrop-blur-xl rounded-2xl px-4 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.6)] flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-secondary/15 flex items-center justify-center text-secondary border border-secondary/30">
+<span class="material-symbols-outlined text-xl">devices</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-text-primary font-bold tracking-tight">10+ Apps</span>
+<span class="font-mono-tag text-mono-tag text-on-surface-variant">Shipped to Production</span>
+</div>
+</div>
+<!-- Overlaid Glass Badge 2 (Floating Bottom Left) -->
+<div class="absolute -bottom-3 -left-3 sm:bottom-6 sm:-left-4 bg-surface-panel/90 border border-primary/40 backdrop-blur-xl rounded-2xl px-4 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.6)] flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center text-primary-fixed border border-primary/30">
+<span class="material-symbols-outlined text-xl">offline_bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-ui text-label-ui text-text-primary font-semibold">Clean Architecture</span>
+<span class="font-mono-tag text-mono-tag text-tertiary">Kotlin + Flutter Offline-First</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. METRICS & IMPACT BAR -->
+<section class="mt-20 relative z-10">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 lg:p-6 bg-surface-glass border border-white/10 rounded-2xl backdrop-blur-xl shadow-2xl"><div class="flex flex-col p-4 border-r border-white/5 last:border-none"><span class="font-mono-tag text-mono-tag text-secondary mb-1">// TELEMETRY.01</span><span class="font-display-hero text-headline-lg lg:text-display-hero text-text-primary font-extrabold tracking-tight">3+ <span class="text-primary text-2xl font-normal">Yrs</span></span><span class="font-body-sm text-body-sm text-text-muted mt-1">Professional Experience</span></div><div class="flex flex-col p-4 border-r border-white/5 last:border-none"><span class="font-mono-tag text-mono-tag text-primary mb-1">// TELEMETRY.02</span><span class="font-display-hero text-headline-lg lg:text-display-hero text-text-primary font-extrabold tracking-tight">10+ <span class="text-secondary text-2xl font-normal">Apps</span></span><span class="font-body-sm text-body-sm text-text-muted mt-1">Production Shipped</span></div><div class="flex flex-col p-4 border-r border-white/5 last:border-none"><span class="font-mono-tag text-mono-tag text-tertiary mb-1">// TELEMETRY.03</span><span class="font-display-hero text-headline-lg lg:text-display-hero text-text-primary font-extrabold tracking-tight">5M+ <span class="text-tertiary text-2xl font-normal">Users</span></span><span class="font-body-sm text-body-sm text-text-muted mt-1">Ecosystem Reach</span></div><div class="flex flex-col p-4"><span class="font-mono-tag text-mono-tag text-secondary-fixed mb-1">// TELEMETRY.04</span><span class="font-display-hero text-headline-lg lg:text-display-hero text-text-primary font-extrabold tracking-tight">100% <span class="text-tertiary-fixed-dim text-2xl font-normal">Core</span></span><span class="font-body-sm text-body-sm text-text-muted mt-1">Offline-First Core</span></div></div>
+</section>
+<!-- 3. TRUSTED BY & ECOSYSTEMS CONTRIBUTED TO -->
+<section class="mt-24 relative z-10 flex flex-col gap-6">
+<div class="flex items-center justify-between border-b border-white/10 pb-4">
+<span class="font-mono-tag text-mono-tag text-secondary font-semibold uppercase tracking-widest">// ECOSYSTEM_CONTRIBUTIONS &amp; CLIENT SCALE</span>
+<span class="font-mono-tag text-mono-tag text-text-muted hidden sm:inline-block">SCALE: TELECOM // HEALTHCARE // ENTERPRISE IOT</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+<!-- Badge 1: My Robi -->
+<div class="flex flex-col gap-1 p-4 rounded-xl bg-surface-glass border border-white/5 hover:border-secondary/40 backdrop-blur-xl transition-all group">
+<div class="flex items-center justify-between">
+<span class="font-label-ui text-label-ui text-text-primary group-hover:text-secondary font-bold">My Robi</span>
+<span class="material-symbols-outlined text-sm text-tertiary">cell_tower</span>
+</div>
+<span class="font-mono-tag text-mono-tag text-text-muted">10M+ Users</span>
+<span class="font-body-sm text-xs text-on-surface-variant">Robi Axiata Telecom</span>
+</div>
+<!-- Badge 2: My Airtel BD -->
+<div class="flex flex-col gap-1 p-4 rounded-xl bg-surface-glass border border-white/5 hover:border-secondary/40 backdrop-blur-xl transition-all group">
+<div class="flex items-center justify-between">
+<span class="font-label-ui text-label-ui text-text-primary group-hover:text-secondary font-bold">My Airtel BD</span>
+<span class="material-symbols-outlined text-sm text-primary">sim_card</span>
+</div>
+<span class="font-mono-tag text-mono-tag text-text-muted">High Concurrency</span>
+<span class="font-body-sm text-xs text-on-surface-variant">Digital Self-Care Engine</span>
+</div>
+<!-- Badge 3: Nascenia Limited -->
+<div class="flex flex-col gap-1 p-4 rounded-xl bg-surface-glass border border-white/5 hover:border-secondary/40 backdrop-blur-xl transition-all group">
+<div class="flex items-center justify-between">
+<span class="font-label-ui text-label-ui text-text-primary group-hover:text-secondary font-bold">Nascenia Ltd</span>
+<span class="material-symbols-outlined text-sm text-secondary">hub</span>
+</div>
+<span class="font-mono-tag text-mono-tag text-text-muted">Core Engineer</span>
+<span class="font-body-sm text-xs text-on-surface-variant">Premier Consultancy</span>
+</div>
+<!-- Badge 4: Shojja Hospital -->
+<div class="flex flex-col gap-1 p-4 rounded-xl bg-surface-glass border border-white/5 hover:border-secondary/40 backdrop-blur-xl transition-all group">
+<div class="flex items-center justify-between">
+<span class="font-label-ui text-label-ui text-text-primary group-hover:text-secondary font-bold">Shojja Hospital</span>
+<span class="material-symbols-outlined text-sm text-tertiary">local_hospital</span>
+</div>
+<span class="font-mono-tag text-mono-tag text-text-muted">Critical Clinical</span>
+<span class="font-body-sm text-xs text-on-surface-variant">Patient &amp; Doctor Portal</span>
+</div>
+<!-- Badge 5: Industrial Scale BLE IoT -->
+<div class="flex flex-col gap-1 p-4 rounded-xl bg-surface-glass border border-white/5 hover:border-secondary/40 backdrop-blur-xl transition-all group">
+<div class="flex items-center justify-between">
+<span class="font-label-ui text-label-ui text-text-primary group-hover:text-secondary font-bold">Industrial BLE</span>
+<span class="material-symbols-outlined text-sm text-secondary-fixed">bluetooth</span>
+</div>
+<span class="font-mono-tag text-mono-tag text-text-muted">Hardware Sync</span>
+<span class="font-body-sm text-xs text-on-surface-variant">Weighing Scale System</span>
+</div>
+<!-- Badge 6: CZM / Biyeta -->
+<div class="flex flex-col gap-1 p-4 rounded-xl bg-surface-glass border border-white/5 hover:border-secondary/40 backdrop-blur-xl transition-all group">
+<div class="flex items-center justify-between">
+<span class="font-label-ui text-label-ui text-text-primary group-hover:text-secondary font-bold">CZM / Biyeta</span>
+<span class="material-symbols-outlined text-sm text-primary-fixed">groups</span>
+</div>
+<span class="font-mono-tag text-mono-tag text-text-muted">Large-Scale</span>
+<span class="font-body-sm text-xs text-on-surface-variant">Community Platforms</span>
+</div>
+</div>
+</section>
+<!-- 4. FLAGSHIP PRODUCTS SHOWCASE -->
+<section class="mt-28 relative z-10 flex flex-col gap-8" id="products">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<span class="font-mono-tag text-mono-tag text-secondary uppercase tracking-widest">// FLAGSHIP_PRODUCTIONS</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary font-bold tracking-tight mt-1">Engineered for Scale &amp; Zero Latency</h2>
+</div>
+<p class="font-body-md text-body-md text-text-muted max-w-md">
+          Independent architectures shipped to global app stores, highlighting privacy-preserving offline storage and reactive state machines.
+        </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- CARD 1: PocketLog: Personal Finance -->
+<div class="relative bg-surface-glass border border-white/10 rounded-2xl p-7 flex flex-col justify-between shadow-2xl backdrop-blur-2xl hover:border-secondary/40 transition-all duration-300 group">
+<div class="flex flex-col gap-5">
+<!-- Header Badges -->
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary/10 border border-tertiary/30 text-tertiary font-mono-tag text-mono-tag">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+                Available on Google Play
+              </span>
+<span class="font-mono-tag text-mono-tag text-text-muted">V2.4.1 // PRODUCTION</span>
+</div>
+<!-- Product Title & Tagline -->
+<div>
+<h3 class="font-headline-md text-headline-md text-text-primary font-bold flex items-center gap-2">
+                PocketLog: Personal Finance
+                <span class="material-symbols-outlined text-secondary text-xl">account_balance_wallet</span>
+</h3>
+<p class="font-mono-tag text-mono-tag text-secondary mt-1 tracking-wide">
+                Track Better. Spend Smarter. 100% Offline.
+              </p>
+</div>
+<p class="font-body-md text-body-md text-text-muted">
+              Engineered with Android Native, Jetpack Compose Material 3 UI, and offline-first Room SQLite persistence. Eliminates external telemetry trackers for complete financial privacy.
+            </p>
+<!-- Feature Matrix Chips -->
+<div class="grid grid-cols-2 gap-2.5 pt-2">
+<div class="flex items-center gap-2 p-2.5 rounded-lg bg-surface-container-low border border-white/5">
+<span class="material-symbols-outlined text-base text-secondary">database</span>
+<span class="font-mono-tag text-mono-tag text-on-surface">100% Offline Room DB</span>
+</div>
+<div class="flex items-center gap-2 p-2.5 rounded-lg bg-surface-container-low border border-white/5">
+<span class="material-symbols-outlined text-base text-primary">picture_as_pdf</span>
+<span class="font-mono-tag text-mono-tag text-on-surface">Instant Canvas A4 PDF</span>
+</div>
+<div class="flex items-center gap-2 p-2.5 rounded-lg bg-surface-container-low border border-white/5">
+<span class="material-symbols-outlined text-base text-tertiary">fingerprint</span>
+<span class="font-mono-tag text-mono-tag text-on-surface">Biometric KeyStore</span>
+</div>
+<div class="flex items-center gap-2 p-2.5 rounded-lg bg-surface-container-low border border-white/5">
+<span class="material-symbols-outlined text-base text-accent-pink">currency_exchange</span>
+<span class="font-mono-tag text-mono-tag text-on-surface">14 Global Currencies</span>
+</div>
+</div>
+<!-- Tech Stack Footer Chips -->
+<div class="flex flex-wrap items-center gap-2 pt-2">
+<span class="px-2.5 py-1 rounded bg-surface-container-highest font-mono-tag text-mono-tag text-on-surface-variant">Kotlin</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-highest font-mono-tag text-mono-tag text-on-surface-variant">Jetpack Compose</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-highest font-mono-tag text-mono-tag text-on-surface-variant">Hilt</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-highest font-mono-tag text-mono-tag text-on-surface-variant">Room SQLite</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-highest font-mono-tag text-mono-tag text-on-surface-variant">Coroutines &amp; Flow</span>
+</div>
+</div>
+<!-- CTAs -->
+<div class="flex items-center gap-4 pt-6 border-t border-white/10 mt-6">
+<a class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-secondary text-on-secondary font-label-ui text-label-ui font-semibold hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all" href="https://play.google.com" rel="noreferrer" target="_blank">
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+<span class="">View on Google Play</span>
+</a>
+<a class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-surface-container border border-white/10 text-on-surface font-label-ui text-label-ui hover:border-white/20 transition-all" href="#skills">
+<span class="">Architecture Breakdown</span>
+</a>
+</div>
+</div>
+<!-- CARD 2: Trade Memo: Behavioral Trading Companion -->
+<div class="relative bg-surface-glass border border-white/10 rounded-2xl p-7 flex flex-col justify-between shadow-2xl backdrop-blur-2xl hover:border-primary/40 transition-all duration-300 group">
+<div class="flex flex-col gap-5">
+<!-- Header Badges -->
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-primary-fixed-dim font-mono-tag text-mono-tag">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                In Active Development / Beta
+              </span>
+<span class="font-mono-tag text-mono-tag text-text-muted">KMP // MULTIPLATFORM</span>
+</div>
+<!-- Product Title & Tagline -->
+<div>
+<h3 class="font-headline-md text-headline-md text-text-primary font-bold flex items-center gap-2">
+                Trade Memo: Trading Companion
+                <span class="material-symbols-outlined text-primary text-xl">candlestick_chart</span>
+</h3>
+<p class="font-mono-tag text-mono-tag text-primary-fixed-dim mt-1 tracking-wide">
+                The Anti-Tilt Journal in Your Pocket.
+              </p>
+</div>
+<p class="font-body-md text-body-md text-text-muted">
+              Built on Kotlin Multiplatform (KMP) and Compose Multiplatform. Features an obsidian AMOLED terminal UI designed to isolate emotional trading biases and calculate avoidable capital losses.
+            </p>
+<!-- Feature Matrix Chips -->
+<div class="grid grid-cols-2 gap-2.5 pt-2">
+<div class="flex items-center gap-2 p-2.5 rounded-lg bg-surface-container-low border border-white/5">
+<span class="material-symbols-outlined text-base text-primary">psychology</span>
+<span class="font-mono-tag text-mono-tag text-on-surface">Anti-Tilt Emotion Tags</span>
+</div>
+<div class="flex items-center gap-2 p-2.5 rounded-lg bg-surface-container-low border border-white/5">
+<span class="material-symbols-outlined text-base text-error">trending_down</span>
+<span class="font-mono-tag text-mono-tag text-on-surface">Avoidable Loss Engine</span>
+</div>
+<div class="flex items-center gap-2 p-2.5 rounded-lg bg-surface-container-low border border-white/5">
+<span class="material-symbols-outlined text-base text-secondary">layers</span>
+<span class="font-mono-tag text-mono-tag text-on-surface">Shared Domain &amp; State</span>
+</div>
+<div class="flex items-center gap-2 p-2.5 rounded-lg bg-surface-container-low border border-white/5">
+<span class="material-symbols-outlined text-base text-tertiary">analytics</span>
+<span class="font-mono-tag text-mono-tag text-on-surface">Execution Scorecards</span>
+</div>
+</div>
+<!-- Tech Stack Footer Chips -->
+<div class="flex flex-wrap items-center gap-2 pt-2">
+<span class="px-2.5 py-1 rounded bg-surface-container-highest font-mono-tag text-mono-tag text-on-surface-variant">Kotlin Multiplatform</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-highest font-mono-tag text-mono-tag text-on-surface-variant">Compose Multiplatform</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-highest font-mono-tag text-mono-tag text-on-surface-variant">SQLDelight</span>
+<span class="px-2.5 py-1 rounded bg-surface-container-highest font-mono-tag text-mono-tag text-on-surface-variant">MVI Orbit</span>
+</div>
+</div>
+<!-- CTAs -->
+<div class="flex items-center gap-4 pt-6 border-t border-white/10 mt-6">
+<a class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary-container text-on-primary-container font-label-ui text-label-ui font-semibold hover:shadow-[0_0_20px_rgba(128,131,255,0.4)] transition-all" href="#contact">
+<span class="material-symbols-outlined text-sm">notifications_active</span>
+<span class="">Join Beta Waitlist</span>
+</a>
+<a class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-surface-container border border-white/10 text-on-surface font-label-ui text-label-ui hover:border-white/20 transition-all" href="https://github.com" rel="noreferrer" target="_blank">
+<span class="material-symbols-outlined text-sm">code</span>
+<span class="">View GitHub Specs</span>
+</a>
+</div>
+</div>
+</div>
+</section><section class="mt-20 relative z-10 flex flex-col gap-6"><div class="flex flex-col md:flex-row md:items-end justify-between gap-2 border-b border-white/10 pb-4"><div><span class="font-mono-tag text-mono-tag text-secondary uppercase tracking-widest">// ENTERPRISE &amp; TELECOM CONTRIBUTIONS</span><h3 class="font-headline-sm text-headline-sm text-text-primary font-bold mt-1">High-scale production applications maintained and engineered for enterprise clients.</h3></div><span class="font-mono-tag text-mono-tag text-tertiary hidden sm:inline-block">PRODUCTION CLIENT DELIVERIES</span></div><div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="bg-surface-glass border border-white/10 rounded-2xl p-6 backdrop-blur-xl flex flex-col justify-between gap-4 shadow-xl hover:border-secondary/40 transition-all group"><div class="flex flex-col gap-3"><div class="flex items-center justify-between gap-2"><span class="font-headline-sm text-headline-sm text-text-primary font-bold group-hover:text-secondary transition-colors">My Robi</span><span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-tertiary/10 border border-tertiary/30 text-tertiary font-mono-tag text-mono-tag">10M+ Installs</span></div><span class="font-mono-tag text-mono-tag text-secondary">Android Native • Kotlin</span><p class="font-body-md text-body-md text-text-muted">Scaled telecom self-care features serving millions of active users in Bangladesh.</p></div><div class="pt-4 border-t border-white/5 flex items-center justify-between"><span class="font-mono-tag text-mono-tag text-text-muted">Google Play Certified</span><span class="material-symbols-outlined text-sm text-secondary">cell_tower</span></div></div><div class="bg-surface-glass border border-white/10 rounded-2xl p-6 backdrop-blur-xl flex flex-col justify-between gap-4 shadow-xl hover:border-secondary/40 transition-all group"><div class="flex flex-col gap-3"><div class="flex items-center justify-between gap-2"><span class="font-headline-sm text-headline-sm text-text-primary font-bold group-hover:text-secondary transition-colors">My Airtel BD</span><span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary/10 border border-primary/30 text-primary-fixed-dim font-mono-tag text-mono-tag">High Concurrency</span></div><span class="font-mono-tag text-mono-tag text-primary">Android Native • Kotlin</span><p class="font-body-md text-body-md text-text-muted">Subscriber account management, dynamic campaign flows, and high-volume REST APIs.</p></div><div class="pt-4 border-t border-white/5 flex items-center justify-between"><span class="font-mono-tag text-mono-tag text-text-muted">Self-Care Core Engine</span><span class="material-symbols-outlined text-sm text-primary">sim_card</span></div></div><div class="bg-surface-glass border border-white/10 rounded-2xl p-6 backdrop-blur-xl flex flex-col justify-between gap-4 shadow-xl hover:border-tertiary/40 transition-all group"><div class="flex flex-col gap-3"><div class="flex items-center justify-between gap-2"><span class="font-headline-sm text-headline-sm text-text-primary font-bold group-hover:text-tertiary transition-colors">Shojja Hospital Ecosystem</span><span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary/10 border border-secondary/30 text-secondary font-mono-tag text-mono-tag">Clinical Portal</span></div><span class="font-mono-tag text-mono-tag text-tertiary">Flutter • Dart • Riverpod</span><p class="font-body-md text-body-md text-text-muted">Multi-tenant healthcare mobile client with OTP auth, localization, and offline caching.</p></div><div class="pt-4 border-t border-white/5 flex items-center justify-between"><span class="font-mono-tag text-mono-tag text-text-muted">Doctor &amp; Patient Portal</span><span class="material-symbols-outlined text-sm text-tertiary">local_hospital</span></div></div></div></section>
+<!-- 5. CORE CLIENT SERVICES (3-Column Bento Grid) -->
+<section class="mt-28 relative z-10 flex flex-col gap-8" id="services">
+<div>
+<span class="font-mono-tag text-mono-tag text-secondary uppercase tracking-widest">// SPECIALIZED_SERVICES</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary font-bold tracking-tight mt-1">High-Precision Mobile Engineering Capabilities</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Bento Card 1 -->
+<div class="bg-surface-glass border border-white/10 rounded-2xl p-6 backdrop-blur-xl flex flex-col justify-between hover:border-primary/40 transition-all duration-300 shadow-xl">
+<div class="flex flex-col gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary/20 border border-primary/30 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">android</span>
+</div>
+<div>
+<span class="font-mono-tag text-mono-tag text-primary font-semibold">// 01 NATIVE ANDROID</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-bold mt-1">Modern Jetpack Compose</h3>
+</div>
+<p class="font-body-md text-body-md text-text-muted">
+              Deep-level native engineering using Kotlin Coroutines, StateFlow, Dagger Hilt, and reactive MVI/MVVM architectures for zero dropped frames and rock-solid memory management.
+            </p>
+<ul class="flex flex-col gap-2 font-mono-tag text-mono-tag text-on-surface-variant pt-2">
+<li class="flex items-center gap-2"><span class="text-tertiary">✔</span> Material 3 Compose Architecture</li>
+<li class="flex items-center gap-2"><span class="text-tertiary">✔</span> Dagger-Hilt &amp; Modularized Dependency</li>
+<li class="flex items-center gap-2"><span class="text-tertiary">✔</span> Play Console Release &amp; CI/CD Pipelines</li>
+</ul>
+</div>
+<div class="pt-6 border-t border-white/5 mt-4">
+<span class="font-mono-tag text-mono-tag text-secondary font-semibold">STACK: Kotlin // Room // Flow // Retrofit</span>
+</div>
+</div>
+<!-- Bento Card 2 -->
+<div class="bg-surface-glass border border-white/10 rounded-2xl p-6 backdrop-blur-xl flex flex-col justify-between hover:border-secondary/40 transition-all duration-300 shadow-xl">
+<div class="flex flex-col gap-4">
+<div class="w-12 h-12 rounded-xl bg-secondary/15 border border-secondary/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-2xl">flutter</span>
+</div>
+<div>
+<span class="font-mono-tag text-mono-tag text-secondary font-semibold">// 02 CROSS-PLATFORM MOBILE</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-bold mt-1">High-Throughput Flutter</h3>
+</div>
+<p class="font-body-md text-body-md text-text-muted">
+              Single-codebase multi-tenant apps with Riverpod &amp; BLoC state machines. Delivers pixel-perfect rendering across Android and iOS with shared business domains.
+            </p>
+<ul class="flex flex-col gap-2 font-mono-tag text-mono-tag text-on-surface-variant pt-2">
+<li class="flex items-center gap-2"><span class="text-tertiary">✔</span> Riverpod &amp; BLoC State Orchestration</li>
+<li class="flex items-center gap-2"><span class="text-tertiary">✔</span> Cross-Platform Shared Repositories</li>
+<li class="flex items-center gap-2"><span class="text-tertiary">✔</span> 60fps Custom Render Engines</li>
+</ul>
+</div>
+<div class="pt-6 border-t border-white/5 mt-4">
+<span class="font-mono-tag text-mono-tag text-secondary font-semibold">STACK: Dart // Riverpod // Bloc // Hive</span>
+</div>
+</div>
+<!-- Bento Card 3 -->
+<div class="bg-surface-glass border border-white/10 rounded-2xl p-6 backdrop-blur-xl flex flex-col justify-between hover:border-tertiary/40 transition-all duration-300 shadow-xl">
+<div class="flex flex-col gap-4">
+<div class="w-12 h-12 rounded-xl bg-tertiary/15 border border-tertiary/30 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-2xl">settings_ethernet</span>
+</div>
+<div>
+<span class="font-mono-tag text-mono-tag text-tertiary font-semibold">// 03 IOT &amp; MODERNIZATION</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-bold mt-1">Hardware Sync &amp; Refactoring</h3>
+</div>
+<p class="font-body-md text-body-md text-text-muted">
+              Bluetooth Low Energy (BLE) integration with custom hardware protocols, real-time weighing scales, legacy Java-to-Kotlin migrations, and memory leak triage.
+            </p>
+<ul class="flex flex-col gap-2 font-mono-tag text-mono-tag text-on-surface-variant pt-2">
+<li class="flex items-center gap-2"><span class="text-tertiary">✔</span> Industrial BLE Packet Parsing</li>
+<li class="flex items-center gap-2"><span class="text-tertiary">✔</span> Legacy Codebase Modularization</li>
+<li class="flex items-center gap-2"><span class="text-tertiary">✔</span> Offline-First SQLite Migrations</li>
+</ul>
+</div>
+<div class="pt-6 border-t border-white/5 mt-4">
+<span class="font-mono-tag text-mono-tag text-secondary font-semibold">STACK: Nordic BLE // LeakCanary // SQLite</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. CAREER TIMELINE & EXPERIENCE -->
+<section class="mt-28 relative z-10 flex flex-col gap-8" id="experience">
+<div>
+<span class="font-mono-tag text-mono-tag text-secondary uppercase tracking-widest">// ARCHITECT_TIMELINE</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary font-bold tracking-tight mt-1">Engineering Experience &amp; Scale</h2>
+</div>
+<div class="relative pl-6 md:pl-8 border-l border-primary/20 space-y-12">
+<!-- Timeline Item 1 -->
+<div class="relative flex flex-col gap-3">
+<!-- Node Dot -->
+<div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-secondary border-4 border-surface-canvas shadow-[0_0_12px_rgba(6,182,212,0.8)]"></div>
+<div class="flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-3">
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-bold">Software Engineer</h3>
+<span class="font-label-ui text-label-ui text-secondary font-semibold">@ Nascenia Limited</span>
+</div>
+<span class="font-mono-tag text-mono-tag px-3 py-1 rounded bg-surface-container-high text-tertiary">Sep 2023 – Present</span>
+</div>
+<p class="font-body-md text-body-md text-text-muted max-w-3xl">
+            Spearheaded core native Android and Flutter product tracks for high-concurrency digital platforms. Directly architected features for nationwide telecommunication ecosystems servicing tens of millions of monthly requests:
+          </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
+<div class="p-3 rounded-lg bg-surface-glass border border-white/5">
+<span class="font-mono-tag text-mono-tag text-secondary font-semibold">// MY ROBI &amp; MY AIRTEL</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Refactored critical purchase journeys and telecom data pass widgets, reducing ANR rates by 18% through reactive coroutine concurrency.
+              </p>
+</div>
+<div class="p-3 rounded-lg bg-surface-glass border border-white/5">
+<span class="font-mono-tag text-mono-tag text-secondary font-semibold">// SHOJJA HOSPITAL &amp; BLE IOT</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Engineered zero-loss Bluetooth Low Energy (BLE) peripheral discovery and custom packet synchronizers for industrial weighing stations.
+              </p>
+</div>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative flex flex-col gap-3">
+<!-- Node Dot -->
+<div class="absolute -left-[31px] md:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-primary border-4 border-surface-canvas shadow-[0_0_12px_rgba(99,102,241,0.8)]"></div>
+<div class="flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-3">
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-bold">Mobile App Publisher &amp; Open-Source Creator</h3>
+<span class="font-label-ui text-label-ui text-primary font-semibold">@ Independent Architecture Lab</span>
+</div>
+<span class="font-mono-tag text-mono-tag px-3 py-1 rounded bg-surface-container-high text-primary-fixed">2022 – Present</span>
+</div>
+<p class="font-body-md text-body-md text-text-muted max-w-3xl">
+            Designed and launched independent native applications focused on deterministic privacy, zero-tracking, and Kotlin Multiplatform ecosystems. PocketLog achieved 100% offline-first rating on Google Play, and Trade Memo pioneering anti-tilt psychological tracking for financial traders.
+          </p>
+</div>
+</div>
+</section>
+<!-- 7. TECHNICAL SKILLS MATRIX -->
+<section class="mt-28 relative z-10 flex flex-col gap-8" id="skills">
+<div>
+<span class="font-mono-tag text-mono-tag text-secondary uppercase tracking-widest">// CORE_COMPETENCY_MATRIX</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary font-bold tracking-tight mt-1">Technical Stack &amp; Architecture Core</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Tile 1: Languages -->
+<div class="bg-surface-glass border border-white/10 rounded-2xl p-6 backdrop-blur-xl flex flex-col gap-4">
+<div class="flex items-center gap-2 text-secondary font-mono-tag text-mono-tag font-semibold">
+<span class="material-symbols-outlined text-lg">code</span>
+<span class="">01 // LANGUAGES</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-mono-tag text-mono-tag">Kotlin (Expert)</span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-mono-tag text-mono-tag">Dart (Advanced)</span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-mono-tag text-mono-tag">Java</span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-mono-tag text-mono-tag">SQL (SQLite)</span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-mono-tag text-mono-tag">Shell / Bash</span>
+</div>
+</div>
+<!-- Tile 2: Mobile Frameworks -->
+<div class="bg-surface-glass border border-white/10 rounded-2xl p-6 backdrop-blur-xl flex flex-col gap-4">
+<div class="flex items-center gap-2 text-primary font-mono-tag text-mono-tag font-semibold">
+<span class="material-symbols-outlined text-lg">phone_android</span>
+<span class="">02 // FRAMEWORKS</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-mono-tag text-mono-tag">Jetpack Compose</span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-mono-tag text-mono-tag">Flutter SDK</span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-mono-tag text-mono-tag">Android SDK</span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-mono-tag text-mono-tag">Compose Multiplatform</span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-mono-tag text-mono-tag">Material 3</span>
+</div>
+</div>
+<!-- Tile 3: Architecture & State -->
+<div class="bg-surface-glass border border-white/10 rounded-2xl p-6 backdrop-blur-xl flex flex-col gap-4">
+<div class="flex items-center gap-2 text-tertiary font-mono-tag text-mono-tag font-semibold">
+<span class="material-symbols-outlined text-lg">schema</span>
+<span class="">03 // ARCHITECTURE</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-mono-tag text-mono-tag">Clean Architecture</span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-mono-tag text-mono-tag">MVI / MVVM</span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-mono-tag text-mono-tag">Dagger-Hilt</span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-mono-tag text-mono-tag">Riverpod / BLoC</span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-mono-tag text-mono-tag">Room DB / SQLDelight</span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-mono-tag text-mono-tag">Coroutines / Flow</span>
+</div>
+</div>
+<!-- Tile 4: Hardware & DevOps -->
+<div class="bg-surface-glass border border-white/10 rounded-2xl p-6 backdrop-blur-xl flex flex-col gap-4">
+<div class="flex items-center gap-2 text-secondary-fixed font-mono-tag text-mono-tag font-semibold">
+<span class="material-symbols-outlined text-lg">build</span>
+<span class="">04 // HARDWARE &amp; CI</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-mono-tag text-mono-tag">Bluetooth Low Energy (BLE)</span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-mono-tag text-mono-tag">Play Console Pipelines</span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-mono-tag text-mono-tag">GitHub Actions CI/CD</span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-mono-tag text-mono-tag">Firebase Crashlytics</span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-mono-tag text-mono-tag">Git Flow</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. CLIENT TESTIMONIALS & CONTACT SECTION -->
+<section class="mt-28 relative z-10 flex flex-col gap-8" id="credentials">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<span class="font-mono-tag text-mono-tag text-secondary uppercase tracking-widest">// CREDENTIALS &amp; ACADEMIC FOUNDATION</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary font-bold tracking-tight mt-1">Academic &amp; Professional Credentials</h2>
+</div>
+<p class="font-body-md text-body-md text-text-muted max-w-md">
+      Formal computer science education and verified professional engineering certifications.
+    </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- LEFT COLUMN: EDUCATION & ACADEMICS -->
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-2 text-secondary font-mono-tag text-mono-tag font-semibold pb-1 border-b border-white/10">
+<span class="material-symbols-outlined text-lg text-secondary">school</span>
+<span class="">EDUCATION &amp; ACADEMICS</span>
+</div>
+<!-- Academic Card 1 -->
+<div class="bg-surface-glass border border-white/10 rounded-2xl p-6 backdrop-blur-xl flex flex-col gap-4 shadow-xl hover:border-secondary/40 transition-all duration-300 group">
+<div class="flex items-start justify-between gap-3">
+<div class="flex flex-col gap-1">
+<span class="font-mono-tag text-mono-tag text-secondary">2023 – Present</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-bold">
+              Bachelor of Science (B.Sc.) in Computer Science &amp; Engineering
+            </h3>
+<span class="font-label-ui text-label-ui text-on-surface-variant">Northern University Bangladesh (Dhaka, Bangladesh)</span>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary/10 border border-tertiary/30 text-tertiary font-mono-tag text-mono-tag whitespace-nowrap shadow-[0_0_15px_rgba(16,185,129,0.15)]">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+            In Progress
+          </span>
+</div>
+<p class="font-body-md text-body-md text-text-muted border-t border-white/5 pt-3">
+          Advanced system architecture, algorithms, and core engineering principles.
+        </p>
+</div>
+<!-- Academic Card 2 -->
+<div class="bg-surface-glass border border-white/10 rounded-2xl p-6 backdrop-blur-xl flex flex-col gap-4 shadow-xl hover:border-primary/40 transition-all duration-300 group">
+<div class="flex items-start justify-between gap-3">
+<div class="flex flex-col gap-1">
+<span class="font-mono-tag text-mono-tag text-primary">2018 – 2022</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-bold">
+              Diploma in Engineering in Computer Science Technology
+            </h3>
+<span class="font-label-ui text-label-ui text-on-surface-variant">Rajshahi Polytechnic Institute (Rajshahi, Bangladesh)</span>
+</div>
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-primary-fixed-dim font-mono-tag text-mono-tag whitespace-nowrap shadow-[0_0_12px_rgba(99,102,241,0.25)]">
+            CGPA: 3.54 / 4.00
+          </span>
+</div>
+<p class="font-body-md text-body-md text-text-muted border-t border-white/5 pt-3">
+          Software engineering, relational databases, data structures, and network systems.
+        </p>
+</div>
+</div>
+<!-- RIGHT COLUMN: CERTIFICATIONS & SPECIALIZATIONS -->
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-2 text-primary font-mono-tag text-mono-tag font-semibold pb-1 border-b border-white/10">
+<span class="material-symbols-outlined text-lg text-primary">verified</span>
+<span class="">CERTIFICATIONS &amp; SPECIALIZATIONS</span>
+</div>
+<!-- Certification Card 1 -->
+<div class="bg-surface-glass border border-white/10 rounded-2xl p-6 backdrop-blur-xl flex flex-col justify-between gap-4 shadow-xl hover:border-secondary/40 transition-all duration-300 group">
+<div class="flex flex-col gap-3">
+<div class="flex items-start justify-between gap-3">
+<div class="flex flex-col gap-1">
+<span class="font-mono-tag text-mono-tag text-secondary">2026 // PROFESSIONAL TRAINING</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-bold">
+                Practical Prompt Engineering &amp; AI Developer Workflows
+              </h3>
+<span class="font-label-ui text-label-ui text-on-surface-variant">Frontend Masters (Online Professional Training)</span>
+</div>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-surface-container-high border border-white/10 text-secondary font-mono-tag text-mono-tag whitespace-nowrap">
+              AI Workflows
+            </span>
+</div>
+<p class="font-body-md text-body-md text-text-muted border-t border-white/5 pt-3">
+            Structured prompt architecture, context optimization, and utilizing AI coding agents into daily workflows.
+          </p>
+</div>
+<div class="pt-2">
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-surface-glass-subtle border border-white/20 text-on-surface font-mono-tag text-mono-tag font-semibold shadow-sm hover:border-secondary/40 hover:text-secondary hover:bg-surface-container hover:shadow-[0_0_15px_rgba(6,182,212,0.35)] transition-all duration-300" href="#" rel="noreferrer" target="_blank"><span class="material-symbols-outlined text-sm text-secondary">open_in_new</span><span>View Credential (PDF) ↗</span></a>
+</div>
+</div>
+<!-- Certification Card 2 -->
+<div class="bg-surface-glass border border-white/10 rounded-2xl p-6 backdrop-blur-xl flex flex-col justify-between gap-4 shadow-xl hover:border-primary/40 transition-all duration-300 group">
+<div class="flex flex-col gap-3">
+<div class="flex items-start justify-between gap-3">
+<div class="flex flex-col gap-1">
+<span class="font-mono-tag text-mono-tag text-primary">3 Months Intensive Program (Dec 2022)</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-bold">
+                Professional Certificate in Android App Development
+              </h3>
+<span class="font-label-ui text-label-ui text-on-surface-variant">Creative IT Institute (Dhaka, Bangladesh)</span>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/30 text-secondary font-mono-tag text-mono-tag whitespace-nowrap shadow-[0_0_12px_rgba(6,182,212,0.25)]">
+<span class="material-symbols-outlined text-xs">verified</span>
+              Verified Credential
+            </span>
+</div>
+<p class="font-body-md text-body-md text-text-muted border-t border-white/5 pt-3">
+            Modern Android SDK, Java/Kotlin architecture, Material Design, and Play Store release lifecycle.
+          </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- GLASSMORPHISM INTERACTIVE CONTACT CARD -->
+<section class="mt-20 mb-16 relative z-10" id="contact">
+<div class="bg-surface-panel/90 border border-white/15 rounded-3xl p-8 lg:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.7)] backdrop-blur-2xl grid grid-cols-1 lg:grid-cols-12 gap-10"><div class="flex flex-col p-4 border-r border-white/5 last:border-none"><span class="font-mono-tag text-mono-tag text-secondary mb-1">// TELEMETRY.01</span><span class="font-display-hero text-headline-lg lg:text-display-hero text-text-primary font-extrabold tracking-tight">3+ <span class="text-primary text-2xl font-normal">Yrs</span></span><span class="font-body-sm text-body-sm text-text-muted mt-1">Professional Experience</span></div><div class="flex flex-col p-4 border-r border-white/5 last:border-none"><span class="font-mono-tag text-mono-tag text-primary mb-1">// TELEMETRY.02</span><span class="font-display-hero text-headline-lg lg:text-display-hero text-text-primary font-extrabold tracking-tight">10+ <span class="text-secondary text-2xl font-normal">Apps</span></span><span class="font-body-sm text-body-sm text-text-muted mt-1">Production Shipped</span></div><div class="flex flex-col p-4 border-r border-white/5 last:border-none"><span class="font-mono-tag text-mono-tag text-tertiary mb-1">// TELEMETRY.03</span><span class="font-display-hero text-headline-lg lg:text-display-hero text-text-primary font-extrabold tracking-tight">5M+ <span class="text-tertiary text-2xl font-normal">Users</span></span><span class="font-body-sm text-body-sm text-text-muted mt-1">Ecosystem Reach</span></div><div class="flex flex-col p-4"><span class="font-mono-tag text-mono-tag text-secondary-fixed mb-1">// TELEMETRY.04</span><span class="font-display-hero text-headline-lg lg:text-display-hero text-text-primary font-extrabold tracking-tight">100% <span class="text-tertiary-fixed-dim text-2xl font-normal">Core</span></span><span class="font-body-sm text-body-sm text-text-muted mt-1">Offline-First Core</span></div></div>
+</section>
+</div>
+</div></main><footer class="relative z-10 w-full bg-surface-container-lowest/80 backdrop-blur-2xl"><div class="max-w-7xl mx-auto px-6 lg:px-12 py-16 flex flex-col gap-12"><div class="grid grid-cols-1 md:grid-cols-4 gap-8"><div class="flex flex-col gap-4 md:col-span-2"><div class="flex items-center gap-3"><span class="font-headline-sm text-headline-sm text-text-primary tracking-tight">Tanvir Shaharia</span><span class="font-mono-tag text-mono-tag px-2 py-0.5 rounded bg-surface-container-highest text-secondary">v4.2.0</span></div><p class="font-body-md text-body-md text-text-muted max-w-md">Senior Mobile Architect specializing in high-throughput Android Native subsystems, Flutter frameworks, reactive telemetry pipelines, and cybernetic digital products.</p><div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-tertiary"></span><span class="font-mono-tag text-mono-tag text-on-surface-variant">LATENCY: 12ms // TOKYO-01 NODE ACTIVE</span></div></div><div class="flex flex-col gap-3"><span class="font-label-ui text-label-ui text-text-primary uppercase tracking-wider">Index</span><div class="flex flex-col gap-2"><a class="font-body-sm text-body-sm text-text-muted hover:text-primary transition-colors" data-path="home" href="#">Overview</a><a class="font-body-sm text-body-sm text-text-muted hover:text-primary transition-colors" data-path="products" href="#">Production Builds</a><a class="font-body-sm text-body-sm text-text-muted hover:text-primary transition-colors" data-path="experience" href="#">Timeline</a><a class="font-body-sm text-body-sm text-text-muted hover:text-primary transition-colors" data-path="skills" href="#">Architecture Core</a></div></div><div class="flex flex-col gap-3"><span class="font-label-ui text-label-ui text-text-primary uppercase tracking-wider">Connectors</span><div class="flex flex-col gap-3"><div class="flex items-center gap-2"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span></span><span class="font-mono-tag text-mono-tag text-tertiary uppercase tracking-wider">// DIRECT CONNECT</span></div><div class="flex items-center gap-2.5 flex-wrap"><a aria-label="GitHub Profile" class="w-11 h-11 rounded-xl bg-slate-900/80 border border-white/10 backdrop-blur-md flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-500/50 hover:shadow-[0_0_15px_rgba(6,182,212,0.35)] hover:-translate-y-1 transition-all duration-300" href="https://github.com" rel="noreferrer" target="_blank"><svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"></path></svg></a><a aria-label="LinkedIn Profile" class="w-11 h-11 rounded-xl bg-slate-900/80 border border-white/10 backdrop-blur-md flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-500/50 hover:shadow-[0_0_15px_rgba(6,182,212,0.35)] hover:-translate-y-1 transition-all duration-300" href="https://linkedin.com" rel="noreferrer" target="_blank"><svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451c.979 0 1.778-.773 1.778-1.729V1.73C24 .774 23.205 0 22.225 0z"></path></svg></a><a aria-label="Telegram" class="w-11 h-11 rounded-xl bg-slate-900/80 border border-white/10 backdrop-blur-md flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-500/50 hover:shadow-[0_0_15px_rgba(6,182,212,0.35)] hover:-translate-y-1 transition-all duration-300" href="https://t.me/tanvir_arch" rel="noreferrer" target="_blank"><svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.943z"></path></svg></a><a aria-label="Google Play Console" class="w-11 h-11 rounded-xl bg-slate-900/80 border border-white/10 backdrop-blur-md flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-500/50 hover:shadow-[0_0_15px_rgba(6,182,212,0.35)] hover:-translate-y-1 transition-all duration-300" href="https://play.google.com" rel="noreferrer" target="_blank"><span class="material-symbols-outlined text-xl">shop</span></a><a aria-label="Direct Email" class="w-11 h-11 rounded-xl bg-slate-900/80 border border-white/10 backdrop-blur-md flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-500/50 hover:shadow-[0_0_15px_rgba(6,182,212,0.35)] hover:-translate-y-1 transition-all duration-300" href="mailto:tanvirshaharia120@gmail.com"><span class="material-symbols-outlined text-xl">mail</span></a></div></div></div></div><div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 bg-surface-glass-subtle rounded-xl px-6 py-4"><span class="font-mono-tag text-mono-tag text-text-muted">© 2025 MD Tanvir Shaharia. All rights reserved. Built for ultra-scale mobile engineering.</span><div class="flex items-center gap-6"><span class="font-mono-tag text-mono-tag text-text-muted hover:text-text-primary cursor-pointer transition-colors">GPG_VERIFIED</span><span class="font-mono-tag text-mono-tag text-text-muted hover:text-text-primary cursor-pointer transition-colors">SYSTEM_TELEMETRY</span></div></div></div></footer>
+</body></html>

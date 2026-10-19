@@ -76,14 +76,17 @@ export default function GitHubShowcase() {
   }, []);
 
   return (
-    <div className="mt-12 pt-8 border-t border-gray-100 dark:border-zinc-800/80">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-6">
+    <div className="pt-8 border-t border-gray-200/60 dark:border-white/10">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
         <div>
-          <h4 className="text-lg font-bold text-gray-900 dark:text-zinc-100 flex items-center gap-2">
-            <i className="fa-brands fa-github text-brand-500 dark:text-brand-400"></i>
+          <span className="font-mono-tag text-xs text-secondary font-semibold uppercase tracking-widest">
+            {"// OPEN_SOURCE_TELEMETRY"}
+          </span>
+          <h4 className="font-headline-sm text-xl sm:text-2xl font-bold text-gray-900 dark:text-text-primary flex items-center gap-2 mt-1">
+            <i className="fa-brands fa-github text-secondary"></i>
             GitHub Open Source Activity
           </h4>
-          <p className="text-xs text-gray-500 dark:text-zinc-400">
+          <p className="font-body-md text-xs sm:text-sm text-gray-600 dark:text-text-muted mt-1">
             Featured open-source Android Native (Kotlin) & Flutter repositories
           </p>
         </div>
@@ -92,50 +95,52 @@ export default function GitHubShowcase() {
           href="https://github.com/tanvir-shaharia"
           target="_blank"
           rel="noreferrer"
-          className="text-xs font-semibold px-4 py-2 rounded-full bg-gray-100 dark:bg-zinc-800/80 hover:bg-gray-200 dark:hover:bg-zinc-700 text-gray-700 dark:text-zinc-200 border border-gray-200 dark:border-zinc-700/60 transition-all flex items-center gap-2 hover:scale-[1.02] active:scale-[0.98]"
+          className="font-label-ui text-xs font-semibold px-4 py-2.5 rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-surface-glass dark:hover:bg-white/10 text-gray-800 dark:text-on-surface border border-gray-200/80 dark:border-white/15 transition-all flex items-center gap-2 hover:scale-[1.02] active:scale-[0.98] shadow-sm cursor-pointer"
         >
           <span>View GitHub Profile</span>
-          <i className="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          <i className="fa-solid fa-arrow-up-right-from-square text-[10px] text-secondary"></i>
         </a>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {repos.map((repo) => (
           <Fade up key={repo.id}>
             <a
               href={repo.html_url}
               target="_blank"
               rel="noreferrer"
-              className="p-5 bg-white dark:bg-zinc-900/60 border border-gray-200 dark:border-zinc-800 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group hover:border-brand-500/50 dark:hover:border-brand-400/50"
+              className="p-6 bg-white/70 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 rounded-2xl shadow-xl dark:shadow-2xl backdrop-blur-xl transition-all duration-300 flex flex-col justify-between group hover:border-secondary/50 hover:-translate-y-1"
             >
               <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="font-bold text-sm text-gray-900 dark:text-zinc-100 group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors flex items-center gap-2 truncate">
-                    <i className="fa-solid fa-book-bookmark text-xs text-gray-400"></i>
+                <div className="flex items-center justify-between mb-3 gap-2">
+                  <span className="font-headline-sm font-bold text-sm sm:text-base text-gray-900 dark:text-text-primary group-hover:text-secondary transition-colors flex items-center gap-2 truncate">
+                    <i className="fa-solid fa-book-bookmark text-xs text-secondary"></i>
                     {repo.name}
                   </span>
-                  <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-brand-50 dark:bg-zinc-800 text-brand-600 dark:text-brand-400 flex-shrink-0">
+                  <span className="font-mono-tag text-[10px] font-semibold px-2.5 py-1 rounded-lg bg-secondary/10 text-secondary border border-secondary/20 flex-shrink-0">
                     {repo.language}
                   </span>
                 </div>
 
-                <p className="text-xs text-gray-600 dark:text-zinc-400 line-clamp-2 mb-4 leading-relaxed">
+                <p className="font-body-md text-xs sm:text-sm text-gray-600 dark:text-text-muted line-clamp-2 mb-4 leading-relaxed">
                   {repo.description}
                 </p>
               </div>
 
-              <div className="flex items-center justify-between text-[11px] text-gray-500 dark:text-zinc-400 pt-3 border-t border-gray-100 dark:border-zinc-800/80">
+              <div className="flex items-center justify-between font-mono-tag text-[11px] text-gray-500 dark:text-text-muted pt-3 border-t border-gray-100 dark:border-white/5">
                 <div className="flex items-center gap-3">
-                  <span className="flex items-center gap-1">
-                    <i className="fa-regular fa-star text-amber-500"></i>
+                  <span className="flex items-center gap-1.5">
+                    <i className="fa-regular fa-star text-amber-400"></i>
                     {repo.stargazers_count}
                   </span>
-                  <span className="flex items-center gap-1">
-                    <span className="w-2 h-2 rounded-full bg-brand-500"></span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-tertiary"></span>
                     Public
                   </span>
                 </div>
-                <i className="fa-solid fa-chevron-right text-[10px] text-gray-400 group-hover:translate-x-1 transition-transform"></i>
+                <div className="w-6 h-6 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                  <i className="fa-solid fa-arrow-right text-[10px]"></i>
+                </div>
               </div>
             </a>
           </Fade>

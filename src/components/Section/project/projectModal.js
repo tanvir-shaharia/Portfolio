@@ -57,10 +57,10 @@ function ProjectModal({ setOpen, open, projectId }) {
 
             {contributions && contributions.length > 0 && (
               <div className="mb-4">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-brand-500 dark:text-brand-400 mb-2">
-                  Key Contributions
+                <h4 className="font-mono-tag text-xs font-bold uppercase tracking-wider text-secondary mb-2">
+                  Key Technical Implementations
                 </h4>
-                <ul className="list-disc list-outside ml-4 text-xs text-gray-600 dark:text-zinc-300 space-y-1.5">
+                <ul className="list-disc list-outside ml-4 text-xs text-gray-600 dark:text-text-muted space-y-1.5 font-body-md">
                   {contributions.map((con, cIdx) => (
                     <li key={cIdx} className="leading-relaxed">{con}</li>
                   ))}
@@ -73,7 +73,7 @@ function ProjectModal({ setOpen, open, projectId }) {
             <div className="mb-4 flex flex-wrap gap-1.5">
               {category.map((cat, idx) => (
                 <span
-                  className="bg-indigo-50 text-indigo-700 text-[10px] font-bold px-2.5 py-1 rounded dark:bg-brand-950/40 dark:text-brand-400 border border-indigo-100/50 dark:border-brand-900/40 capitalize inline-block"
+                  className="font-mono-tag text-[10px] font-semibold px-2.5 py-1 rounded-lg bg-secondary/10 text-secondary border border-secondary/20"
                   key={idx}
                 >
                   {cat}
@@ -85,17 +85,17 @@ function ProjectModal({ setOpen, open, projectId }) {
               <div className="flex gap-2.5 pt-2">
                 {link && (
                   <a href={link} target="_blank" rel="noopener noreferrer" className="flex-1">
-                    <button className="w-full bg-brand-500 hover:bg-brand-600 text-xs text-white font-bold py-2.5 px-3 rounded-lg inline-flex items-center justify-center transition-colors">
-                      <i className="fa-solid fa-share-from-square mr-1.5"></i>
-                      <span>Get App</span>
+                    <button className="w-full bg-gradient-to-r from-primary to-secondary hover:shadow-[0_0_20px_rgba(99,102,241,0.5)] text-xs text-white font-label-ui font-bold py-2.5 px-3 rounded-xl inline-flex items-center justify-center transition-all cursor-pointer">
+                      <span className="material-symbols-outlined text-sm mr-1.5">open_in_new</span>
+                      <span>Live App Listing</span>
                     </button>
                   </a>
                 )}
                 {source && (
                   <a href={source} target="_blank" rel="noopener noreferrer" className="flex-1">
-                    <button className="w-full bg-zinc-800 hover:bg-zinc-900 text-xs text-white font-bold py-2.5 px-3 rounded-lg inline-flex items-center justify-center transition-colors border border-zinc-700 dark:border-zinc-800">
+                    <button className="w-full bg-gray-100 hover:bg-gray-200 dark:bg-surface-glass dark:hover:bg-white/10 text-xs text-gray-900 dark:text-on-surface font-label-ui font-bold py-2.5 px-3 rounded-xl inline-flex items-center justify-center transition-all border border-gray-200 dark:border-white/15 cursor-pointer">
                       <i className="fa-brands fa-github mr-1.5"></i>
-                      <span>Github</span>
+                      <span>GitHub Specs</span>
                     </button>
                   </a>
                 )}
@@ -117,13 +117,14 @@ function ProjectModal({ setOpen, open, projectId }) {
       >
         <Box
           sx={style}
-          className="w-[96%] md:w-[700px] outline-none rounded-xl overflow-x-auto scrollbar-hide dark:text-zinc-100 bg-gray-50 dark:bg-zinc-900 dark:border dark:border-zinc-800"
+          className="w-[96%] md:w-[720px] outline-none rounded-3xl overflow-hidden bg-white/95 dark:bg-surface-panel/95 backdrop-blur-2xl border border-gray-200/80 dark:border-white/15 shadow-2xl p-6"
         >
           <button
-            className="absolute top-3 right-3 h-8 w-8 dark:bg-zinc-800 bg-gray-200 hover:bg-gray-300 dark:hover:bg-zinc-700 dark:text-zinc-200 text-gray-700 rounded-full z-50 flex items-center justify-center transition-colors"
+            className="absolute top-4 right-4 h-9 w-9 bg-gray-100 hover:bg-gray-200 dark:bg-surface-glass dark:hover:bg-white/15 text-gray-700 dark:text-zinc-200 rounded-full z-50 flex items-center justify-center transition-all border border-gray-200 dark:border-white/10 cursor-pointer shadow-sm"
             onClick={handleClose}
+            aria-label="Close modal"
           >
-            <i className="fa-solid fa-xmark"></i>
+            <i className="fa-solid fa-xmark text-sm"></i>
           </button>
           {content}
         </Box>

@@ -1,44 +1,45 @@
 import { AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
-import { Fade } from "react-reveal";
-import { Link, useLocation } from "react-router-dom";
-import projectList from "../../../utils/projectList";
-import Title from "../title";
+import projectList from "../../../utils/projectList.json";
 import ProjectButton from "./projectButton";
 import Projects from "./projects";
+import ScrollReveal from "../../ScrollReveal";
 
 export default function Project() {
   const [items, setItems] = useState([...projectList.sort((b, a) => a.id - b.id)]);
 
-  const location = useLocation();
-  const path = location.pathname;
-
   return (
-    <div className="containerCustom gap">
-      <Title title="projects" />
+    <section
+      id="projects"
+      className="mt-20 sm:mt-28 relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12"
+      aria-label="All Shipped Mobile Engineering Projects"
+    >
+      {/* Modern Section Header */}
+      <ScrollReveal>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 sm:mb-10">
+          <div>
+            <span className="font-mono-tag text-xs text-secondary font-semibold uppercase tracking-widest">
+              {"// SHIPPED_ENGINEERING_ROSTER"}
+            </span>
+            <h2 className="font-display-hero text-2xl sm:text-3xl lg:text-4xl text-gray-900 dark:text-text-primary font-extrabold tracking-tight mt-1">
+              All Shipped & Client Projects
+            </h2>
+          </div>
+          <p className="font-body-md text-sm sm:text-base text-gray-600 dark:text-text-muted max-w-md leading-relaxed">
+            Full portfolio of production Android Native, Flutter, and IoT solutions delivering verified scale across telecom, health, and enterprise hardware.
+          </p>
+        </div>
+      </ScrollReveal>
+
+      {/* Cyber-Glass Category Filter */}
       <ProjectButton setItem={setItems} items={items} />
 
+      {/* Responsive Cyber-Glass Grid */}
       <AnimatePresence>
-        <div className="grid lg:grid-cols-3 sm:grid-cols-2 columns-1 gap-1 justify-items-center">
-          <Projects items={items} setItem={setItems} />{" "}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-6">
+          <Projects items={items} setItem={setItems} />
         </div>
       </AnimatePresence>
-
-      {path === "/" && (
-        <Fade up>
-          <div className="text-center mt-9 flex justify-center">
-            <Link to="/projects">
-              <button
-                type="button"
-                className="bg-gradient-to-r from-brand-600 via-brand-500 to-accent-violet hover:from-brand-500 hover:to-indigo-600 font-medium rounded-3xl text-sm px-8 py-3.5 text-center text-white hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center gap-1.5"
-              >
-                Show more
-                <i className="fa-solid fa-arrow-right text-xs"></i>
-              </button>
-            </Link>
-          </div>
-        </Fade>
-      )}
-    </div>
+    </section>
   );
 }

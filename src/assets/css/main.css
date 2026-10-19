@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -111,3 +113,414 @@
 .animate-fade-in {
   animation: fadeIn 0.25s ease-out forwards;
 }
+
+/* Obsidian Cyber-Glass Atmosphere */
+html {
+  scroll-behavior: smooth;
+}
+
+.ambient-grid {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+  mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%);
+}
+
+.glass-card {
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Accessibility: Focus Visible Ring */
+:focus-visible {
+  outline: 2px solid #06b6d4;
+  outline-offset: 2px;
+}
+
+/* Accessibility: Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Obsidian Navbar Background */
+.obsidian-navbar {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.dark .obsidian-navbar {
+  background-color: rgba(9, 9, 11, 0.92) !important;
+}
+
+/* Obsidian Mobile Drawer */
+.obsidian-drawer {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+}
+
+.dark .obsidian-drawer {
+  background-color: rgba(9, 9, 11, 0.98) !important;
+}
+
+/* ========================================================
+   M1: HERO & AMBIENT MOTION ENHANCEMENTS
+   ======================================================== */
+
+/* 1. Subtle Floating Motion for Hero Badges */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes floatSlowReverse {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-float-slow-reverse {
+  animation: floatSlowReverse 6s ease-in-out infinite 0.8s;
+  will-change: transform;
+}
+
+/* 2. Slow Rotating Radial/Conic Glow behind Portrait */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 22s linear infinite;
+  will-change: transform;
+}
+
+/* 3. Ambient Background Orbs Drift */
+@keyframes orbDrift1 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(30px, 25px) scale(1.08);
+  }
+}
+
+@keyframes orbDrift2 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(-30px, 20px) scale(0.94);
+  }
+}
+
+@keyframes orbDrift3 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(25px, -25px) scale(1.06);
+  }
+}
+
+.animate-orb-drift-1 {
+  animation: orbDrift1 15s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-orb-drift-2 {
+  animation: orbDrift2 19s ease-in-out infinite 1s;
+  will-change: transform;
+}
+
+.animate-orb-drift-3 {
+  animation: orbDrift3 17s ease-in-out infinite 2s;
+  will-change: transform;
+}
+
+/* 4. Restrained Radar Pulse for Availability Badges */
+@keyframes radarPulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.45);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 7px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.radar-ring {
+  animation: radarPulse 2.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ========================================================
+   M2: INTERACTIVE CARDS & BORDER BEAM ENHANCEMENTS
+   ======================================================== */
+
+/* 1. Mouse Spotlight Overlay for Glass Cards */
+@media (hover: hover) and (pointer: fine) {
+  .card-spotlight {
+    position: relative;
+  }
+  .card-spotlight::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      400px circle at var(--mouse-x, -999px) var(--mouse-y, -999px),
+      rgba(99, 102, 241, 0.12),
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+    z-index: 10;
+  }
+  .dark .card-spotlight::before {
+    background: radial-gradient(
+      420px circle at var(--mouse-x, -999px) var(--mouse-y, -999px),
+      rgba(6, 182, 212, 0.15),
+      transparent 65%
+    );
+  }
+  .card-spotlight:hover::before {
+    opacity: 1;
+  }
+}
+
+/* 2. 3D Perspective Tilt Smoothing */
+.tilt-card {
+  transition: transform 0.18s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* 3. Magnetic Hover Feedback for Selected CTAs */
+.btn-magnetic {
+  transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+/* 4. Restrained Border-Beam Animations (PocketLog, Trade Memo, Metrics) */
+@keyframes borderBeamSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.border-beam-card {
+  position: relative;
+  border-radius: 1.125rem;
+  overflow: hidden;
+  padding: 1.5px;
+}
+
+.border-beam-card::before {
+  content: "";
+  position: absolute;
+  top: -80%;
+  left: -80%;
+  width: 260%;
+  height: 260%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 260deg,
+    rgba(6, 182, 212, 0.2) 290deg,
+    rgba(6, 182, 212, 0.85) 325deg,
+    rgba(99, 102, 241, 0.95) 350deg,
+    transparent 360deg
+  );
+  animation: borderBeamSpin 7.5s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.border-beam-card-indigo::before {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 260deg,
+    rgba(99, 102, 241, 0.2) 290deg,
+    rgba(129, 140, 248, 0.85) 325deg,
+    rgba(192, 132, 252, 0.95) 350deg,
+    transparent 360deg
+  );
+  animation: borderBeamSpin 8.5s linear infinite;
+}
+
+.border-beam-card-metrics::before {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 270deg,
+    rgba(16, 185, 129, 0.2) 300deg,
+    rgba(6, 182, 212, 0.85) 330deg,
+    rgba(99, 102, 241, 0.9) 355deg,
+    transparent 360deg
+  );
+  animation: borderBeamSpin 9s linear infinite;
+}
+
+.border-beam-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: calc(1.125rem - 1.5px);
+}
+
+/* ========================================================
+   M3: SCROLL, METRICS & CAREER TIMELINE ENHANCEMENTS
+   ======================================================== */
+
+/* 1. Glowing Career Timeline Line & Traveling Cyber Beam */
+.timeline-track {
+  position: relative;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 182, 212, 0.75) 0%,
+    rgba(99, 102, 241, 0.85) 55%,
+    rgba(16, 185, 129, 0.5) 100%
+  );
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.35);
+  border-radius: 9999px;
+}
+
+@keyframes timelineBeamGlow {
+  0% {
+    top: -5%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    top: 105%;
+    opacity: 0;
+  }
+}
+
+.timeline-beam {
+  position: absolute;
+  left: -1px;
+  width: 4px;
+  height: 70px;
+  border-radius: 9999px;
+  background: linear-gradient(180deg, transparent, #06b6d4, #6366f1, transparent);
+  box-shadow: 0 0 14px #06b6d4;
+  animation: timelineBeamGlow 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* 2. Career Node Pulses */
+@keyframes nodePulseCyan {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.6), 0 0 10px rgba(6, 182, 212, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(6, 182, 212, 0), 0 0 16px rgba(6, 182, 212, 0.9);
+  }
+}
+
+@keyframes nodePulseIndigo {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.6), 0 0 10px rgba(99, 102, 241, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(99, 102, 241, 0), 0 0 16px rgba(99, 102, 241, 0.9);
+  }
+}
+
+.timeline-node-cyan {
+  animation: nodePulseCyan 3.2s ease-in-out infinite;
+}
+
+.timeline-node-indigo {
+  animation: nodePulseIndigo 3.2s ease-in-out infinite 1.6s;
+}
+
+/* Accessibility: Enhanced Reduced Motion overrides */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-float-slow-reverse,
+  .animate-spin-slow,
+  .animate-orb-drift-1,
+  .animate-orb-drift-2,
+  .animate-orb-drift-3,
+  .radar-ring {
+    animation: none !important;
+    transform: none !important;
+  }
+  .border-beam-card::before,
+  .border-beam-card-indigo::before,
+  .border-beam-card-metrics::before {
+    animation: none !important;
+    opacity: 0.25 !important;
+  }
+  .card-spotlight::before {
+    display: none !important;
+  }
+  .tilt-card {
+    transform: none !important;
+    transition: none !important;
+  }
+  .btn-magnetic {
+    transform: none !important;
+    transition: none !important;
+  }
+  .timeline-beam,
+  .timeline-node-cyan,
+  .timeline-node-indigo {
+    animation: none !important;
+  }
+}
+
+
+
+

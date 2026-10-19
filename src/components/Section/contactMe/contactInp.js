@@ -1,17 +1,13 @@
 import React from "react";
-import { Fade } from "react-reveal";
 
-export default function ContactInp({ delay, type, placeholder, ...rest }) {
+export default function ContactInp({ type, placeholder, className = "", ...rest }) {
   return (
-    <>
-      <Fade up delay={delay}>
-        <input
-          type={type}
-          placeholder={placeholder}
-          className="w-full rounded-lg shadow-sm border border-gray-200 dark:border-zinc-700/80 text-gray-900 dark:text-zinc-100 bg-white dark:bg-zinc-900 placeholder-gray-400 dark:placeholder-zinc-400 focus:border-brand-500 dark:focus:border-brand-500 focus:ring-1 focus:ring-brand-500 p-3.5 text-sm transition-all"
-          {...rest}
-        />
-      </Fade>
-    </>
+    <input
+      type={type}
+      placeholder={placeholder}
+      aria-label={placeholder}
+      className={`w-full rounded-xl shadow-sm border border-gray-200/80 dark:border-white/10 text-gray-900 dark:text-zinc-100 bg-white/80 dark:bg-surface-canvas/90 placeholder-gray-400 dark:placeholder-zinc-400 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary/50 p-3.5 text-sm transition-all font-body-md ${className}`}
+      {...rest}
+    />
   );
 }
