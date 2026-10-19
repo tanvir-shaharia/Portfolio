@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import TechLogo from "./TechLogo";
@@ -6,6 +6,9 @@ import { handleMagneticMove, handleMagneticLeave } from "../utils/motion";
 
 export default function Navbar({ theme, toggleDarkMode }) {
   const [openMenu, setOpenMenu] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+  const [scrollProgress, setScrollProgress] = useState(0);
+
   const location = useLocation();
   const navigate = useNavigate();
   const path = location.pathname;
@@ -20,9 +23,96 @@ export default function Navbar({ theme, toggleDarkMode }) {
     { name: "Contact", target: "contact", fallbackPath: "/contact" },
   ];
 
+  // 1. Scroll Progress Calculation (Passive RAF)
+  useEffect(() => {
+    let ticking = false;
+
+    const updateProgress = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight =
+        document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const progress =
+        docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
+      setScrollProgress(progress);
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateProgress);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    updateProgress();
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // 2. Active Section Scroll Spy via IntersectionObserver
+  useEffect(() => {
+    if (path !== "/") {
+      return;
+    }
+
+    const sectionIds = [
+      "home",
+      "products",
+      "experience",
+      "skills",
+      "services",
+      "credentials",
+      "contact",
+    ];
+
+    const elements = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    if (elements.length === 0 || typeof IntersectionObserver === "undefined") return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: "-90px 0px -50% 0px",
+        threshold: [0, 0.2, 0.5],
+      }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+
+    // Edge handling for top of page and footer bottom
+    const handleEdgeScroll = () => {
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      if (scrollY < 120) {
+        setActiveSection("home");
+      } else if (
+        window.innerHeight + scrollY >=
+        document.documentElement.scrollHeight - 70
+      ) {
+        setActiveSection("contact");
+      }
+    };
+
+    window.addEventListener("scroll", handleEdgeScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", handleEdgeScroll);
+    };
+  }, [path]);
+
   const handleNavClick = (link) => {
     setOpenMenu(false);
     if (path === "/") {
+      setActiveSection(link.target);
       if (link.target === "home") {
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
@@ -44,7 +134,10 @@ export default function Navbar({ theme, toggleDarkMode }) {
           <Link
             to="/"
             onClick={() => {
-              if (path === "/") window.scrollTo({ top: 0, behavior: "smooth" });
+              if (path === "/") {
+                setActiveSection("home");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
             }}
             className="flex items-center gap-3 group"
           >
@@ -71,18 +164,26 @@ export default function Navbar({ theme, toggleDarkMode }) {
           </div>
         </div>
 
-        {/* Center: Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5">
-          {navLinks.map((link, idx) => (
-            <button
-              key={idx}
-              type="button"
-              onClick={() => handleNavClick(link)}
-              className="px-3.5 py-2 rounded-lg font-label-ui text-sm text-gray-700 dark:text-zinc-200 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100/80 dark:hover:bg-white/10 transition-all cursor-pointer font-medium"
-            >
-              {link.name}
-            </button>
-          ))}
+        {/* Center: Desktop Navigation Links with Active Section Highlight */}
+        <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5" aria-label="Main Navigation">
+          {navLinks.map((link, idx) => {
+            const isActive = path === "/" && activeSection === link.target;
+            return (
+              <button
+                key={idx}
+                type="button"
+                onClick={() => handleNavClick(link)}
+                className={`px-3.5 py-2 rounded-lg font-label-ui text-sm transition-all duration-200 cursor-pointer ${
+                  isActive
+                    ? "bg-primary/15 text-primary dark:text-secondary border border-primary/30 dark:border-secondary/30 shadow-[0_0_12px_rgba(99,102,241,0.2)] font-semibold"
+                    : "text-gray-700 dark:text-zinc-200 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100/80 dark:hover:bg-white/10 font-medium border border-transparent"
+                }`}
+                aria-current={isActive ? "true" : undefined}
+              >
+                {link.name}
+              </button>
+            );
+          })}
         </nav>
 
         {/* Right: Actions (Theme switch + Let's Talk CTA + Mobile Toggle) */}
@@ -122,6 +223,13 @@ export default function Navbar({ theme, toggleDarkMode }) {
         </div>
       </div>
 
+      {/* Subtle Scroll Progress Indicator (Top Viewport Accent Bar) */}
+      <div
+        aria-hidden="true"
+        className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-primary via-secondary to-tertiary shadow-[0_0_10px_rgba(6,182,212,0.6)] transition-[width] duration-75 ease-out pointer-events-none"
+        style={{ width: `${scrollProgress}%` }}
+      />
+
       {/* Mobile Drawer Menu */}
       {openMenu && (
         <div className="obsidian-drawer lg:hidden backdrop-blur-2xl border-b border-gray-200/80 dark:border-white/10 px-6 py-6 shadow-2xl animate-fade-in">
@@ -136,16 +244,24 @@ export default function Navbar({ theme, toggleDarkMode }) {
               </span>
             </div>
 
-            {navLinks.map((link, idx) => (
-              <button
-                key={idx}
-                type="button"
-                onClick={() => handleNavClick(link)}
-                className="w-full text-left px-4 py-3 rounded-xl font-label-ui text-sm font-medium text-gray-800 dark:text-zinc-100 hover:bg-gray-100 dark:hover:bg-white/10 transition-all cursor-pointer"
-              >
-                {link.name}
-              </button>
-            ))}
+            {navLinks.map((link, idx) => {
+              const isActive = path === "/" && activeSection === link.target;
+              return (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={() => handleNavClick(link)}
+                  className={`w-full text-left px-4 py-3 rounded-xl font-label-ui text-sm transition-all cursor-pointer ${
+                    isActive
+                      ? "bg-primary/15 text-primary dark:text-secondary border-l-2 border-primary dark:border-secondary font-semibold pl-4"
+                      : "font-medium text-gray-800 dark:text-zinc-100 hover:bg-gray-100 dark:hover:bg-white/10"
+                  }`}
+                  aria-current={isActive ? "true" : undefined}
+                >
+                  {link.name}
+                </button>
+              );
+            })}
 
             <button
               type="button"

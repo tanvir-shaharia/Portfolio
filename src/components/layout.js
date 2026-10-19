@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { WhatsAppWidget } from "react-whatsapp-widget";
 import "../assets/css/whatsappWidget.css";
+import { prefersReducedMotion } from "../utils/motion";
 import { useWindowScrollPositions } from "../hook/useWindowScrollPositions";
 import Footer from "./footer";
 import Navbar from "./nav";
@@ -17,7 +18,10 @@ export default function Layout({ children }) {
   const path = location.pathname;
 
   const backToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({
+      top: 0,
+      behavior: prefersReducedMotion() ? "auto" : "smooth",
+    });
   };
 
   const toggleDarkMode = () => {
@@ -73,29 +77,18 @@ export default function Layout({ children }) {
             />
           )}
 
+          {/* Discreet Obsidian Glass Back-to-Top Button */}
           <button
-            x-data="topBtn"
+            type="button"
             id="topButton"
-            className={`fixed z-10 p-2 sm:p-3 bg-gray-100 hover:bg-gray-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:text-white text-black rounded-full shadow-md bottom-[7.4rem] right-[13px] sm:bottom-[3.4rem] sm:right-24 hover:-translate-y-1 transition-all duration-300 ${
-              scrollY > 250 ? "block" : "hidden"
+            className={`fixed z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-white/85 dark:bg-surface-glass/95 border border-gray-200/80 dark:border-white/15 backdrop-blur-xl shadow-lg hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] text-gray-700 dark:text-zinc-200 hover:text-secondary dark:hover:text-secondary flex items-center justify-center bottom-[7.6rem] right-4 sm:bottom-[3.4rem] sm:right-24 hover:-translate-y-1 active:translate-y-0 transition-all duration-300 focus-visible:ring-2 focus-visible:ring-secondary focus:outline-none cursor-pointer ${
+              scrollY > 400 ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-4 pointer-events-none"
             }`}
             onClick={backToTop}
-            aria-label="Back to top"
+            aria-label="Scroll back to top"
+            title="Back to top"
           >
-            <svg
-              className="w-7 h-7"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2.5"
-                d="M5 10l7-7m0 0l7 7m-7-7v18"
-              ></path>
-            </svg>
+            <span className="material-symbols-outlined text-xl sm:text-2xl">arrow_upward</span>
           </button>
         </div>
       )}

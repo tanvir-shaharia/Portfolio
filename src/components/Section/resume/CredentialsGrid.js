@@ -1,13 +1,53 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ResumeDownloadBtn from "../../ResumeDownloadBtn";
 import ScrollReveal from "../../ScrollReveal";
 import { handleCardHoverMove, handleCardHoverLeave } from "../../../utils/motion";
 
 export default function CredentialsGrid() {
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof document !== "undefined") {
+      return (
+        document.documentElement.classList.contains("dark") ||
+        !document.documentElement.classList.contains("light")
+      );
+    }
+    return true;
+  });
+
+  useEffect(() => {
+    const updateTheme = () => {
+      if (typeof document !== "undefined") {
+        setIsDark(
+          document.documentElement.classList.contains("dark") ||
+            !document.documentElement.classList.contains("light")
+        );
+      }
+    };
+
+    updateTheme();
+
+    if (typeof MutationObserver !== "undefined") {
+      const observer = new MutationObserver(updateTheme);
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ["class"],
+      });
+      return () => observer.disconnect();
+    }
+  }, []);
+
+  const promptPdf =
+    process.env.PUBLIC_URL +
+    (isDark ? "/prompt-engineering-dark.pdf" : "/prompt-engineering.pdf");
+
+  const javaPdf =
+    process.env.PUBLIC_URL +
+    (isDark ? "/java-dark.pdf" : "/java.pdf");
+
   return (
     <section
       id="credentials"
-      className="mt-24 sm:mt-32 relative z-10 flex flex-col gap-8"
+      className="mt-6 sm:mt-8 relative z-10 flex flex-col gap-8"
       aria-label="Academic education and professional certifications"
     >
       {/* Section Header */}
@@ -32,45 +72,48 @@ export default function CredentialsGrid() {
         </div>
       </ScrollReveal>
 
-      {/* Two-Column Frosted Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-        {/* LEFT COLUMN: EDUCATION & ACADEMICS */}
-        <ScrollReveal delay={60} className="h-full">
-          <div className="flex flex-col gap-6 h-full">
-            <div className="flex items-center gap-2 text-secondary font-mono-tag text-xs font-semibold uppercase tracking-wider pb-2 border-b border-gray-200/60 dark:border-white/10">
-              <span className="material-symbols-outlined text-lg text-secondary">school</span>
-              <span>EDUCATION & ACADEMICS</span>
-            </div>
+      {/* 1. HORIZONTAL ROW: EDUCATION & ACADEMICS (2 Balanced Columns) */}
+      <div className="flex flex-col gap-6">
+        <ScrollReveal delay={60}>
+          <div className="flex items-center gap-2 text-secondary font-mono-tag text-xs font-semibold uppercase tracking-wider pb-2 border-b border-gray-200/60 dark:border-white/10">
+            <span className="material-symbols-outlined text-lg text-secondary">school</span>
+            <span>EDUCATION &amp; ACADEMICS</span>
+          </div>
+        </ScrollReveal>
 
-            {/* Academic Card 1: Northern University Bangladesh */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+          {/* Academic Card 1: Northern University Bangladesh */}
+          <ScrollReveal delay={80} className="h-full">
             <div
-              className="card-spotlight tilt-card bg-white/70 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 rounded-2xl p-6 sm:p-7 backdrop-blur-xl flex flex-col justify-between gap-4 shadow-xl hover:border-secondary/40 transition-all duration-300 group"
+              className="card-spotlight tilt-card bg-white/70 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 rounded-2xl p-6 sm:p-7 backdrop-blur-xl flex flex-col justify-between gap-4 shadow-xl hover:border-secondary/40 transition-all duration-300 group h-full"
               onMouseMove={handleCardHoverMove}
               onMouseLeave={handleCardHoverLeave}
             >
-            <div className="flex flex-col gap-3">
-              <div className="flex items-start justify-between gap-3">
-                <div className="flex flex-col gap-1">
-                  <span className="font-mono-tag text-xs text-secondary font-semibold">
-                    2023 – 2027
-                  </span>
-                  <h3 className="font-headline-sm text-base sm:text-lg text-gray-900 dark:text-text-primary font-bold tracking-tight">
-                    Bachelor of Science (B.Sc.) in Computer Science & Engineering
-                  </h3>
-                  <span className="font-label-ui text-xs sm:text-sm text-gray-600 dark:text-on-surface-variant font-medium">
-                    Northern University Bangladesh (Dhaka, Bangladesh)
-                  </span>
+              <div className="flex flex-col gap-3">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex flex-col gap-1">
+                    <span className="font-mono-tag text-xs text-secondary font-semibold">
+                      2023 – 2027
+                    </span>
+                    <h3 className="font-headline-sm text-base sm:text-lg text-gray-900 dark:text-text-primary font-bold tracking-tight">
+                      Bachelor of Science (B.Sc.) in Computer Science &amp; Engineering
+                    </h3>
+                    <span className="font-label-ui text-xs sm:text-sm text-gray-600 dark:text-on-surface-variant font-medium">
+                      Northern University Bangladesh (Dhaka, Bangladesh)
+                    </span>
+                  </div>
                 </div>
+                <p className="font-body-md text-xs sm:text-sm text-gray-600 dark:text-text-muted border-t border-gray-100 dark:border-white/5 pt-3 leading-relaxed">
+                  Advanced system architecture, algorithms, and core engineering principles.
+                </p>
               </div>
-              <p className="font-body-md text-xs sm:text-sm text-gray-600 dark:text-text-muted border-t border-gray-100 dark:border-white/5 pt-3 leading-relaxed">
-                Advanced system architecture, algorithms, and core engineering principles.
-              </p>
             </div>
-          </div>
+          </ScrollReveal>
 
-            {/* Academic Card 2: Rajshahi Polytechnic Institute */}
+          {/* Academic Card 2: Rajshahi Polytechnic Institute */}
+          <ScrollReveal delay={120} className="h-full">
             <div
-              className="card-spotlight tilt-card bg-white/70 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 rounded-2xl p-6 sm:p-7 backdrop-blur-xl flex flex-col justify-between gap-4 shadow-xl hover:border-primary/40 transition-all duration-300 group"
+              className="card-spotlight tilt-card bg-white/70 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 rounded-2xl p-6 sm:p-7 backdrop-blur-xl flex flex-col justify-between gap-4 shadow-xl hover:border-primary/40 transition-all duration-300 group h-full"
               onMouseMove={handleCardHoverMove}
               onMouseLeave={handleCardHoverLeave}
             >
@@ -96,20 +139,68 @@ export default function CredentialsGrid() {
                 </p>
               </div>
             </div>
+          </ScrollReveal>
+        </div>
+      </div>
+
+      {/* 2. HORIZONTAL ROW: CERTIFICATIONS & SPECIALIZATIONS (3 Balanced Columns) */}
+      <div className="flex flex-col gap-6 pt-4">
+        <ScrollReveal delay={140}>
+          <div className="flex items-center gap-2 text-primary font-mono-tag text-xs font-semibold uppercase tracking-wider pb-2 border-b border-gray-200/60 dark:border-white/10">
+            <span className="material-symbols-outlined text-lg text-primary">verified</span>
+            <span>CERTIFICATIONS &amp; SPECIALIZATIONS</span>
           </div>
         </ScrollReveal>
 
-        {/* RIGHT COLUMN: CERTIFICATIONS & SPECIALIZATIONS */}
-        <ScrollReveal delay={140} className="h-full">
-          <div className="flex flex-col gap-6 h-full">
-            <div className="flex items-center gap-2 text-primary font-mono-tag text-xs font-semibold uppercase tracking-wider pb-2 border-b border-gray-200/60 dark:border-white/10">
-              <span className="material-symbols-outlined text-lg text-primary">verified</span>
-              <span>CERTIFICATIONS & SPECIALIZATIONS</span>
-            </div>
-
-            {/* Certification Card 1: Practical Prompt Engineering */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+          {/* Certification Card 1: Java Fundamentals */}
+          <ScrollReveal delay={160} className="h-full">
             <div
-              className="card-spotlight tilt-card bg-white/70 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 rounded-2xl p-6 sm:p-7 backdrop-blur-xl flex flex-col justify-between gap-4 shadow-xl hover:border-secondary/40 transition-all duration-300 group"
+              className="card-spotlight tilt-card bg-white/70 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 rounded-2xl p-6 sm:p-7 backdrop-blur-xl flex flex-col justify-between gap-4 shadow-xl hover:border-tertiary/40 transition-all duration-300 group h-full"
+              onMouseMove={handleCardHoverMove}
+              onMouseLeave={handleCardHoverLeave}
+            >
+              <div className="flex flex-col gap-3">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex flex-col gap-1">
+                    <span className="font-mono-tag text-xs text-tertiary font-semibold">
+                      OCT 2026 // CORE JVM &amp; BACKEND
+                    </span>
+                    <h3 className="font-headline-sm text-base sm:text-lg text-gray-900 dark:text-text-primary font-bold tracking-tight">
+                      Java Fundamentals &amp; Object-Oriented Architecture
+                    </h3>
+                    <span className="font-label-ui text-xs sm:text-sm text-gray-600 dark:text-on-surface-variant font-medium">
+                      Master.dev / Frontend Masters (Instructor: Angie Jones)
+                    </span>
+                  </div>
+                  <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-gray-100 dark:bg-surface-container-high border border-gray-200/60 dark:border-white/10 text-tertiary font-mono-tag text-xs font-semibold whitespace-nowrap flex-shrink-0">
+                    Core Java
+                  </span>
+                </div>
+                <p className="font-body-md text-xs sm:text-sm text-gray-600 dark:text-text-muted border-t border-gray-100 dark:border-white/5 pt-3 leading-relaxed">
+                  Deep-dive into core Java mechanics, OOP design patterns, collections framework, exception handling, and JVM memory lifecycle.
+                </p>
+              </div>
+
+              <div className="pt-2">
+                <a
+                  href={javaPdf}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="View Java Fundamentals Credential (PDF)"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gray-100 dark:bg-surface-glass-subtle border border-gray-200 dark:border-white/20 text-gray-800 dark:text-on-surface font-mono-tag text-xs font-semibold shadow-sm hover:border-tertiary/40 hover:text-tertiary hover:bg-gray-200 dark:hover:bg-surface-container hover:shadow-[0_0_15px_rgba(16,185,129,0.35)] transition-all duration-300"
+                >
+                  <span className="material-symbols-outlined text-sm text-tertiary">open_in_new</span>
+                  <span>View Credential (PDF) ↗</span>
+                </a>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Certification Card 2: Practical Prompt Engineering */}
+          <ScrollReveal delay={190} className="h-full">
+            <div
+              className="card-spotlight tilt-card bg-white/70 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 rounded-2xl p-6 sm:p-7 backdrop-blur-xl flex flex-col justify-between gap-4 shadow-xl hover:border-secondary/40 transition-all duration-300 group h-full"
               onMouseMove={handleCardHoverMove}
               onMouseLeave={handleCardHoverLeave}
             >
@@ -120,7 +211,7 @@ export default function CredentialsGrid() {
                       2026 // PROFESSIONAL TRAINING
                     </span>
                     <h3 className="font-headline-sm text-base sm:text-lg text-gray-900 dark:text-text-primary font-bold tracking-tight">
-                      Practical Prompt Engineering & AI Developer Workflows
+                      Practical Prompt Engineering &amp; AI Developer Workflows
                     </h3>
                     <span className="font-label-ui text-xs sm:text-sm text-gray-600 dark:text-on-surface-variant font-medium">
                       Frontend Masters (Online Professional Training)
@@ -137,9 +228,10 @@ export default function CredentialsGrid() {
 
               <div className="pt-2">
                 <a
-                  href={process.env.PUBLIC_URL + "/prompt-engineering-dark.pdf"}
+                  href={promptPdf}
                   target="_blank"
                   rel="noreferrer"
+                  aria-label="View Prompt Engineering Credential (PDF)"
                   className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gray-100 dark:bg-surface-glass-subtle border border-gray-200 dark:border-white/20 text-gray-800 dark:text-on-surface font-mono-tag text-xs font-semibold shadow-sm hover:border-secondary/40 hover:text-secondary hover:bg-gray-200 dark:hover:bg-surface-container hover:shadow-[0_0_15px_rgba(6,182,212,0.35)] transition-all duration-300"
                 >
                   <span className="material-symbols-outlined text-sm text-secondary">open_in_new</span>
@@ -147,10 +239,12 @@ export default function CredentialsGrid() {
                 </a>
               </div>
             </div>
+          </ScrollReveal>
 
-            {/* Certification Card 2: Professional Certificate in Android */}
+          {/* Certification Card 3: Professional Certificate in Android */}
+          <ScrollReveal delay={220} className="h-full">
             <div
-              className="card-spotlight tilt-card bg-white/70 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 rounded-2xl p-6 sm:p-7 backdrop-blur-xl flex flex-col justify-between gap-4 shadow-xl hover:border-primary/40 transition-all duration-300 group"
+              className="card-spotlight tilt-card bg-white/70 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 rounded-2xl p-6 sm:p-7 backdrop-blur-xl flex flex-col justify-between gap-4 shadow-xl hover:border-primary/40 transition-all duration-300 group h-full"
               onMouseMove={handleCardHoverMove}
               onMouseLeave={handleCardHoverLeave}
             >
@@ -177,8 +271,8 @@ export default function CredentialsGrid() {
                 </p>
               </div>
             </div>
-          </div>
-        </ScrollReveal>
+          </ScrollReveal>
+        </div>
       </div>
     </section>
   );

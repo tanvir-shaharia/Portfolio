@@ -4,6 +4,7 @@ import portraitPic from "../../../assets/images/tanvir_shaharia.png";
 import ResumeDownloadBtn from "../../ResumeDownloadBtn";
 import MetricsBar from "./MetricsBar";
 import EcosystemBar from "./EcosystemBar";
+import CopyButton from "../../CopyButton";
 import { handleMagneticMove, handleMagneticLeave } from "../../../utils/motion";
 
 export default function HomeHero() {
@@ -16,7 +17,7 @@ export default function HomeHero() {
   };
 
   return (
-    <div className="relative w-full overflow-hidden pt-24 pb-12 lg:pt-32 lg:pb-20">
+    <div className="relative w-full overflow-hidden pt-24 pb-10 lg:pt-32 lg:pb-12">
       {/* Ambient Radial Blur Halos with Drift */}
       <div className="absolute top-12 left-1/4 w-[450px] h-[450px] bg-primary/15 rounded-full blur-[130px] pointer-events-none -z-10 animate-orb-drift-1"></div>
       <div className="absolute top-1/2 -right-24 w-[450px] h-[450px] bg-secondary/15 rounded-full blur-[140px] pointer-events-none -z-10 animate-orb-drift-2"></div>
@@ -79,6 +80,26 @@ export default function HomeHero() {
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* Core Competency Static Skill Tags (Instant Recruiter Scanability) */}
+            <div className="flex flex-wrap items-center gap-2 pt-0.5" aria-label="Core Technical Competencies">
+              <span className="font-mono-tag text-[11px] sm:text-xs px-2.5 py-1 rounded-md bg-gray-100 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 text-gray-800 dark:text-zinc-200 font-semibold flex items-center gap-1.5 shadow-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                Kotlin
+              </span>
+              <span className="font-mono-tag text-[11px] sm:text-xs px-2.5 py-1 rounded-md bg-gray-100 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 text-gray-800 dark:text-zinc-200 font-semibold flex items-center gap-1.5 shadow-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Jetpack Compose
+              </span>
+              <span className="font-mono-tag text-[11px] sm:text-xs px-2.5 py-1 rounded-md bg-gray-100 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 text-gray-800 dark:text-zinc-200 font-semibold flex items-center gap-1.5 shadow-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                Flutter
+              </span>
+              <span className="font-mono-tag text-[11px] sm:text-xs px-2.5 py-1 rounded-md bg-gray-100 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 text-gray-800 dark:text-zinc-200 font-semibold flex items-center gap-1.5 shadow-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                Clean Architecture
+              </span>
             </div>
 
             {/* Pitch Bio */}
@@ -151,13 +172,16 @@ export default function HomeHero() {
                 >
                   <i className="fa-brands fa-google-play text-sm"></i>
                 </a>
-                <a
-                  href="mailto:tanvirshaharia120@gmail.com"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-surface-glass border border-gray-200 dark:border-white/10 text-gray-700 dark:text-on-surface-variant hover:text-secondary hover:border-secondary/50 transition-all shadow-sm text-xs"
-                >
-                  <span className="material-symbols-outlined text-sm text-tertiary">mail</span>
-                  <span>tanvirshaharia120@gmail.com</span>
-                </a>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-surface-glass border border-gray-200 dark:border-white/10 text-gray-700 dark:text-on-surface-variant hover:border-secondary/50 transition-all shadow-sm text-xs">
+                  <a
+                    href="mailto:tanvirshaharia120@gmail.com"
+                    className="inline-flex items-center gap-1.5 hover:text-secondary transition-colors"
+                  >
+                    <span className="material-symbols-outlined text-sm text-tertiary">mail</span>
+                    <span>tanvirshaharia120@gmail.com</span>
+                  </a>
+                  <CopyButton text="tanvirshaharia120@gmail.com" label="email" className="ml-1" />
+                </div>
               </div>
             </div>
           </div>
@@ -198,14 +222,14 @@ export default function HomeHero() {
 
               {/* Overlaid Glass Badge 2 (Floating Bottom Left) */}
               <div className="animate-float-slow-reverse absolute -bottom-3 -left-2 sm:-bottom-3 sm:-left-4 bg-white/95 dark:bg-surface-panel/95 border border-primary/40 backdrop-blur-xl rounded-2xl px-3.5 py-2.5 sm:px-4 sm:py-3 shadow-[0_8px_32px_rgba(0,0,0,0.3)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.6)] flex items-center gap-3 z-20">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-primary/20 flex items-center justify-center text-primary-fixed border border-primary/30 flex-shrink-0">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary dark:text-primary-fixed border border-primary/30 dark:border-primary/40 flex-shrink-0">
                   <span className="material-symbols-outlined text-lg sm:text-xl">offline_bolt</span>
                 </div>
                 <div className="flex flex-col">
                   <span className="font-label-ui text-xs sm:text-sm text-gray-900 dark:text-text-primary font-semibold">
                     Clean Architecture
                   </span>
-                  <span className="font-mono-tag text-[10px] sm:text-xs text-tertiary font-medium">
+                  <span className="font-mono-tag text-[10px] sm:text-xs text-emerald-600 dark:text-tertiary font-medium">
                     Kotlin + Flutter Offline-First
                   </span>
                 </div>

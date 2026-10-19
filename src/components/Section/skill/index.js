@@ -13,7 +13,7 @@ export default function Skill() {
       <TechMatrix />
 
       {/* Live Verified Contribution Stream */}
-      <div className="mt-14 sm:mt-20">
+      <div className="mt-2 sm:mt-4">
         <GitHubShowcase />
       </div>
     </div>

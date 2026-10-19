@@ -138,7 +138,7 @@ export default function Footer() {
                   <i className="fa-brands fa-linkedin text-base"></i>
                 </a>
                 <a
-                  href="https://t.me/tanvir_arch"
+                  href="https://t.me/tanvir_shaharia"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Telegram"

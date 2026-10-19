@@ -27,9 +27,21 @@ describe('CredentialsGrid Component', () => {
 
   test('provides working link to verified prompt engineering certificate PDF', () => {
     render(<CredentialsGrid />);
-    const link = screen.getByRole('link', { name: /View Credential \(PDF\)/i });
+    const link = screen.getByRole('link', { name: /View Prompt Engineering Credential \(PDF\)/i });
     expect(link).toBeInTheDocument();
     expect(link).toHaveAttribute('href', expect.stringContaining('/prompt-engineering-dark.pdf'));
+    expect(link).toHaveAttribute('target', '_blank');
+  });
+
+  test('displays Master.dev verified Java Fundamentals certificate with theme-adaptive PDF link', () => {
+    render(<CredentialsGrid />);
+    expect(screen.getByText(/Java Fundamentals & Object-Oriented Architecture/i)).toBeInTheDocument();
+    expect(screen.getByText(/Angie Jones/i)).toBeInTheDocument();
+    expect(screen.getByText('Core Java')).toBeInTheDocument();
+
+    const link = screen.getByRole('link', { name: /View Java Fundamentals Credential \(PDF\)/i });
+    expect(link).toBeInTheDocument();
+    expect(link).toHaveAttribute('href', expect.stringContaining('/java-dark.pdf'));
     expect(link).toHaveAttribute('target', '_blank');
   });
 

@@ -76,7 +76,7 @@ export default function GitHubShowcase() {
   }, []);
 
   return (
-    <div className="mt-14 sm:mt-16 pt-8 border-t border-gray-200/60 dark:border-white/10">
+    <div className="pt-8 border-t border-gray-200/60 dark:border-white/10">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
         <div>
           <span className="font-mono-tag text-xs text-secondary font-semibold uppercase tracking-widest">

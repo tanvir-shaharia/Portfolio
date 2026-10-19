@@ -28,7 +28,7 @@ export default function MobileApps() {
   return (
     <section
       id="products"
-      className="mt-24 sm:mt-32 relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12"
+      className="mt-12 sm:mt-16 relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12"
       aria-label="Flagship Mobile Productions & Enterprise Showcase"
     >
       {/* 4.1 Section Header */}

@@ -3,6 +3,7 @@ import swal from "sweetalert";
 import ThankYouImg from "../../../assets/images/thank-you-envelope.png";
 import ContactInp from "./contactInp";
 import ScrollReveal from "../../ScrollReveal";
+import CopyButton from "../../CopyButton";
 
 export default function ContactMe() {
   const [loading, setLoading] = useState(false);
@@ -94,42 +95,48 @@ export default function ContactMe() {
             {/* Direct Connect Channels */}
             <div className="flex flex-col gap-3 pt-2">
               {/* Email */}
-              <a
-                href="mailto:tanvirshaharia120@gmail.com"
-                className="flex items-center gap-3 p-3 rounded-xl bg-gray-50/80 dark:bg-surface-glass border border-gray-200/50 dark:border-white/5 hover:border-secondary/40 transition-all group"
-              >
-                <div className="w-10 h-10 rounded-lg bg-secondary/15 flex items-center justify-center text-secondary flex-shrink-0">
-                  <span className="material-symbols-outlined text-lg">mail</span>
-                </div>
-                <div className="flex flex-col truncate">
-                  <span className="font-mono-tag text-[10px] text-gray-500 dark:text-text-muted uppercase">
-                    Direct Email
-                  </span>
-                  <span className="font-label-ui text-xs sm:text-sm text-gray-900 dark:text-text-primary group-hover:text-secondary transition-colors truncate font-semibold">
-                    tanvirshaharia120@gmail.com
-                  </span>
-                </div>
-              </a>
+              <div className="flex items-center justify-between p-3 rounded-xl bg-gray-50/80 dark:bg-surface-glass border border-gray-200/50 dark:border-white/5 hover:border-secondary/40 transition-all group">
+                <a
+                  href="mailto:tanvirshaharia120@gmail.com"
+                  className="flex items-center gap-3 min-w-0 flex-1"
+                >
+                  <div className="w-10 h-10 rounded-lg bg-secondary/15 flex items-center justify-center text-secondary flex-shrink-0">
+                    <span className="material-symbols-outlined text-lg">mail</span>
+                  </div>
+                  <div className="flex flex-col truncate">
+                    <span className="font-mono-tag text-[10px] text-gray-500 dark:text-text-muted uppercase">
+                      Direct Email
+                    </span>
+                    <span className="font-label-ui text-xs sm:text-sm text-gray-900 dark:text-text-primary group-hover:text-secondary transition-colors truncate font-semibold">
+                      tanvirshaharia120@gmail.com
+                    </span>
+                  </div>
+                </a>
+                <CopyButton text="tanvirshaharia120@gmail.com" label="email" className="ml-2 flex-shrink-0" />
+              </div>
 
               {/* WhatsApp */}
-              <a
-                href="https://wa.me/8801644566945"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-3 p-3 rounded-xl bg-gray-50/80 dark:bg-surface-glass border border-gray-200/50 dark:border-white/5 hover:border-tertiary/40 transition-all group"
-              >
-                <div className="w-10 h-10 rounded-lg bg-tertiary/15 flex items-center justify-center text-tertiary flex-shrink-0">
-                  <i className="fa-brands fa-whatsapp text-lg"></i>
-                </div>
-                <div className="flex flex-col truncate">
-                  <span className="font-mono-tag text-[10px] text-gray-500 dark:text-text-muted uppercase">
-                    WhatsApp Direct
-                  </span>
-                  <span className="font-label-ui text-xs sm:text-sm text-gray-900 dark:text-text-primary group-hover:text-tertiary transition-colors truncate font-semibold">
-                    +880 1644-566945
-                  </span>
-                </div>
-              </a>
+              <div className="flex items-center justify-between p-3 rounded-xl bg-gray-50/80 dark:bg-surface-glass border border-gray-200/50 dark:border-white/5 hover:border-tertiary/40 transition-all group">
+                <a
+                  href="https://wa.me/8801644566945"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-3 min-w-0 flex-1"
+                >
+                  <div className="w-10 h-10 rounded-lg bg-tertiary/15 flex items-center justify-center text-tertiary flex-shrink-0">
+                    <i className="fa-brands fa-whatsapp text-lg"></i>
+                  </div>
+                  <div className="flex flex-col truncate">
+                    <span className="font-mono-tag text-[10px] text-gray-500 dark:text-text-muted uppercase">
+                      WhatsApp Direct
+                    </span>
+                    <span className="font-label-ui text-xs sm:text-sm text-gray-900 dark:text-text-primary group-hover:text-tertiary transition-colors truncate font-semibold">
+                      +880 1644-566945
+                    </span>
+                  </div>
+                </a>
+                <CopyButton text="+8801644566945" label="phone number" className="ml-2 flex-shrink-0" />
+              </div>
 
               {/* Location & Remote */}
               <div className="flex items-center gap-3 p-3 rounded-xl bg-gray-50/80 dark:bg-surface-glass border border-gray-200/50 dark:border-white/5">
@@ -169,7 +176,7 @@ export default function ContactMe() {
               <i className="fa-brands fa-linkedin text-base"></i>
             </a>
             <a
-              href="https://t.me/tanvir_arch"
+              href="https://t.me/tanvir_shaharia"
               target="_blank"
               rel="noreferrer"
               aria-label="Telegram"
