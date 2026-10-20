@@ -16,7 +16,7 @@ export default function EnterpriseGrid() {
       certifiedTag: "Google Play Certified",
       icon: "cell_tower",
       iconColor: "text-secondary",
-      link: "https://play.google.com/store/apps/details?id=com.robi.myrobi",
+      link: "https://play.google.com/store/apps/details?id=net.omobio.robisc",
       image: "/my_robi.webp",
     },
     {
@@ -31,7 +31,7 @@ export default function EnterpriseGrid() {
       certifiedTag: "Self-Care Core Engine",
       icon: "sim_card",
       iconColor: "text-primary",
-      link: "https://play.google.com/store/apps/details?id=com.airtel.myairtel",
+      link: "https://play.google.com/store/apps/details?id=net.omobio.airtelsc",
       image: "/my_airtel.webp",
     },
     {
