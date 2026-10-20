@@ -2,6 +2,7 @@ import { Box, Modal, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import swal from "sweetalert";
+import { GooglePlayIcon } from "../../SocialBrandIcon";
 
 const modalStyle = {
   position: "absolute",
@@ -195,7 +196,7 @@ export default function AppModal({ setOpen, open, app }) {
                     {name}
                   </Typography>
                   <div className="flex items-center gap-2 mt-1">
-                    <span className="bg-primary/10 text-primary-fixed-dim dark:bg-primary/20 dark:text-primary-fixed-dim border border-primary/30 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider font-mono-tag">
+                    <span className="bg-indigo-500/10 text-indigo-700 dark:text-indigo-300 dark:bg-indigo-950/40 border border-indigo-500/30 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider font-mono-tag">
                       {platform}
                     </span>
                     {formattedVersion && (
@@ -217,18 +218,18 @@ export default function AppModal({ setOpen, open, app }) {
                   </div>
                 </div>
               ) : isUnderDevelopment ? (
-                <div className="mt-2.5 mb-4 flex items-start gap-2 bg-primary/10 border border-primary/25 rounded-xl p-2.5 text-xs text-primary-fixed-dim font-semibold leading-relaxed">
-                  <i className="fa-solid fa-code text-sm mt-0.5 flex-shrink-0 text-primary"></i>
+                <div className="mt-2.5 mb-4 flex items-start gap-2 bg-indigo-500/10 border border-indigo-500/25 rounded-xl p-2.5 text-xs text-indigo-700 dark:text-indigo-300 font-semibold leading-relaxed">
+                  <i className="fa-solid fa-code text-sm mt-0.5 flex-shrink-0 text-indigo-600 dark:text-indigo-400"></i>
                   <div>
                     <span className="block font-bold">{statusLabel}</span>
                     <span className="block text-[10px] text-gray-600 dark:text-text-muted font-medium mt-0.5">
-                      Native Android-first architecture built with Kotlin Multiplatform & Compose Multiplatform. In active development.
+                      Native Android-first architecture built with Kotlin Multiplatform &amp; Compose Multiplatform. In active development.
                     </span>
                   </div>
                 </div>
               ) : (
-                <div className="mt-2.5 mb-4 flex items-center gap-2 bg-tertiary/10 border border-tertiary/30 rounded-xl p-2.5 text-xs text-tertiary font-semibold font-mono-tag">
-                  <i className="fa-solid fa-circle-check text-tertiary"></i>
+                <div className="mt-2.5 mb-4 flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-2.5 text-xs text-emerald-700 dark:text-emerald-400 font-semibold font-mono-tag">
+                  <i className="fa-solid fa-circle-check text-emerald-600 dark:text-emerald-400"></i>
                   <span>{statusLabel}</span>
                 </div>
               )}
@@ -334,7 +335,7 @@ export default function AppModal({ setOpen, open, app }) {
                           onClick={handleAvailabilityClick}
                           className="w-full bg-secondary hover:bg-secondary-fixed-dim text-xs sm:text-sm text-on-secondary font-bold py-2.5 px-4 rounded-xl inline-flex items-center justify-center transition-all shadow-md cursor-pointer gap-2"
                         >
-                          <i className="fa-brands fa-google-play"></i>
+                          <GooglePlayIcon className="w-4 h-4" />
                           <span>{btnLabel}</span>
                         </button>
                       ) : (
@@ -345,7 +346,7 @@ export default function AppModal({ setOpen, open, app }) {
                           className="block w-full"
                         >
                           <button className="w-full bg-secondary hover:bg-secondary-fixed-dim text-xs sm:text-sm text-on-secondary font-bold py-2.5 px-4 rounded-xl inline-flex items-center justify-center transition-all shadow-md cursor-pointer gap-2">
-                            <i className="fa-brands fa-google-play"></i>
+                            <GooglePlayIcon className="w-4 h-4" />
                             <span>{btnLabel}</span>
                           </button>
                         </a>

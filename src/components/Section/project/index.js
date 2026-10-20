@@ -11,7 +11,7 @@ export default function Project() {
   return (
     <section
       id="projects"
-      className="mt-20 sm:mt-28 relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12"
+      className="mt-12 sm:mt-16 relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12"
       aria-label="All Shipped Mobile Engineering Projects"
     >
       {/* Modern Section Header */}

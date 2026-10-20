@@ -51,14 +51,14 @@ export default function CredentialsGrid() {
       aria-label="Academic education and professional certifications"
     >
       {/* Section Header */}
-      <ScrollReveal>
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-gray-200/60 dark:border-white/10 pb-6">
+      <ScrollReveal className="relative z-30">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-gray-200/60 dark:border-white/10 pb-6 relative z-30">
           <div>
-            <span className="font-mono-tag text-xs text-secondary font-semibold uppercase tracking-widest">
-              {"// CREDENTIALS & ACADEMIC FOUNDATION"}
+            <span className="font-mono-tag text-xs text-sky-700 dark:text-sky-400 font-semibold uppercase tracking-widest">
+              CREDENTIALS &amp; ACADEMIC FOUNDATION
             </span>
             <h2 className="font-display-hero text-2xl sm:text-3xl lg:text-4xl text-gray-900 dark:text-text-primary font-extrabold tracking-tight mt-1">
-              Academic & Professional Credentials
+              Academic &amp; Professional Credentials
             </h2>
             <p className="font-body-md text-sm sm:text-base text-gray-600 dark:text-text-muted mt-2 max-w-xl leading-relaxed">
               Formal computer science education and verified professional engineering certifications.
@@ -66,17 +66,17 @@ export default function CredentialsGrid() {
           </div>
 
           {/* Quick Resume Download Action */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 relative z-30">
             <ResumeDownloadBtn />
           </div>
         </div>
       </ScrollReveal>
 
       {/* 1. HORIZONTAL ROW: EDUCATION & ACADEMICS (2 Balanced Columns) */}
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-6 relative z-10">
         <ScrollReveal delay={60}>
-          <div className="flex items-center gap-2 text-secondary font-mono-tag text-xs font-semibold uppercase tracking-wider pb-2 border-b border-gray-200/60 dark:border-white/10">
-            <span className="material-symbols-outlined text-lg text-secondary">school</span>
+          <div className="flex items-center gap-2 text-sky-700 dark:text-sky-400 font-mono-tag text-xs font-semibold uppercase tracking-wider pb-2 border-b border-gray-200/60 dark:border-white/10">
+            <span className="material-symbols-outlined text-lg text-sky-600 dark:text-sky-400">school</span>
             <span>EDUCATION &amp; ACADEMICS</span>
           </div>
         </ScrollReveal>
@@ -85,14 +85,14 @@ export default function CredentialsGrid() {
           {/* Academic Card 1: Northern University Bangladesh */}
           <ScrollReveal delay={80} className="h-full">
             <div
-              className="card-spotlight tilt-card bg-white/70 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 rounded-2xl p-6 sm:p-7 backdrop-blur-xl flex flex-col justify-between gap-4 shadow-xl hover:border-secondary/40 transition-all duration-300 group h-full"
+              className="card-spotlight tilt-card bg-white/70 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 rounded-2xl p-6 sm:p-7 backdrop-blur-xl flex flex-col justify-between gap-4 shadow-xl hover:border-sky-500/40 transition-all duration-300 group h-full"
               onMouseMove={handleCardHoverMove}
               onMouseLeave={handleCardHoverLeave}
             >
               <div className="flex flex-col gap-3">
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex flex-col gap-1">
-                    <span className="font-mono-tag text-xs text-secondary font-semibold">
+                    <span className="font-mono-tag text-xs text-sky-700 dark:text-sky-400 font-semibold">
                       2023 – 2027
                     </span>
                     <h3 className="font-headline-sm text-base sm:text-lg text-gray-900 dark:text-text-primary font-bold tracking-tight">
@@ -113,14 +113,14 @@ export default function CredentialsGrid() {
           {/* Academic Card 2: Rajshahi Polytechnic Institute */}
           <ScrollReveal delay={120} className="h-full">
             <div
-              className="card-spotlight tilt-card bg-white/70 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 rounded-2xl p-6 sm:p-7 backdrop-blur-xl flex flex-col justify-between gap-4 shadow-xl hover:border-primary/40 transition-all duration-300 group h-full"
+              className="card-spotlight tilt-card bg-white/70 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 rounded-2xl p-6 sm:p-7 backdrop-blur-xl flex flex-col justify-between gap-4 shadow-xl hover:border-indigo-500/40 transition-all duration-300 group h-full"
               onMouseMove={handleCardHoverMove}
               onMouseLeave={handleCardHoverLeave}
             >
               <div className="flex flex-col gap-3">
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex flex-col gap-1">
-                    <span className="font-mono-tag text-xs text-primary font-semibold">
+                    <span className="font-mono-tag text-xs text-indigo-700 dark:text-indigo-400 font-semibold">
                       2018 – 2022
                     </span>
                     <h3 className="font-headline-sm text-base sm:text-lg text-gray-900 dark:text-text-primary font-bold tracking-tight">
@@ -130,7 +130,7 @@ export default function CredentialsGrid() {
                       Rajshahi Polytechnic Institute (Rajshahi, Bangladesh)
                     </span>
                   </div>
-                  <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-primary-fixed-dim font-mono-tag text-xs font-semibold whitespace-nowrap shadow-[0_0_12px_rgba(99,102,241,0.25)] flex-shrink-0">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-700 dark:text-indigo-300 font-mono-tag text-xs font-semibold whitespace-nowrap flex-shrink-0">
                     CGPA: 3.54 / 4.00
                   </span>
                 </div>
@@ -146,8 +146,8 @@ export default function CredentialsGrid() {
       {/* 2. HORIZONTAL ROW: CERTIFICATIONS & SPECIALIZATIONS (3 Balanced Columns) */}
       <div className="flex flex-col gap-6 pt-4">
         <ScrollReveal delay={140}>
-          <div className="flex items-center gap-2 text-primary font-mono-tag text-xs font-semibold uppercase tracking-wider pb-2 border-b border-gray-200/60 dark:border-white/10">
-            <span className="material-symbols-outlined text-lg text-primary">verified</span>
+          <div className="flex items-center gap-2 text-indigo-700 dark:text-indigo-400 font-mono-tag text-xs font-semibold uppercase tracking-wider pb-2 border-b border-gray-200/60 dark:border-white/10">
+            <span className="material-symbols-outlined text-lg text-indigo-600 dark:text-indigo-400">verified</span>
             <span>CERTIFICATIONS &amp; SPECIALIZATIONS</span>
           </div>
         </ScrollReveal>
@@ -156,14 +156,14 @@ export default function CredentialsGrid() {
           {/* Certification Card 1: Java Fundamentals */}
           <ScrollReveal delay={160} className="h-full">
             <div
-              className="card-spotlight tilt-card bg-white/70 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 rounded-2xl p-6 sm:p-7 backdrop-blur-xl flex flex-col justify-between gap-4 shadow-xl hover:border-tertiary/40 transition-all duration-300 group h-full"
+              className="card-spotlight tilt-card bg-white/70 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 rounded-2xl p-6 sm:p-7 backdrop-blur-xl flex flex-col justify-between gap-4 shadow-xl hover:border-emerald-500/40 transition-all duration-300 group h-full"
               onMouseMove={handleCardHoverMove}
               onMouseLeave={handleCardHoverLeave}
             >
               <div className="flex flex-col gap-3">
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex flex-col gap-1">
-                    <span className="font-mono-tag text-xs text-tertiary font-semibold">
+                    <span className="font-mono-tag text-xs text-emerald-700 dark:text-emerald-400 font-semibold">
                       OCT 2026 // CORE JVM &amp; BACKEND
                     </span>
                     <h3 className="font-headline-sm text-base sm:text-lg text-gray-900 dark:text-text-primary font-bold tracking-tight">
@@ -173,7 +173,7 @@ export default function CredentialsGrid() {
                       Master.dev / Frontend Masters (Instructor: Angie Jones)
                     </span>
                   </div>
-                  <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-gray-100 dark:bg-surface-container-high border border-gray-200/60 dark:border-white/10 text-tertiary font-mono-tag text-xs font-semibold whitespace-nowrap flex-shrink-0">
+                  <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-700 dark:text-emerald-400 font-mono-tag text-xs font-semibold whitespace-nowrap flex-shrink-0">
                     Core Java
                   </span>
                 </div>
@@ -188,9 +188,9 @@ export default function CredentialsGrid() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="View Java Fundamentals Credential (PDF)"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gray-100 dark:bg-surface-glass-subtle border border-gray-200 dark:border-white/20 text-gray-800 dark:text-on-surface font-mono-tag text-xs font-semibold shadow-sm hover:border-tertiary/40 hover:text-tertiary hover:bg-gray-200 dark:hover:bg-surface-container hover:shadow-[0_0_15px_rgba(16,185,129,0.35)] transition-all duration-300"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-800 dark:text-on-surface font-mono-tag text-xs font-semibold shadow-sm hover:border-emerald-500/40 hover:text-emerald-700 dark:hover:text-emerald-400 hover:bg-gray-200/80 dark:hover:bg-white/10 transition-all duration-300"
                 >
-                  <span className="material-symbols-outlined text-sm text-tertiary">open_in_new</span>
+                  <span className="material-symbols-outlined text-sm text-emerald-600 dark:text-emerald-400">open_in_new</span>
                   <span>View Credential (PDF) ↗</span>
                 </a>
               </div>
@@ -200,14 +200,14 @@ export default function CredentialsGrid() {
           {/* Certification Card 2: Practical Prompt Engineering */}
           <ScrollReveal delay={190} className="h-full">
             <div
-              className="card-spotlight tilt-card bg-white/70 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 rounded-2xl p-6 sm:p-7 backdrop-blur-xl flex flex-col justify-between gap-4 shadow-xl hover:border-secondary/40 transition-all duration-300 group h-full"
+              className="card-spotlight tilt-card bg-white/70 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 rounded-2xl p-6 sm:p-7 backdrop-blur-xl flex flex-col justify-between gap-4 shadow-xl hover:border-sky-500/40 transition-all duration-300 group h-full"
               onMouseMove={handleCardHoverMove}
               onMouseLeave={handleCardHoverLeave}
             >
               <div className="flex flex-col gap-3">
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex flex-col gap-1">
-                    <span className="font-mono-tag text-xs text-secondary font-semibold">
+                    <span className="font-mono-tag text-xs text-sky-700 dark:text-sky-400 font-semibold">
                       2026 // PROFESSIONAL TRAINING
                     </span>
                     <h3 className="font-headline-sm text-base sm:text-lg text-gray-900 dark:text-text-primary font-bold tracking-tight">
@@ -217,7 +217,7 @@ export default function CredentialsGrid() {
                       Frontend Masters (Online Professional Training)
                     </span>
                   </div>
-                  <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-gray-100 dark:bg-surface-container-high border border-gray-200/60 dark:border-white/10 text-secondary font-mono-tag text-xs font-semibold whitespace-nowrap flex-shrink-0">
+                  <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-700 dark:text-sky-400 font-mono-tag text-xs font-semibold whitespace-nowrap flex-shrink-0">
                     AI Workflows
                   </span>
                 </div>
@@ -232,9 +232,9 @@ export default function CredentialsGrid() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="View Prompt Engineering Credential (PDF)"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gray-100 dark:bg-surface-glass-subtle border border-gray-200 dark:border-white/20 text-gray-800 dark:text-on-surface font-mono-tag text-xs font-semibold shadow-sm hover:border-secondary/40 hover:text-secondary hover:bg-gray-200 dark:hover:bg-surface-container hover:shadow-[0_0_15px_rgba(6,182,212,0.35)] transition-all duration-300"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-800 dark:text-on-surface font-mono-tag text-xs font-semibold shadow-sm hover:border-sky-500/40 hover:text-sky-700 dark:hover:text-sky-400 hover:bg-gray-200/80 dark:hover:bg-white/10 transition-all duration-300"
                 >
-                  <span className="material-symbols-outlined text-sm text-secondary">open_in_new</span>
+                  <span className="material-symbols-outlined text-sm text-sky-600 dark:text-sky-400">open_in_new</span>
                   <span>View Credential (PDF) ↗</span>
                 </a>
               </div>
@@ -244,14 +244,14 @@ export default function CredentialsGrid() {
           {/* Certification Card 3: Professional Certificate in Android */}
           <ScrollReveal delay={220} className="h-full">
             <div
-              className="card-spotlight tilt-card bg-white/70 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 rounded-2xl p-6 sm:p-7 backdrop-blur-xl flex flex-col justify-between gap-4 shadow-xl hover:border-primary/40 transition-all duration-300 group h-full"
+              className="card-spotlight tilt-card bg-white/70 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 rounded-2xl p-6 sm:p-7 backdrop-blur-xl flex flex-col justify-between gap-4 shadow-xl hover:border-indigo-500/40 transition-all duration-300 group h-full"
               onMouseMove={handleCardHoverMove}
               onMouseLeave={handleCardHoverLeave}
             >
               <div className="flex flex-col gap-3">
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex flex-col gap-1">
-                    <span className="font-mono-tag text-xs text-primary font-semibold">
+                    <span className="font-mono-tag text-xs text-indigo-700 dark:text-indigo-400 font-semibold">
                       3 Months Intensive Program (Dec 2022)
                     </span>
                     <h3 className="font-headline-sm text-base sm:text-lg text-gray-900 dark:text-text-primary font-bold tracking-tight">
@@ -261,7 +261,7 @@ export default function CredentialsGrid() {
                       Creative IT Institute (Dhaka, Bangladesh)
                     </span>
                   </div>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/30 text-secondary font-mono-tag text-xs font-semibold whitespace-nowrap shadow-[0_0_12px_rgba(6,182,212,0.25)] flex-shrink-0">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-700 dark:text-indigo-300 font-mono-tag text-xs font-semibold whitespace-nowrap flex-shrink-0">
                     <span className="material-symbols-outlined text-xs">verified</span>
                     <span>Verified Credential</span>
                   </span>

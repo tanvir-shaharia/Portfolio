@@ -8,8 +8,16 @@ import App from '../App';
 
 describe('PocketLog Privacy & Terms Pages', () => {
   beforeAll(() => {
-    // Mock window.scrollTo for jsdom
+    // Mock window.scrollTo and IntersectionObserver for jsdom
     window.scrollTo = jest.fn();
+    global.IntersectionObserver = class {
+      observe() {}
+      unobserve() {}
+      disconnect() {}
+    };
+    window.IntersectionObserver = global.IntersectionObserver;
+    global.IntersectionObserverEntry = class {};
+    window.IntersectionObserverEntry = global.IntersectionObserverEntry;
   });
 
   test('renders PocketLog Privacy Policy with v2.0.0 metadata, headings, and permissions table', () => {
@@ -90,5 +98,36 @@ describe('PocketLog Privacy & Terms Pages', () => {
     );
     expect(screen.getAllByText('PocketLog Terms of Service').length).toBeGreaterThanOrEqual(1);
     expect(screen.queryByText(/page not found/i)).not.toBeInTheDocument();
+  });
+
+  test('routes to /project-estimator standalone page without 404 and does not mount on homepage', () => {
+    // 1. Verify /project-estimator standalone page renders
+    const { unmount } = render(
+      <MemoryRouter initialEntries={['/project-estimator']}>
+        <App />
+      </MemoryRouter>
+    );
+    expect(
+      screen.getByRole('heading', { name: /estimate project cost & timeline/i })
+    ).toBeInTheDocument();
+    expect(screen.getByText(/back to portfolio/i)).toBeInTheDocument();
+    expect(screen.queryByText(/page not found/i)).not.toBeInTheDocument();
+    unmount();
+
+    // 2. Verify homepage does NOT render the full estimator section
+    render(
+      <MemoryRouter initialEntries={['/']}>
+        <App />
+      </MemoryRouter>
+    );
+    expect(
+      screen.queryByRole('heading', { name: /estimate project cost & timeline/i })
+    ).not.toBeInTheDocument();
+    // But CTA buttons to /project-estimator are present and link to /project-estimator
+    const ctas = screen.getAllByRole('link', { name: /estimate project cost/i });
+    expect(ctas.length).toBeGreaterThanOrEqual(1);
+    ctas.forEach((cta) => {
+      expect(cta).toHaveAttribute('href', '/project-estimator');
+    });
   });
 });

@@ -3,6 +3,7 @@ import mobileAppsList from "../../../utils/mobileAppsList.json";
 import AppModal from "./appModal";
 import EnterpriseGrid from "./EnterpriseGrid";
 import ScrollReveal from "../../ScrollReveal";
+import { GooglePlayIcon } from "../../SocialBrandIcon";
 import {
   handleCardHoverMove,
   handleCardHoverLeave,
@@ -35,11 +36,11 @@ export default function MobileApps() {
       <ScrollReveal>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 sm:mb-10">
           <div>
-            <span className="font-mono-tag text-xs text-secondary font-semibold uppercase tracking-widest">
-              {"// FLAGSHIP_PRODUCTIONS"}
+            <span className="font-mono-tag text-xs text-sky-700 dark:text-sky-400 font-semibold uppercase tracking-widest">
+              FLAGSHIP PRODUCTIONS
             </span>
             <h2 className="font-display-hero text-2xl sm:text-3xl lg:text-4xl text-gray-900 dark:text-text-primary font-extrabold tracking-tight mt-1">
-              Engineered for Scale & Zero Latency
+              Engineered for Scale &amp; Zero Latency
             </h2>
           </div>
           <p className="font-body-md text-sm sm:text-base text-gray-600 dark:text-text-muted max-w-md leading-relaxed">
@@ -62,12 +63,12 @@ export default function MobileApps() {
             <div className="flex flex-col gap-5">
               {/* Header Badges */}
               <div className="flex items-center justify-between">
-                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary/10 border border-tertiary/30 text-tertiary font-mono-tag text-xs font-semibold">
-                  <span className="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-400 font-mono-tag text-xs font-semibold">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                   <span>Available on Google Play</span>
                 </span>
-                <span className="font-mono-tag text-xs text-gray-500 dark:text-text-muted font-medium">
-                  V2.0.0 // PRODUCTION
+                <span className="font-mono-tag text-xs text-gray-600 dark:text-text-muted font-medium">
+                  V2.0.0 • PRODUCTION
                 </span>
               </div>
 
@@ -87,7 +88,7 @@ export default function MobileApps() {
 
                 {/* Quick Preview Badge Overlay */}
                 <div className="absolute bottom-2.5 right-2.5 z-10 bg-black/75 backdrop-blur-md text-white text-[11px] font-mono-tag px-3 py-1 rounded-full flex items-center gap-1.5 border border-white/20">
-                  <span className="material-symbols-outlined text-sm text-secondary">visibility</span>
+                  <span className="material-symbols-outlined text-sm text-sky-400">visibility</span>
                   <span>Click to Expand Screenshots</span>
                 </div>
               </div>
@@ -98,11 +99,11 @@ export default function MobileApps() {
                   <h3 className="font-headline-md text-xl sm:text-2xl text-gray-900 dark:text-text-primary font-extrabold tracking-tight">
                     PocketLog: Personal Finance
                   </h3>
-                  <span className="material-symbols-outlined text-secondary text-2xl flex-shrink-0">
+                  <span className="material-symbols-outlined text-sky-600 dark:text-sky-400 text-2xl flex-shrink-0">
                     account_balance_wallet
                   </span>
                 </div>
-                <p className="font-mono-tag text-xs sm:text-sm text-secondary mt-1 font-semibold tracking-wide">
+                <p className="font-mono-tag text-xs sm:text-sm text-sky-700 dark:text-sky-400 mt-1 font-semibold tracking-wide">
                   Track Better. Spend Smarter. 100% Offline.
                 </p>
               </div>
@@ -117,25 +118,25 @@ export default function MobileApps() {
               {/* Feature Matrix Chips (2x2) */}
               <div className="grid grid-cols-2 gap-2.5 pt-1">
                 <div className="flex items-center gap-2 p-2.5 rounded-xl bg-gray-50/80 dark:bg-surface-container-low border border-gray-200/50 dark:border-white/5">
-                  <span className="material-symbols-outlined text-base text-secondary">database</span>
+                  <span className="material-symbols-outlined text-base text-sky-600 dark:text-sky-400">database</span>
                   <span className="font-mono-tag text-xs text-gray-800 dark:text-on-surface font-medium truncate">
                     100% Offline Room DB
                   </span>
                 </div>
                 <div className="flex items-center gap-2 p-2.5 rounded-xl bg-gray-50/80 dark:bg-surface-container-low border border-gray-200/50 dark:border-white/5">
-                  <span className="material-symbols-outlined text-base text-primary">picture_as_pdf</span>
+                  <span className="material-symbols-outlined text-base text-indigo-600 dark:text-indigo-400">picture_as_pdf</span>
                   <span className="font-mono-tag text-xs text-gray-800 dark:text-on-surface font-medium truncate">
                     Instant Canvas A4 PDF
                   </span>
                 </div>
                 <div className="flex items-center gap-2 p-2.5 rounded-xl bg-gray-50/80 dark:bg-surface-container-low border border-gray-200/50 dark:border-white/5">
-                  <span className="material-symbols-outlined text-base text-tertiary">fingerprint</span>
+                  <span className="material-symbols-outlined text-base text-emerald-600 dark:text-emerald-400">fingerprint</span>
                   <span className="font-mono-tag text-xs text-gray-800 dark:text-on-surface font-medium truncate">
                     Biometric KeyStore
                   </span>
                 </div>
                 <div className="flex items-center gap-2 p-2.5 rounded-xl bg-gray-50/80 dark:bg-surface-container-low border border-gray-200/50 dark:border-white/5">
-                  <span className="material-symbols-outlined text-base text-cyan-400">currency_exchange</span>
+                  <span className="material-symbols-outlined text-base text-sky-600 dark:text-sky-400">currency_exchange</span>
                   <span className="font-mono-tag text-xs text-gray-800 dark:text-on-surface font-medium truncate">
                     14 Global Currencies
                   </span>
@@ -166,9 +167,9 @@ export default function MobileApps() {
                 onMouseMove={handleMagneticMove}
                 onMouseLeave={handleMagneticLeave}
                 onBlur={handleMagneticLeave}
-                className="btn-magnetic inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-secondary text-on-secondary font-label-ui text-xs sm:text-sm font-bold hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all flex-1 sm:flex-initial"
+                className="btn-magnetic inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-label-ui text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all flex-1 sm:flex-initial"
               >
-                <i className="fa-brands fa-google-play text-sm"></i>
+                <GooglePlayIcon className="w-4 h-4" />
                 <span>View on Google Play</span>
               </a>
 
@@ -176,7 +177,7 @@ export default function MobileApps() {
                 onClick={() => handleOpen(pocketLogApp)}
                 className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-surface-container border border-gray-200 dark:border-white/10 text-gray-800 dark:text-on-surface font-label-ui text-xs sm:text-sm font-semibold hover:border-gray-300 dark:hover:border-white/20 transition-all cursor-pointer flex-1 sm:flex-initial"
               >
-                <span className="material-symbols-outlined text-base text-secondary">architecture</span>
+                <span className="material-symbols-outlined text-base text-sky-600 dark:text-sky-400">architecture</span>
                 <span>View Details</span>
               </button>
             </div>
@@ -195,12 +196,12 @@ export default function MobileApps() {
             <div className="flex flex-col gap-5">
               {/* Header Badges */}
               <div className="flex items-center justify-between">
-                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-primary-fixed-dim font-mono-tag text-xs font-semibold">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-700 dark:text-indigo-300 font-mono-tag text-xs font-semibold">
+                  <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse"></span>
                   <span>Under Active Development</span>
                 </span>
-                <span className="font-mono-tag text-xs text-gray-500 dark:text-text-muted font-medium">
-                  KMP // MULTIPLATFORM
+                <span className="font-mono-tag text-xs text-gray-600 dark:text-text-muted font-medium">
+                  KMP • MULTIPLATFORM
                 </span>
               </div>
 
@@ -220,7 +221,7 @@ export default function MobileApps() {
 
                 {/* Quick Preview Badge Overlay */}
                 <div className="absolute bottom-2.5 right-2.5 z-10 bg-black/75 backdrop-blur-md text-white text-[11px] font-mono-tag px-3 py-1 rounded-full flex items-center gap-1.5 border border-white/20">
-                  <span className="material-symbols-outlined text-sm text-primary">visibility</span>
+                  <span className="material-symbols-outlined text-sm text-indigo-400">visibility</span>
                   <span>Click to Expand Specs</span>
                 </div>
               </div>
@@ -231,11 +232,11 @@ export default function MobileApps() {
                   <h3 className="font-headline-md text-xl sm:text-2xl text-gray-900 dark:text-text-primary font-extrabold tracking-tight">
                     Trade Memo
                   </h3>
-                  <span className="material-symbols-outlined text-primary text-2xl flex-shrink-0">
+                  <span className="material-symbols-outlined text-indigo-600 dark:text-indigo-400 text-2xl flex-shrink-0">
                     candlestick_chart
                   </span>
                 </div>
-                <p className="font-mono-tag text-xs sm:text-sm text-primary-fixed-dim mt-1 font-semibold tracking-wide">
+                <p className="font-mono-tag text-xs sm:text-sm text-indigo-700 dark:text-indigo-300 mt-1 font-semibold tracking-wide">
                   The Anti-Tilt Journal in Your Pocket.
                 </p>
               </div>
@@ -250,7 +251,7 @@ export default function MobileApps() {
               {/* Feature Matrix Chips (2x2) */}
               <div className="grid grid-cols-2 gap-2.5 pt-1">
                 <div className="flex items-center gap-2 p-2.5 rounded-xl bg-gray-50/80 dark:bg-surface-container-low border border-gray-200/50 dark:border-white/5">
-                  <span className="material-symbols-outlined text-base text-primary">psychology</span>
+                  <span className="material-symbols-outlined text-base text-indigo-600 dark:text-indigo-400">psychology</span>
                   <span className="font-mono-tag text-xs text-gray-800 dark:text-on-surface font-medium truncate">
                     Anti-Tilt Emotion Tags
                   </span>
@@ -262,13 +263,13 @@ export default function MobileApps() {
                   </span>
                 </div>
                 <div className="flex items-center gap-2 p-2.5 rounded-xl bg-gray-50/80 dark:bg-surface-container-low border border-gray-200/50 dark:border-white/5">
-                  <span className="material-symbols-outlined text-base text-secondary">layers</span>
+                  <span className="material-symbols-outlined text-base text-sky-600 dark:text-sky-400">layers</span>
                   <span className="font-mono-tag text-xs text-gray-800 dark:text-on-surface font-medium truncate">
-                    Shared Domain & State
+                    Shared Domain &amp; State
                   </span>
                 </div>
                 <div className="flex items-center gap-2 p-2.5 rounded-xl bg-gray-50/80 dark:bg-surface-container-low border border-gray-200/50 dark:border-white/5">
-                  <span className="material-symbols-outlined text-base text-tertiary">analytics</span>
+                  <span className="material-symbols-outlined text-base text-emerald-600 dark:text-emerald-400">analytics</span>
                   <span className="font-mono-tag text-xs text-gray-800 dark:text-on-surface font-medium truncate">
                     Execution Scorecards
                   </span>
@@ -300,7 +301,7 @@ export default function MobileApps() {
                 onClick={() => handleOpen(tradeMemoApp)}
                 className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-surface-container border border-gray-200 dark:border-white/10 text-gray-800 dark:text-on-surface font-label-ui text-xs sm:text-sm font-semibold hover:border-gray-300 dark:hover:border-white/20 transition-all cursor-pointer flex-1 sm:flex-initial"
               >
-                <span className="material-symbols-outlined text-base text-primary">architecture</span>
+                <span className="material-symbols-outlined text-base text-indigo-600 dark:text-indigo-400">architecture</span>
                 <span>View Details</span>
               </button>
 
@@ -309,7 +310,7 @@ export default function MobileApps() {
                 onMouseMove={handleMagneticMove}
                 onMouseLeave={handleMagneticLeave}
                 onBlur={handleMagneticLeave}
-                className="btn-magnetic inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-primary-container text-on-primary-container font-label-ui text-xs sm:text-sm font-bold hover:shadow-[0_0_20px_rgba(128,131,255,0.4)] transition-all flex-1 sm:flex-initial"
+                className="btn-magnetic inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-label-ui text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all flex-1 sm:flex-initial"
               >
                 <span className="material-symbols-outlined text-sm">notifications_active</span>
                 <span>Join Beta Waitlist</span>

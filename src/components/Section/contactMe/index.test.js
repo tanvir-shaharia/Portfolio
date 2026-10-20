@@ -65,7 +65,7 @@ describe('ContactMe Component (Gmail SMTP)', () => {
       );
     });
 
-    expect(screen.getByText('Thank You !')).toBeInTheDocument();
+    expect(await screen.findByText('Thank You !')).toBeInTheDocument();
   });
 
   test('handles Gmail SMTP failure without incorrectly showing thank you screen', async () => {

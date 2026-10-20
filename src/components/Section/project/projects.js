@@ -36,7 +36,7 @@ export default function Projects({ items }) {
               className="w-full flex flex-col mb-4 md:mb-0"
             >
               <div
-                className="card-spotlight tilt-card relative projectBtn w-full overflow-hidden hover:cursor-pointer rounded-2xl border border-gray-200/80 dark:border-white/10 shadow-lg dark:shadow-2xl hover:border-secondary/50 hover:shadow-[0_8px_30px_rgba(6,182,212,0.2)] transition-all duration-300 ease-out group bg-white/70 dark:bg-surface-glass backdrop-blur-xl flex flex-col justify-between"
+                className="card-spotlight tilt-card relative projectBtn w-full overflow-hidden hover:cursor-pointer rounded-2xl border border-gray-200/80 dark:border-white/10 shadow-lg dark:shadow-2xl hover:border-sky-500/40 hover:shadow-xl transition-all duration-300 ease-out group bg-white/70 dark:bg-surface-glass backdrop-blur-xl flex flex-col justify-between"
                 onClick={() => handleOpen(id)}
                 onMouseMove={handleCardHoverMove}
                 onMouseLeave={handleCardHoverLeave}
@@ -57,7 +57,7 @@ export default function Projects({ items }) {
                     {category.slice(0, 2).map((cat, cIdx) => (
                       <span
                         key={cIdx}
-                        className="bg-black/75 backdrop-blur-md text-secondary border border-secondary/30 font-mono-tag text-[10px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded-lg shadow-md"
+                        className="bg-black/80 backdrop-blur-md text-sky-300 border border-sky-500/30 font-mono-tag text-[10px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded-lg shadow-md"
                       >
                         {cat}
                       </span>
@@ -81,7 +81,7 @@ export default function Projects({ items }) {
                 {/* Card Info Bar */}
                 <div className="p-5 flex flex-col gap-3 border-t border-gray-100 dark:border-white/5 bg-transparent">
                   <div>
-                    <h5 className="font-headline-sm font-bold text-base sm:text-lg text-gray-900 dark:text-text-primary group-hover:text-secondary transition-colors">
+                    <h5 className="font-headline-sm font-bold text-base sm:text-lg text-gray-900 dark:text-text-primary group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
                       {name}
                     </h5>
                     <p className="font-mono-tag text-xs text-gray-500 dark:text-text-muted mt-1 line-clamp-1">
@@ -89,9 +89,9 @@ export default function Projects({ items }) {
                     </p>
                   </div>
 
-                  <div className="flex items-center justify-between text-xs font-mono-tag text-secondary font-semibold pt-2 border-t border-gray-100 dark:border-white/5">
+                  <div className="flex items-center justify-between text-xs font-mono-tag text-sky-700 dark:text-sky-400 font-semibold pt-2 border-t border-gray-100 dark:border-white/5">
                     <span>Inspect Architecture Specs</span>
-                    <div className="w-7 h-7 rounded-lg bg-secondary/15 text-secondary flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                    <div className="w-7 h-7 rounded-lg bg-sky-500/10 text-sky-700 dark:text-sky-400 flex items-center justify-center group-hover:translate-x-1 transition-transform">
                       <i className="fa-solid fa-arrow-right text-[10px]"></i>
                     </div>
                   </div>

@@ -14,8 +14,8 @@ export const CORE_CATEGORIES = [
     title: "Programming Languages",
     subtitle: "Core Languages & Runtimes",
     icon: "code",
-    iconColor: "text-secondary",
-    accentBorder: "group-hover:border-secondary/40",
+    iconColor: "text-sky-600 dark:text-sky-400",
+    accentBorder: "group-hover:border-sky-500/40",
     skills: [
       {
         id: "kotlin",
@@ -65,8 +65,8 @@ export const CORE_CATEGORIES = [
     title: "Mobile Platforms & Frameworks",
     subtitle: "Native Android & Cross-Platform UI",
     icon: "phone_android",
-    iconColor: "text-primary",
-    accentBorder: "group-hover:border-primary/40",
+    iconColor: "text-indigo-600 dark:text-indigo-400",
+    accentBorder: "group-hover:border-indigo-500/40",
     skills: [
       {
         id: "android-sdk",
@@ -109,8 +109,8 @@ export const CORE_CATEGORIES = [
     title: "Architecture & State Management",
     subtitle: "Architecture, Reactive State & Dependency Injection",
     icon: "schema",
-    iconColor: "text-tertiary",
-    accentBorder: "group-hover:border-tertiary/40",
+    iconColor: "text-emerald-600 dark:text-emerald-400",
+    accentBorder: "group-hover:border-emerald-500/40",
     skills: [
       {
         id: "clean-arch",
@@ -165,8 +165,8 @@ export const CORE_CATEGORIES = [
     title: "Networking & Cloud Services",
     subtitle: "APIs, Messaging, Cloud Sync & Observability",
     icon: "hub",
-    iconColor: "text-secondary-fixed",
-    accentBorder: "group-hover:border-secondary-fixed/40",
+    iconColor: "text-sky-600 dark:text-sky-400",
+    accentBorder: "group-hover:border-sky-500/40",
     skills: [
       {
         id: "rest-apis",
@@ -216,8 +216,8 @@ export const CORE_CATEGORIES = [
     title: "Databases & Local Storage",
     subtitle: "Offline-First Persistence & Data Management",
     icon: "database",
-    iconColor: "text-secondary",
-    accentBorder: "group-hover:border-secondary/40",
+    iconColor: "text-indigo-600 dark:text-indigo-400",
+    accentBorder: "group-hover:border-indigo-500/40",
     skills: [
       {
         id: "room-db",
@@ -252,8 +252,8 @@ export const CORE_CATEGORIES = [
     title: "Developer Tools & Ecosystem",
     subtitle: "Build Systems, Release Workflows & Hardware Integration",
     icon: "build",
-    iconColor: "text-primary-fixed",
-    accentBorder: "group-hover:border-primary-fixed/40",
+    iconColor: "text-emerald-600 dark:text-emerald-400",
+    accentBorder: "group-hover:border-emerald-500/40",
     skills: [
       {
         id: "android-studio",
