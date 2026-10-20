@@ -27,7 +27,7 @@
     "placeholderSrc": "/my_robi.webp",
     "imageSrc": "/my_robi.webp",
     "source": "",
-    "link": "https://play.google.com/store/apps/details?id=com.robi.myrobi"
+    "link": "https://play.google.com/store/apps/details?id=net.omobio.robisc"
   },
   {
     "id": 3,
@@ -42,7 +42,7 @@
     "placeholderSrc": "/my_airtel.webp",
     "imageSrc": "/my_airtel.webp",
     "source": "",
-    "link": "https://play.google.com/store/apps/details?id=com.airtel.myairtel"
+    "link": "https://play.google.com/store/apps/details?id=net.omobio.airtelsc"
   },
   {
     "id": 4,
