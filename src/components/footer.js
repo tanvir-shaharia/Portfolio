@@ -1,6 +1,16 @@
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import TechLogo from "./TechLogo";
+import {
+  GitHubIcon,
+  LinkedInIcon,
+  GooglePlayIcon,
+  TelegramIcon,
+  GmailIcon,
+  FacebookIcon,
+  InstagramIcon,
+  XIcon,
+} from "./SocialBrandIcon";
 
 export default function Footer() {
   const location = useLocation();
@@ -35,7 +45,7 @@ export default function Footer() {
               <span className="font-headline-sm text-lg sm:text-xl font-bold text-gray-900 dark:text-text-primary tracking-tight">
                 Tanvir Shaharia
               </span>
-              <span className="font-mono-tag text-xs px-2.5 py-0.5 rounded-full bg-gray-100 dark:bg-surface-container-highest text-secondary border border-secondary/20 font-semibold">
+              <span className="font-mono-tag text-xs px-2.5 py-0.5 rounded-full bg-sky-500/10 text-sky-700 dark:text-sky-300 border border-sky-500/20 font-semibold">
                 v4.2.0
               </span>
             </div>
@@ -46,9 +56,9 @@ export default function Footer() {
             </p>
 
             <div className="flex items-center gap-2 pt-1">
-              <span className="h-2 w-2 rounded-full bg-tertiary animate-pulse"></span>
-              <span className="font-mono-tag text-xs text-gray-500 dark:text-text-muted">
-                STATUS: AVAILABLE // OPEN TO CONTRACTS & ROLES
+              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span className="font-mono-tag text-xs text-gray-600 dark:text-text-muted">
+                STATUS: AVAILABLE FOR CONTRACTS &amp; ROLES
               </span>
             </div>
           </div>
@@ -62,40 +72,46 @@ export default function Footer() {
               <a
                 href="#home"
                 onClick={(e) => handleNavClick(e, "home", "/")}
-                className="text-gray-600 dark:text-text-muted hover:text-secondary transition-colors"
+                className="text-gray-600 dark:text-text-muted hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
               >
                 Overview
               </a>
               <a
                 href="#products"
                 onClick={(e) => handleNavClick(e, "products", "/projects")}
-                className="text-gray-600 dark:text-text-muted hover:text-secondary transition-colors"
+                className="text-gray-600 dark:text-text-muted hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
               >
                 Production Builds
               </a>
               <a
                 href="#experience"
                 onClick={(e) => handleNavClick(e, "experience", "/resume")}
-                className="text-gray-600 dark:text-text-muted hover:text-secondary transition-colors"
+                className="text-gray-600 dark:text-text-muted hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
               >
                 Timeline
               </a>
               <a
                 href="#skills"
                 onClick={(e) => handleNavClick(e, "skills", "/skill")}
-                className="text-gray-600 dark:text-text-muted hover:text-secondary transition-colors"
+                className="text-gray-600 dark:text-text-muted hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
               >
                 Architecture Core
               </a>
               <Link
+                to="/project-estimator"
+                className="text-gray-600 dark:text-text-muted hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
+              >
+                Project Cost Estimator
+              </Link>
+              <Link
                 to="/pocketlog/privacy"
-                className="text-gray-600 dark:text-text-muted hover:text-secondary transition-colors"
+                className="text-gray-600 dark:text-text-muted hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
               >
                 PocketLog Privacy Policy
               </Link>
               <Link
                 to="/pocketlog/terms"
-                className="text-gray-600 dark:text-text-muted hover:text-secondary transition-colors"
+                className="text-gray-600 dark:text-text-muted hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
               >
                 PocketLog Terms of Service
               </Link>
@@ -110,11 +126,11 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-2">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                 </span>
-                <span className="font-mono-tag text-xs text-tertiary uppercase tracking-wider font-semibold">
-                  {"// DIRECT CONNECT"}
+                <span className="font-mono-tag text-xs text-emerald-700 dark:text-emerald-400 uppercase tracking-wider font-semibold">
+                  DIRECT CONNECT
                 </span>
               </div>
 
@@ -124,43 +140,70 @@ export default function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="GitHub Profile"
-                  className="w-10 h-10 rounded-xl bg-gray-100 dark:bg-surface-glass border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-700 dark:text-on-surface hover:text-secondary hover:border-secondary/50 hover:-translate-y-0.5 transition-all shadow-sm"
+                  className="w-10 h-10 rounded-xl bg-white/80 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 flex items-center justify-center text-gray-800 dark:text-white hover:border-gray-400 dark:hover:border-white/30 hover:scale-110 hover:-translate-y-0.5 transition-all shadow-sm"
                 >
-                  <i className="fa-brands fa-github text-base"></i>
+                  <GitHubIcon className="w-5 h-5 text-gray-900 dark:text-white" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/tanvir-shaharia/"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="LinkedIn Profile"
-                  className="w-10 h-10 rounded-xl bg-gray-100 dark:bg-surface-glass border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-700 dark:text-on-surface hover:text-secondary hover:border-secondary/50 hover:-translate-y-0.5 transition-all shadow-sm"
+                  className="w-10 h-10 rounded-xl bg-white/80 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 flex items-center justify-center hover:border-[#0A66C2]/50 hover:scale-110 hover:-translate-y-0.5 transition-all shadow-sm"
                 >
-                  <i className="fa-brands fa-linkedin text-base"></i>
+                  <LinkedInIcon className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://x.com/tanvir_shaharia"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="X (formerly Twitter) Profile"
+                  className="w-10 h-10 rounded-xl bg-white/80 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 flex items-center justify-center text-gray-900 dark:text-white hover:border-gray-400 dark:hover:border-white/30 hover:scale-110 hover:-translate-y-0.5 transition-all shadow-sm"
+                >
+                  <XIcon className="w-4 h-4 text-gray-900 dark:text-white" />
+                </a>
+                <a
+                  href="https://www.facebook.com/tanvir.softwaredev"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Facebook Page"
+                  className="w-10 h-10 rounded-xl bg-white/80 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 flex items-center justify-center hover:border-[#1877F2]/50 hover:scale-110 hover:-translate-y-0.5 transition-all shadow-sm"
+                >
+                  <FacebookIcon className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://www.instagram.com/tanvir_shaharia"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Instagram Profile"
+                  className="w-10 h-10 rounded-xl bg-white/80 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 flex items-center justify-center hover:border-pink-500/50 hover:scale-110 hover:-translate-y-0.5 transition-all shadow-sm"
+                >
+                  <InstagramIcon className="w-5 h-5" />
                 </a>
                 <a
                   href="https://t.me/tanvir_shaharia"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Telegram"
-                  className="w-10 h-10 rounded-xl bg-gray-100 dark:bg-surface-glass border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-700 dark:text-on-surface hover:text-secondary hover:border-secondary/50 hover:-translate-y-0.5 transition-all shadow-sm"
+                  className="w-10 h-10 rounded-xl bg-white/80 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 flex items-center justify-center hover:border-[#24A1DE]/50 hover:scale-110 hover:-translate-y-0.5 transition-all shadow-sm"
                 >
-                  <i className="fa-brands fa-telegram text-base"></i>
+                  <TelegramIcon className="w-5 h-5" />
                 </a>
                 <a
                   href="https://play.google.com/store/apps/dev?id=7594744948572165866"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Google Play Store Profile"
-                  className="w-10 h-10 rounded-xl bg-gray-100 dark:bg-surface-glass border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-700 dark:text-on-surface hover:text-secondary hover:border-secondary/50 hover:-translate-y-0.5 transition-all shadow-sm"
+                  className="w-10 h-10 rounded-xl bg-white/80 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 flex items-center justify-center hover:border-sky-500/50 hover:scale-110 hover:-translate-y-0.5 transition-all shadow-sm"
                 >
-                  <i className="fa-brands fa-google-play text-sm"></i>
+                  <GooglePlayIcon className="w-5 h-5" />
                 </a>
                 <a
                   href="mailto:tanvirshaharia120@gmail.com"
                   aria-label="Direct Email"
-                  className="w-10 h-10 rounded-xl bg-gray-100 dark:bg-surface-glass border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-700 dark:text-on-surface hover:text-secondary hover:border-secondary/50 hover:-translate-y-0.5 transition-all shadow-sm"
+                  className="w-10 h-10 rounded-xl bg-white/80 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 flex items-center justify-center hover:border-sky-500/50 hover:scale-110 hover:-translate-y-0.5 transition-all shadow-sm"
                 >
-                  <span className="material-symbols-outlined text-base">mail</span>
+                  <GmailIcon className="w-5 h-5" />
                 </a>
               </div>
             </div>
@@ -173,10 +216,10 @@ export default function Footer() {
             © {new Date().getFullYear()} MD Tanvir Shaharia. All rights reserved. Built for ultra-scale mobile engineering.
           </span>
           <div className="flex items-center gap-5">
-            <span className="font-mono-tag text-xs text-gray-500 dark:text-text-muted hover:text-secondary transition-colors cursor-default">
+            <span className="font-mono-tag text-xs text-gray-500 dark:text-text-muted hover:text-sky-600 dark:hover:text-sky-400 transition-colors cursor-default">
               VERIFIED_PORTFOLIO
             </span>
-            <span className="font-mono-tag text-xs text-gray-500 dark:text-text-muted hover:text-secondary transition-colors cursor-default">
+            <span className="font-mono-tag text-xs text-gray-500 dark:text-text-muted hover:text-sky-600 dark:hover:text-sky-400 transition-colors cursor-default">
               CLEAN_ARCHITECTURE
             </span>
           </div>

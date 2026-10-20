@@ -1,13 +1,36 @@
-import React from "react";
-import Typed from "react-typed";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import portraitPic from "../../../assets/images/tanvir_shaharia.png";
 import ResumeDownloadBtn from "../../ResumeDownloadBtn";
 import MetricsBar from "./MetricsBar";
 import EcosystemBar from "./EcosystemBar";
 import CopyButton from "../../CopyButton";
+import { GitHubIcon, LinkedInIcon, GooglePlayIcon, GmailIcon, XIcon } from "../../SocialBrandIcon";
 import { handleMagneticMove, handleMagneticLeave } from "../../../utils/motion";
 
+const HEADLINE_SPECIALTIES = [
+  "Android Native (Kotlin & Jetpack Compose)",
+  "Cross-Platform Systems (Flutter & Dart)",
+  "Clean Architecture & Reactive Coroutines",
+  "Offline-First & High-Throughput Engines",
+];
+
 export default function HomeHero() {
+  const [specialtyIndex, setSpecialtyIndex] = useState(0);
+  const [isFading, setIsFading] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsFading(true);
+      setTimeout(() => {
+        setSpecialtyIndex((prev) => (prev + 1) % HEADLINE_SPECIALTIES.length);
+        setIsFading(false);
+      }, 300);
+    }, 3600);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const scrollToSection = (e, sectionId) => {
     e.preventDefault();
     const element = document.getElementById(sectionId);
@@ -46,13 +69,13 @@ export default function HomeHero() {
             <div className="flex flex-col gap-2">
               <h1 className="font-display-hero text-4xl sm:text-5xl lg:text-[56px] lg:leading-[64px] text-gray-900 dark:text-text-primary tracking-tight font-extrabold">
                 Hi, I'm{" "}
-                <span className="bg-gradient-to-r from-primary-container via-secondary to-tertiary-fixed-dim bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-indigo-600 via-sky-600 to-indigo-800 dark:from-indigo-400 dark:via-sky-400 dark:to-teal-300 bg-clip-text text-transparent">
                   MD Tanvir Shaharia
                 </span>
               </h1>
               <div className="flex flex-wrap items-center gap-2 mt-1">
                 <h2 className="font-headline-sm text-base sm:text-lg text-gray-700 dark:text-on-surface flex items-center gap-1.5 font-bold">
-                  <span className="text-secondary font-mono-code font-bold">&gt;</span>
+                  <span className="text-sky-700 dark:text-sky-400 font-mono-code font-bold">&gt;</span>
                   <span>Software Engineer</span>
                 </h2>
                 <div className="min-h-[30px] flex items-center">
@@ -60,23 +83,23 @@ export default function HomeHero() {
                   <span className="sr-only">
                     Specialized in Android Native (Kotlin & Jetpack Compose), Cross-Platform Systems (Flutter & Dart), Clean Architecture & Reactive Coroutines, and Offline-First & High-Throughput Engines.
                   </span>
-                  {/* Interactive Cycling Typewriter */}
-                  <div aria-hidden="true" className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary border border-primary/30 font-mono-tag text-xs sm:text-sm font-semibold shadow-[0_0_15px_rgba(99,102,241,0.2)]">
-                    <span className="text-secondary font-bold font-mono">{"//"}</span>
-                    <Typed
-                      strings={[
-                        "Android Native (Kotlin & Jetpack Compose)",
-                        "Cross-Platform Systems (Flutter & Dart)",
-                        "Clean Architecture & Reactive Coroutines",
-                        "Offline-First & High-Throughput Engines",
-                      ]}
-                      typeSpeed={40}
-                      backSpeed={24}
-                      backDelay={2200}
-                      loop
-                      cursorChar="▍"
-                      className="text-primary dark:text-primary-fixed-dim font-mono font-semibold"
-                    />
+                  {/* Interactive Full-Line Smooth Cycling Rotator */}
+                  <div
+                    aria-hidden="true"
+                    className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-indigo-500/10 dark:bg-indigo-900/30 border border-indigo-500/20 dark:border-indigo-500/40 text-indigo-800 dark:text-indigo-200 font-mono-tag text-xs sm:text-sm font-semibold shadow-sm backdrop-blur-xl min-h-[34px] overflow-hidden"
+                  >
+                    <span className="text-sky-600 dark:text-sky-400 font-bold font-mono flex-shrink-0">
+                      {"//"}
+                    </span>
+                    <span
+                      className={`font-mono font-semibold transition-all duration-300 ease-out inline-block ${
+                        isFading
+                          ? "opacity-0 -translate-y-1.5 scale-[0.98]"
+                          : "opacity-100 translate-y-0 scale-100"
+                      }`}
+                    >
+                      {HEADLINE_SPECIALTIES[specialtyIndex]}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -85,19 +108,19 @@ export default function HomeHero() {
             {/* Core Competency Static Skill Tags (Instant Recruiter Scanability) */}
             <div className="flex flex-wrap items-center gap-2 pt-0.5" aria-label="Core Technical Competencies">
               <span className="font-mono-tag text-[11px] sm:text-xs px-2.5 py-1 rounded-md bg-gray-100 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 text-gray-800 dark:text-zinc-200 font-semibold flex items-center gap-1.5 shadow-sm">
-                <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-sky-500"></span>
                 Kotlin
               </span>
               <span className="font-mono-tag text-[11px] sm:text-xs px-2.5 py-1 rounded-md bg-gray-100 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 text-gray-800 dark:text-zinc-200 font-semibold flex items-center gap-1.5 shadow-sm">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
                 Jetpack Compose
               </span>
               <span className="font-mono-tag text-[11px] sm:text-xs px-2.5 py-1 rounded-md bg-gray-100 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 text-gray-800 dark:text-zinc-200 font-semibold flex items-center gap-1.5 shadow-sm">
-                <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-sky-500"></span>
                 Flutter
               </span>
               <span className="font-mono-tag text-[11px] sm:text-xs px-2.5 py-1 rounded-md bg-gray-100 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 text-gray-800 dark:text-zinc-200 font-semibold flex items-center gap-1.5 shadow-sm">
-                <span className="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                 Clean Architecture
               </span>
             </div>
@@ -111,14 +134,14 @@ export default function HomeHero() {
             </p>
 
             {/* Action CTAs */}
-            <div className="flex flex-wrap items-center gap-3.5 pt-2">
+            <div className="flex flex-wrap items-center gap-3.5 pt-2 relative z-30">
               <a
                 href="#contact"
                 onClick={(e) => scrollToSection(e, "contact")}
                 onMouseMove={handleMagneticMove}
                 onMouseLeave={handleMagneticLeave}
                 onBlur={handleMagneticLeave}
-                className="btn-magnetic inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-primary-container via-indigo-600 to-secondary text-white font-label-ui text-sm font-semibold shadow-[0_0_24px_rgba(99,102,241,0.4)] hover:shadow-[0_0_32px_rgba(6,182,212,0.6)]"
+                className="btn-magnetic inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-sky-600 hover:from-indigo-500 hover:to-sky-500 text-white font-label-ui text-sm font-semibold shadow-md hover:shadow-lg"
               >
                 <span>Start a Project</span>
                 <span className="material-symbols-outlined text-lg">arrow_forward</span>
@@ -126,23 +149,22 @@ export default function HomeHero() {
 
               <ResumeDownloadBtn />
 
-              <a
-                href="#products"
-                onClick={(e) => scrollToSection(e, "products")}
+              <Link
+                to="/project-estimator"
                 onMouseMove={handleMagneticMove}
                 onMouseLeave={handleMagneticLeave}
                 onBlur={handleMagneticLeave}
-                className="btn-magnetic inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-surface-glass-subtle border border-secondary/30 text-secondary font-label-ui text-sm font-semibold hover:bg-secondary/10 hover:border-secondary/60"
+                className="btn-magnetic inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white dark:bg-surface-glass-subtle border border-sky-600/30 dark:border-sky-400/30 text-sky-700 dark:text-sky-300 font-label-ui text-sm font-semibold hover:bg-sky-50 dark:hover:bg-sky-500/10 hover:border-sky-600/60 dark:hover:border-sky-400/60 shadow-sm"
               >
-                <span className="material-symbols-outlined text-lg">code_blocks</span>
-                <span>Explore Shipped Apps</span>
-              </a>
+                <span className="material-symbols-outlined text-lg">calculate</span>
+                <span>Estimate Project Cost</span>
+              </Link>
             </div>
 
             {/* Social & Direct Profile Strip */}
             <div className="flex flex-wrap items-center gap-3.5 pt-4 text-xs font-mono-tag">
               <span className="text-gray-500 dark:text-text-muted font-medium">
-                {"// REPOSITORIES & CONNECT:"}
+                PROFILES &amp; CONNECT:
               </span>
               <div className="flex items-center gap-2">
                 <a
@@ -150,35 +172,44 @@ export default function HomeHero() {
                   href="https://github.com/tanvir-shaharia"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-9 h-9 rounded-xl bg-gray-100 dark:bg-surface-glass border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-700 dark:text-on-surface hover:text-secondary hover:border-secondary/50 hover:-translate-y-0.5 transition-all shadow-sm"
+                  className="w-9 h-9 rounded-xl bg-white/80 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 flex items-center justify-center text-gray-800 dark:text-white hover:border-gray-400 dark:hover:border-white/30 hover:scale-105 hover:-translate-y-0.5 transition-all shadow-sm"
                 >
-                  <i className="fa-brands fa-github text-sm"></i>
+                  <GitHubIcon className="w-4 h-4 text-gray-900 dark:text-white" />
                 </a>
                 <a
                   aria-label="LinkedIn Profile"
                   href="https://www.linkedin.com/in/tanvir-shaharia"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-9 h-9 rounded-xl bg-gray-100 dark:bg-surface-glass border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-700 dark:text-on-surface hover:text-secondary hover:border-secondary/50 hover:-translate-y-0.5 transition-all shadow-sm"
+                  className="w-9 h-9 rounded-xl bg-white/80 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 flex items-center justify-center hover:border-[#0A66C2]/50 hover:scale-105 hover:-translate-y-0.5 transition-all shadow-sm"
                 >
-                  <i className="fa-brands fa-linkedin text-sm"></i>
+                  <LinkedInIcon className="w-4 h-4" />
+                </a>
+                <a
+                  aria-label="X (formerly Twitter) Profile"
+                  href="https://x.com/tanvir_shaharia"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-9 h-9 rounded-xl bg-white/80 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 flex items-center justify-center text-gray-900 dark:text-white hover:border-gray-400 dark:hover:border-white/30 hover:scale-105 hover:-translate-y-0.5 transition-all shadow-sm"
+                >
+                  <XIcon className="w-3.5 h-3.5 text-gray-900 dark:text-white" />
                 </a>
                 <a
                   aria-label="Google Play Store Profile"
                   href="https://play.google.com/store/apps/dev?id=7594744948572165866"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-9 h-9 rounded-xl bg-gray-100 dark:bg-surface-glass border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-700 dark:text-on-surface hover:text-secondary hover:border-secondary/50 hover:-translate-y-0.5 transition-all shadow-sm"
+                  className="w-9 h-9 rounded-xl bg-white/80 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 flex items-center justify-center hover:border-sky-500/50 hover:scale-105 hover:-translate-y-0.5 transition-all shadow-sm"
                 >
-                  <i className="fa-brands fa-google-play text-sm"></i>
+                  <GooglePlayIcon className="w-4 h-4" />
                 </a>
-                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-surface-glass border border-gray-200 dark:border-white/10 text-gray-700 dark:text-on-surface-variant hover:border-secondary/50 transition-all shadow-sm text-xs">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/80 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 text-gray-700 dark:text-on-surface-variant hover:border-sky-500/50 transition-all shadow-sm text-xs">
                   <a
                     href="mailto:tanvirshaharia120@gmail.com"
-                    className="inline-flex items-center gap-1.5 hover:text-secondary transition-colors"
+                    className="inline-flex items-center gap-2 hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
                   >
-                    <span className="material-symbols-outlined text-sm text-tertiary">mail</span>
-                    <span>tanvirshaharia120@gmail.com</span>
+                    <GmailIcon className="w-4 h-4" />
+                    <span className="font-medium text-gray-900 dark:text-white">tanvirshaharia120@gmail.com</span>
                   </a>
                   <CopyButton text="tanvirshaharia120@gmail.com" label="email" className="ml-1" />
                 </div>
@@ -188,10 +219,10 @@ export default function HomeHero() {
 
           {/* Right Column: High-Tech Glass Frame Portrait (5 cols) */}
           <div className="lg:col-span-5 relative flex items-center justify-center mt-6 lg:mt-0">
-            {/* Ambient Rotating Radial & Conic Cyber-Glow */}
-            <div className="absolute -inset-6 bg-gradient-to-tr from-primary/35 via-secondary/25 to-tertiary/20 rounded-full blur-3xl opacity-75 -z-10 animate-spin-slow pointer-events-none"></div>
+            {/* Ambient Refined Glow */}
+            <div className="absolute -inset-4 bg-gradient-to-tr from-indigo-500/20 via-sky-500/15 to-transparent rounded-full blur-2xl -z-10 pointer-events-none"></div>
 
-            <div className="relative w-full max-w-sm sm:max-w-md bg-white/70 dark:bg-surface-glass border border-gray-200 dark:border-white/15 backdrop-blur-2xl rounded-3xl p-3 sm:p-4 shadow-2xl overflow-visible group">
+            <div className="relative w-full max-w-sm sm:max-w-md bg-white/80 dark:bg-surface-glass border border-gray-200 dark:border-white/15 backdrop-blur-2xl rounded-3xl p-3 sm:p-4 shadow-2xl overflow-visible group">
               {/* Glass Top Specular Shine */}
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none"></div>
 
@@ -206,30 +237,30 @@ export default function HomeHero() {
               </div>
 
               {/* Overlaid Glass Badge 1 (Floating Top Right) */}
-              <div className="animate-float-slow absolute -top-3 -right-2 sm:-top-3 sm:-right-4 bg-white/95 dark:bg-surface-panel/95 border border-secondary/40 backdrop-blur-xl rounded-2xl px-3.5 py-2.5 sm:px-4 sm:py-3 shadow-[0_8px_32px_rgba(0,0,0,0.3)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.6)] flex items-center gap-3 z-20">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-secondary/15 flex items-center justify-center text-secondary border border-secondary/30 flex-shrink-0">
+              <div className="animate-float-slow absolute -top-3 -right-2 sm:-top-3 sm:-right-4 bg-white/95 dark:bg-surface-panel/95 border border-sky-500/30 dark:border-sky-400/30 backdrop-blur-xl rounded-2xl px-3.5 py-2.5 sm:px-4 sm:py-3 shadow-lg flex items-center gap-3 z-20">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-sky-500/10 dark:bg-sky-400/10 flex items-center justify-center text-sky-700 dark:text-sky-400 border border-sky-500/20 dark:border-sky-400/20 flex-shrink-0">
                   <span className="material-symbols-outlined text-lg sm:text-xl">devices</span>
                 </div>
                 <div className="flex flex-col">
                   <span className="font-headline-sm text-sm sm:text-base text-gray-900 dark:text-text-primary font-bold tracking-tight">
                     10+ Apps
                   </span>
-                  <span className="font-mono-tag text-[10px] sm:text-xs text-gray-500 dark:text-on-surface-variant font-medium">
+                  <span className="font-mono-tag text-[10px] sm:text-xs text-gray-600 dark:text-on-surface-variant font-medium">
                     Shipped to Production
                   </span>
                 </div>
               </div>
 
               {/* Overlaid Glass Badge 2 (Floating Bottom Left) */}
-              <div className="animate-float-slow-reverse absolute -bottom-3 -left-2 sm:-bottom-3 sm:-left-4 bg-white/95 dark:bg-surface-panel/95 border border-primary/40 backdrop-blur-xl rounded-2xl px-3.5 py-2.5 sm:px-4 sm:py-3 shadow-[0_8px_32px_rgba(0,0,0,0.3)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.6)] flex items-center gap-3 z-20">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary dark:text-primary-fixed border border-primary/30 dark:border-primary/40 flex-shrink-0">
+              <div className="animate-float-slow-reverse absolute -bottom-3 -left-2 sm:-bottom-3 sm:-left-4 bg-white/95 dark:bg-surface-panel/95 border border-indigo-500/30 dark:border-indigo-400/30 backdrop-blur-xl rounded-2xl px-3.5 py-2.5 sm:px-4 sm:py-3 shadow-lg flex items-center gap-3 z-20">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-indigo-500/10 dark:bg-indigo-400/10 flex items-center justify-center text-indigo-700 dark:text-indigo-400 border border-indigo-500/20 dark:border-indigo-400/20 flex-shrink-0">
                   <span className="material-symbols-outlined text-lg sm:text-xl">offline_bolt</span>
                 </div>
                 <div className="flex flex-col">
                   <span className="font-label-ui text-xs sm:text-sm text-gray-900 dark:text-text-primary font-semibold">
                     Clean Architecture
                   </span>
-                  <span className="font-mono-tag text-[10px] sm:text-xs text-emerald-600 dark:text-tertiary font-medium">
+                  <span className="font-mono-tag text-[10px] sm:text-xs text-emerald-700 dark:text-emerald-400 font-medium">
                     Kotlin + Flutter Offline-First
                   </span>
                 </div>

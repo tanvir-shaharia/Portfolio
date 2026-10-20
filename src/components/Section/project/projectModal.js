@@ -1,6 +1,7 @@
 import { Box, Modal, Typography } from "@mui/material";
 import React from "react";
 import projectList from "../../../utils/projectList.json";
+import { GitHubIcon } from "../../SocialBrandIcon";
 
 const style = {
   position: "absolute",
@@ -57,7 +58,7 @@ function ProjectModal({ setOpen, open, projectId }) {
 
             {contributions && contributions.length > 0 && (
               <div className="mb-4">
-                <h4 className="font-mono-tag text-xs font-bold uppercase tracking-wider text-secondary mb-2">
+                <h4 className="font-mono-tag text-xs font-bold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-2">
                   Key Technical Implementations
                 </h4>
                 <ul className="list-disc list-outside ml-4 text-xs text-gray-600 dark:text-text-muted space-y-1.5 font-body-md">
@@ -73,7 +74,7 @@ function ProjectModal({ setOpen, open, projectId }) {
             <div className="mb-4 flex flex-wrap gap-1.5">
               {category.map((cat, idx) => (
                 <span
-                  className="font-mono-tag text-[10px] font-semibold px-2.5 py-1 rounded-lg bg-secondary/10 text-secondary border border-secondary/20"
+                  className="font-mono-tag text-[10px] font-semibold px-2.5 py-1 rounded-lg bg-sky-500/10 text-sky-700 dark:text-sky-400 border border-sky-500/20"
                   key={idx}
                 >
                   {cat}
@@ -85,7 +86,7 @@ function ProjectModal({ setOpen, open, projectId }) {
               <div className="flex gap-2.5 pt-2">
                 {link && (
                   <a href={link} target="_blank" rel="noopener noreferrer" className="flex-1">
-                    <button className="w-full bg-gradient-to-r from-primary to-secondary hover:shadow-[0_0_20px_rgba(99,102,241,0.5)] text-xs text-white font-label-ui font-bold py-2.5 px-3 rounded-xl inline-flex items-center justify-center transition-all cursor-pointer">
+                    <button className="w-full bg-sky-600 hover:bg-sky-500 text-xs text-white font-label-ui font-bold py-2.5 px-3 rounded-xl inline-flex items-center justify-center transition-all cursor-pointer shadow-md">
                       <span className="material-symbols-outlined text-sm mr-1.5">open_in_new</span>
                       <span>Live App Listing</span>
                     </button>
@@ -94,7 +95,7 @@ function ProjectModal({ setOpen, open, projectId }) {
                 {source && (
                   <a href={source} target="_blank" rel="noopener noreferrer" className="flex-1">
                     <button className="w-full bg-gray-100 hover:bg-gray-200 dark:bg-surface-glass dark:hover:bg-white/10 text-xs text-gray-900 dark:text-on-surface font-label-ui font-bold py-2.5 px-3 rounded-xl inline-flex items-center justify-center transition-all border border-gray-200 dark:border-white/15 cursor-pointer">
-                      <i className="fa-brands fa-github mr-1.5"></i>
+                      <GitHubIcon className="w-4 h-4 mr-1.5 inline-block text-gray-900 dark:text-white" />
                       <span>GitHub Specs</span>
                     </button>
                   </a>

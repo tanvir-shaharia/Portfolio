@@ -1,48 +1,95 @@
 import React from "react";
 
 /**
- * TechLogo: Obsidian Cyber-Glass TS Tech Monogram
- * Faithful reproduction of the brand logo from the approved Stitch UI design reference.
+ * TechLogo: Scaled-up High-Contrast TS Cyber Monogram
+ * - Bold Solid White Architectural 'T'
+ * - Smooth Electric Cyan 'S' Curve
+ * - Soft Translucent Cyber-Glass Backdrop (No harsh distracting borders)
  */
 export default function TechLogo({ className = "w-9 h-9" }) {
   return (
     <div
-      className={`relative flex items-center justify-center rounded-xl bg-slate-900/90 dark:bg-[#0b101b] border border-cyan-500/40 dark:border-cyan-400/50 shadow-[0_0_15px_rgba(6,182,212,0.35)] backdrop-blur-xl group-hover:border-cyan-400 group-hover:shadow-[0_0_22px_rgba(6,182,212,0.6)] transition-all duration-300 flex-shrink-0 ${className}`}
+      className={`relative flex items-center justify-center rounded-xl bg-slate-900/60 dark:bg-cyan-950/25 border border-cyan-500/25 dark:border-cyan-400/30 shadow-[0_0_12px_rgba(0,240,255,0.15)] backdrop-blur-xl group-hover:border-cyan-400/60 group-hover:shadow-[0_0_20px_rgba(0,240,255,0.35)] group-hover:scale-105 transition-all duration-300 flex-shrink-0 ${className}`}
       aria-label="Tanvir Shaharia TS Tech Monogram"
     >
       <svg
         viewBox="0 0 32 32"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-6 h-6"
+        className="w-6 h-6 sm:w-6.5 sm:h-6.5"
       >
         <defs>
-          <linearGradient id="tsGrad" x1="6" y1="8" x2="26" y2="24" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#38bdf8" />
-            <stop offset="0.5" stopColor="#06b6d4" />
-            <stop offset="1" stopColor="#818cf8" />
+          {/* Radial ambient glow behind letters */}
+          <radialGradient
+            id="tsCoreGlow"
+            cx="50%"
+            cy="50%"
+            r="50%"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="0%" stopColor="#00f0ff" stopOpacity="0.22" />
+            <stop offset="100%" stopColor="#00f0ff" stopOpacity="0" />
+          </radialGradient>
+
+          {/* Electric Cyan to Sky Gradient for S */}
+          <linearGradient
+            id="sCyanGrad"
+            x1="18"
+            y1="9.5"
+            x2="27"
+            y2="25"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="0%" stopColor="#67e8f9" />
+            <stop offset="50%" stopColor="#00f0ff" />
+            <stop offset="100%" stopColor="#38bdf8" />
           </linearGradient>
-          <filter id="tsGlow" x="-20%" y="-20%" width="140%" height="140%">
-            <feDropShadow dx="0" dy="0" stdDeviation="1.2" floodColor="#06b6d4" floodOpacity="0.7" />
+
+          {/* Soft Glow Filter for Cyan S */}
+          <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow
+              dx="0"
+              dy="0"
+              stdDeviation="0.8"
+              floodColor="#00f0ff"
+              floodOpacity="0.6"
+            />
           </filter>
         </defs>
 
-        {/* Cyber Monogram TS: Interlocking T and S letterforms */}
-        {/* T-bar */}
-        <path
-          d="M 7.5 10.5 C 7.5 9.67 8.17 9 9 9 H 23 C 23.83 9 24.5 9.67 24.5 10.5 V 12 H 17.5 V 23 H 14.5 V 12 H 7.5 V 10.5 Z"
-          fill="url(#tsGrad)"
-          filter="url(#tsGlow)"
+        {/* Ambient subtle glow */}
+        <circle cx="16" cy="16" r="13" fill="url(#tsCoreGlow)" />
+
+        {/* 'T' Letterform: Crisp Solid Architectural White */}
+        {/* T Top Horizontal Bar */}
+        <rect
+          x="4.5"
+          y="6.5"
+          width="17.5"
+          height="4"
+          rx="1.5"
+          fill="#ffffff"
+          className="drop-shadow-sm"
+        />
+        {/* T Vertical Stem */}
+        <rect
+          x="11"
+          y="9.5"
+          width="4.2"
+          height="15.5"
+          rx="1.5"
+          fill="#ffffff"
+          className="drop-shadow-sm"
         />
 
-        {/* S-curve dynamic cyber cut */}
+        {/* 'S' Letterform: Smooth Dynamic Electric Cyan Curve */}
         <path
-          d="M 18.5 14.5 H 22.5 C 23.3 14.5 24 15.2 24 16 V 17 C 24 17.8 23.3 18.5 22.5 18.5 H 18.5 V 21 H 23"
-          stroke="#38bdf8"
-          strokeWidth="1.6"
+          d="M 18.5 12.8 C 18.5 10.8 20.2 9.5 22.8 9.5 C 25.5 9.5 27 11 27 13.2 C 27 16.2 18 17.5 18 21.2 C 18 23.6 20 25.2 23 25.2 C 25.8 25.2 27.2 23.6 27.2 21.8"
+          stroke="url(#sCyanGrad)"
+          strokeWidth="2.8"
           strokeLinecap="round"
           strokeLinejoin="round"
-          filter="url(#tsGlow)"
+          filter="url(#cyanGlow)"
         />
       </svg>
     </div>

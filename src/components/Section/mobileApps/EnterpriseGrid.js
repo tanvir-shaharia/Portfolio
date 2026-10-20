@@ -8,14 +8,14 @@ export default function EnterpriseGrid() {
       id: "robi",
       name: "My Robi",
       metric: "10M+ Installs",
-      metricStyle: "bg-tertiary/10 border-tertiary/30 text-tertiary",
+      metricStyle: "bg-emerald-500/10 border-emerald-500/30 text-emerald-700 dark:text-emerald-400",
       tech: "Android Native • Kotlin",
-      techColor: "text-secondary",
+      techColor: "text-sky-700 dark:text-sky-400",
       description:
         "Scaled telecom self-care features serving millions of active users in Bangladesh. Optimized data pass purchase journeys and reduced ANR rates.",
       certifiedTag: "Google Play Certified",
       icon: "cell_tower",
-      iconColor: "text-secondary",
+      iconColor: "text-sky-600 dark:text-sky-400",
       link: "https://play.google.com/store/apps/details?id=net.omobio.robisc",
       image: "/my_robi.webp",
     },
@@ -23,14 +23,14 @@ export default function EnterpriseGrid() {
       id: "airtel",
       name: "My Airtel BD",
       metric: "High Concurrency",
-      metricStyle: "bg-primary/10 border-primary/30 text-primary-fixed-dim",
+      metricStyle: "bg-indigo-500/10 border-indigo-500/30 text-indigo-700 dark:text-indigo-300",
       tech: "Android Native • Kotlin",
-      techColor: "text-primary",
+      techColor: "text-indigo-700 dark:text-indigo-400",
       description:
         "Subscriber account management, dynamic campaign flows, and high-volume REST APIs supporting millions of daily transactions.",
       certifiedTag: "Self-Care Core Engine",
       icon: "sim_card",
-      iconColor: "text-primary",
+      iconColor: "text-indigo-600 dark:text-indigo-400",
       link: "https://play.google.com/store/apps/details?id=net.omobio.airtelsc",
       image: "/my_airtel.webp",
     },
@@ -38,14 +38,14 @@ export default function EnterpriseGrid() {
       id: "shojja",
       name: "Shojja Hospital Ecosystem",
       metric: "Clinical Portal",
-      metricStyle: "bg-secondary/10 border-secondary/30 text-secondary",
+      metricStyle: "bg-sky-500/10 border-sky-500/30 text-sky-700 dark:text-sky-400",
       tech: "Flutter • Dart • Riverpod",
-      techColor: "text-tertiary",
+      techColor: "text-emerald-700 dark:text-emerald-400",
       description:
         "Multi-tenant healthcare mobile client with OTP authentication, localization, doctor appointment management, and offline caching.",
       certifiedTag: "Doctor & Patient Portal",
       icon: "local_hospital",
-      iconColor: "text-tertiary",
+      iconColor: "text-emerald-600 dark:text-emerald-400",
       link: "https://github.com/tanvir-shaharia",
       image:
         "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=600&auto=format&fit=crop",
@@ -58,14 +58,14 @@ export default function EnterpriseGrid() {
       <ScrollReveal>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 border-b border-gray-200/60 dark:border-white/10 pb-4">
           <div>
-            <span className="font-mono-tag text-xs text-secondary font-semibold uppercase tracking-widest">
-              {"// ENTERPRISE & TELECOM CONTRIBUTIONS"}
+            <span className="font-mono-tag text-xs text-sky-700 dark:text-sky-400 font-semibold uppercase tracking-widest">
+              ENTERPRISE &amp; TELECOM CONTRIBUTIONS
             </span>
             <h3 className="font-headline-sm text-lg sm:text-xl lg:text-2xl text-gray-900 dark:text-text-primary font-bold mt-1 tracking-tight">
               High-scale production applications maintained and engineered for enterprise clients.
             </h3>
           </div>
-          <span className="font-mono-tag text-[11px] text-tertiary hidden sm:inline-block font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-tertiary/10 border border-tertiary/20 flex-shrink-0">
+          <span className="font-mono-tag text-[11px] text-emerald-700 dark:text-emerald-400 hidden sm:inline-block font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex-shrink-0">
             PRODUCTION CLIENT DELIVERIES
           </span>
         </div>
@@ -76,14 +76,14 @@ export default function EnterpriseGrid() {
         {enterpriseProjects.map((item, idx) => (
           <ScrollReveal key={item.id} delay={idx * 100} className="h-full">
             <div
-              className="card-spotlight tilt-card bg-white/70 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 rounded-2xl p-6 backdrop-blur-xl flex flex-col justify-between gap-5 shadow-lg dark:shadow-xl hover:border-secondary/40 transition-all duration-300 group h-full"
+              className="card-spotlight tilt-card bg-white/80 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 rounded-2xl p-6 backdrop-blur-xl flex flex-col justify-between gap-5 shadow-lg dark:shadow-xl hover:border-sky-500/40 transition-all duration-300 group h-full"
               onMouseMove={handleCardHoverMove}
               onMouseLeave={handleCardHoverLeave}
             >
               <div className="flex flex-col gap-3">
                 {/* Card Top: Title & Metric Pill */}
                 <div className="flex items-center justify-between gap-2">
-                  <span className="font-headline-sm text-lg text-gray-900 dark:text-text-primary font-bold group-hover:text-secondary transition-colors">
+                  <span className="font-headline-sm text-lg text-gray-900 dark:text-text-primary font-bold group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
                     {item.name}
                   </span>
                   <span
@@ -115,7 +115,7 @@ export default function EnterpriseGrid() {
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-gray-700 dark:text-on-surface hover:text-secondary transition-colors text-xs font-mono-tag"
+                    className="flex items-center gap-1 text-gray-700 dark:text-on-surface hover:text-sky-600 dark:hover:text-sky-400 transition-colors text-xs font-mono-tag"
                     aria-label={`${item.name} external link`}
                   >
                     <span className={`material-symbols-outlined text-base ${item.iconColor}`}>

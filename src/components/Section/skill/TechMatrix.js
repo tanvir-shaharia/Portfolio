@@ -17,8 +17,8 @@ export default function TechMatrix() {
       {/* 1. Header */}
       <ScrollReveal>
         <div className="flex flex-col gap-2">
-          <span className="font-mono-tag text-xs text-secondary font-semibold uppercase tracking-widest">
-            {"// TECHNICAL_STACK_MATRIX"}
+          <span className="font-mono-tag text-xs text-sky-700 dark:text-sky-400 font-semibold uppercase tracking-widest">
+            TECHNICAL STACK &amp; ARCHITECTURE
           </span>
           <h2 className="font-display-hero text-2xl sm:text-3xl lg:text-4xl text-gray-900 dark:text-text-primary font-extrabold tracking-tight">
             Technical Stack &amp; Architecture Core
@@ -60,7 +60,7 @@ export default function TechMatrix() {
                   {cat.skills.map((skill) => (
                     <li
                       key={skill.id}
-                      className="px-3 py-1.5 rounded-lg bg-gray-100/90 dark:bg-surface-container-high/80 text-gray-800 dark:text-on-surface font-mono-tag text-xs font-medium border border-gray-200/70 dark:border-white/5 transition-all duration-150 hover:border-secondary/40 hover:bg-white dark:hover:bg-surface-container-highest flex items-center gap-1.5 shadow-sm"
+                      className="px-3 py-1.5 rounded-lg bg-gray-100/90 dark:bg-surface-container-high/80 text-gray-800 dark:text-on-surface font-mono-tag text-xs font-medium border border-gray-200/70 dark:border-white/5 transition-all duration-150 hover:border-sky-500/40 hover:bg-white dark:hover:bg-surface-container-highest flex items-center gap-1.5 shadow-sm"
                     >
                       <TechIcon icon={skill.icon} />
                       <span>{skill.name}</span>
@@ -68,10 +68,10 @@ export default function TechMatrix() {
                         <span
                           className={`text-[10px] uppercase font-mono-tag font-semibold px-1.5 py-0.5 rounded ml-1 tracking-wider ${
                             skill.badge === "Academic"
-                              ? "bg-blue-500/10 text-blue-600 dark:text-blue-300 border border-blue-500/20"
+                              ? "bg-sky-500/10 text-sky-700 dark:text-sky-300 border border-sky-500/20"
                               : skill.badge === "Certified"
-                              ? "bg-amber-500/10 text-amber-600 dark:text-amber-300 border border-amber-500/20"
-                              : "bg-indigo-500/10 text-indigo-600 dark:text-indigo-300 border border-indigo-500/20"
+                              ? "bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20"
+                              : "bg-indigo-500/10 text-indigo-700 dark:text-indigo-300 border border-indigo-500/20"
                           }`}
                         >
                           {skill.badge}
@@ -88,10 +88,10 @@ export default function TechMatrix() {
 
       {/* 3. Separate Supporting Category — Backend & Web Development */}
       <ScrollReveal delay={200}>
-        <div className="bg-white/70 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 rounded-2xl p-6 sm:p-7 backdrop-blur-xl shadow-xl transition-all duration-300 hover:border-secondary/30">
+        <div className="bg-white/70 dark:bg-surface-glass border border-gray-200/80 dark:border-white/10 rounded-2xl p-6 sm:p-7 backdrop-blur-xl shadow-xl transition-all duration-300 hover:border-sky-500/30">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-4 border-b border-gray-100 dark:border-white/5">
             <div>
-              <div className="flex items-center gap-2 text-secondary font-mono-tag text-xs font-semibold uppercase tracking-wider mb-1">
+              <div className="flex items-center gap-2 text-sky-700 dark:text-sky-400 font-mono-tag text-xs font-semibold uppercase tracking-wider mb-1">
                 <span className="material-symbols-outlined text-lg leading-none select-none" aria-hidden="true">
                   {BACKEND_WEB_EXPERIENCE.icon}
                 </span>
@@ -113,7 +113,7 @@ export default function TechMatrix() {
             {BACKEND_WEB_EXPERIENCE.skills.map((skill) => (
               <li
                 key={skill.id}
-                className="p-3.5 rounded-xl bg-gray-50/80 dark:bg-surface-container-high/60 border border-gray-200/60 dark:border-white/5 flex flex-col gap-1.5 transition-all duration-150 hover:border-secondary/40 hover:bg-white dark:hover:bg-surface-container-highest"
+                className="p-3.5 rounded-xl bg-gray-50/80 dark:bg-surface-container-high/60 border border-gray-200/60 dark:border-white/5 flex flex-col gap-1.5 transition-all duration-150 hover:border-sky-500/40 hover:bg-white dark:hover:bg-surface-container-highest"
               >
                 <div className="flex items-center justify-between gap-2">
                   <div className="flex items-center gap-2 text-gray-800 dark:text-on-surface font-mono-tag text-xs font-semibold">
@@ -121,7 +121,7 @@ export default function TechMatrix() {
                     <span>{skill.name}</span>
                   </div>
                   {skill.badge && (
-                    <span className="text-[10px] uppercase font-mono-tag font-semibold px-1.5 py-0.5 rounded bg-indigo-500/10 text-indigo-600 dark:text-indigo-300 border border-indigo-500/20 tracking-wider">
+                    <span className="text-[10px] uppercase font-mono-tag font-semibold px-1.5 py-0.5 rounded bg-indigo-500/10 text-indigo-700 dark:text-indigo-300 border border-indigo-500/20 tracking-wider">
                       {skill.badge}
                     </span>
                   )}
@@ -137,16 +137,16 @@ export default function TechMatrix() {
 
       {/* 4. Compact AI-Assisted Engineering Strip */}
       <ScrollReveal delay={260}>
-        <div className="bg-white/50 dark:bg-surface-glass/70 border border-gray-200/70 dark:border-white/10 rounded-2xl p-5 sm:p-6 backdrop-blur-xl flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 shadow-lg transition-all duration-300 hover:border-primary/40">
+        <div className="bg-white/50 dark:bg-surface-glass/70 border border-gray-200/70 dark:border-white/10 rounded-2xl p-5 sm:p-6 backdrop-blur-xl flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 shadow-lg transition-all duration-300 hover:border-indigo-500/30">
           <div className="flex items-start sm:items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 text-primary flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-700 dark:text-indigo-400 flex items-center justify-center flex-shrink-0">
               <span className="material-symbols-outlined text-xl" aria-hidden="true">
                 {AI_WORKFLOWS.icon}
               </span>
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-mono-tag text-[11px] text-primary font-bold uppercase tracking-widest">
+                <span className="font-mono-tag text-[11px] text-indigo-700 dark:text-indigo-400 font-bold uppercase tracking-widest">
                   {AI_WORKFLOWS.heading}
                 </span>
               </div>
@@ -160,7 +160,7 @@ export default function TechMatrix() {
             {AI_WORKFLOWS.skills.map((skill) => (
               <li
                 key={skill.id}
-                className="px-3 py-1.5 rounded-lg bg-gray-100/90 dark:bg-surface-container-high/80 text-gray-800 dark:text-on-surface font-mono-tag text-xs font-medium border border-gray-200/70 dark:border-white/5 transition-all duration-150 hover:border-primary/40 flex items-center gap-1.5 shadow-sm"
+                className="px-3 py-1.5 rounded-lg bg-gray-100/90 dark:bg-surface-container-high/80 text-gray-800 dark:text-on-surface font-mono-tag text-xs font-medium border border-gray-200/70 dark:border-white/5 transition-all duration-150 hover:border-indigo-500/40 flex items-center gap-1.5 shadow-sm"
               >
                 <TechIcon icon={skill.icon} />
                 <span>{skill.name}</span>

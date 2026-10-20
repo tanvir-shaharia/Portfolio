@@ -11,6 +11,7 @@ import Projects from "./pages/projects";
 import Skill from "./pages/skill";
 import PocketLogPrivacy from "./pages/pocketlogPrivacy";
 import PocketLogTerms from "./pages/pocketlogTerms";
+import ProjectEstimatorPage from "./pages/projectEstimator";
 
 function App() {
   const location = useLocation();
@@ -28,6 +29,7 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/resume" element={<Experience />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/project-estimator" element={<ProjectEstimatorPage />} />
         <Route path="/pocketlog/privacy" element={<PocketLogPrivacy />} />
         <Route path="/pocketlog/terms" element={<PocketLogTerms />} />
         <Route path="*" element={<PageNotFound />} />
